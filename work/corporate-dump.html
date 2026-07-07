@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Dump™ — Product Story | Mark Young</title>
+  <meta
+    name="description"
+    content="Corporate Dump: an anonymous workplace restroom review platform built on the thesis that bathroom quality is a proxy for company culture. A product story by Mark Young — solo product designer and AI-directed developer."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Corporate Dump™ — Product Story | Mark Young" />
+  <meta
+    property="og:description"
+    content="An anonymous workplace restroom review app, treated with complete institutional seriousness."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myuxd.work/work/corporate-dump.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="../index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="destin-elite.html">Destin Elite Carts</a></li>
+            <li><a href="corporate-dump.html" aria-current="page">Corporate Dump™</a></li>
+            <li><a href="athlink.html">AthLink</a></li>
+            <li><a href="carrier-360.html">Carrier 360</a></li>
+          </ul>
+        </div>
+
+        <a href="../resume.html" class="nav__link">Resume</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="story">
+    <div class="story__wrap">
+      <!-- ==================== MASTHEAD ==================== -->
+      <header class="story-head reveal">
+        <p class="eyebrow">Product Story</p>
+        <h1 class="story-head__title">Corporate Dump™</h1>
+        <p class="story-head__subtitle">
+          Anonymous Workplace Restroom Review Platform
+        </p>
+      </header>
+
+      <div class="placeholder placeholder--story reveal">
+        [ Corporate Dump™ — app screens: field report feed, one-handed submit flow, and a completed field report ]
+      </div>
+
+      <!-- ==================== AT A GLANCE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-glance">
+        <h2 id="s-glance" class="story-section__title">At a Glance</h2>
+        <div class="glance-panel">
+          <table class="glance">
+            <tbody>
+              <tr>
+                <th scope="row">Role</th>
+                <td>Solo Product Designer + AI-Directed Developer</td>
+              </tr>
+              <tr>
+                <th scope="row">Timeline</th>
+                <td>~45 days, concept to App Store submission</td>
+              </tr>
+              <tr>
+                <th scope="row">Stack</th>
+                <td>React Native · Expo SDK 54 · Firebase Firestore · Google Maps/Places API · Google AdMob · EAS Build</td>
+              </tr>
+              <tr>
+                <th scope="row">Tools</th>
+                <td>Claude · Claude Code</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Outcomes</th>
+                <td>
+                  20 TestFlight builds shipped · Submitted to App Store July 4, 2026 ·
+                  Full light/dark theme system with semantic token architecture ·
+                  30 seeded field reports establishing institutional voice ·
+                  corporatedump.com live on Vercel · Complete design system documented
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== OVERVIEW ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-overview">
+        <h2 id="s-overview" class="story-section__title">Overview</h2>
+        <p>
+          Corporate Dump is an anonymous workplace restroom review platform built on
+          the thesis that bathroom quality is a reliable proxy for company culture.
+          Think Glassdoor meets Yelp, but for toilets. The app was designed and
+          shipped solo by a Senior UX Designer over approximately 45 days using React
+          Native, Firebase, and AI-directed development via Claude Code.
+        </p>
+      </section>
+
+      <!-- ==================== THE PROBLEM ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-problem">
+        <h2 id="s-problem" class="story-section__title">The Problem</h2>
+        <p>
+          Workplace culture is notoriously difficult to measure honestly. Glassdoor
+          reviews are tied to professional reputation and often sanitized. Employee
+          surveys are filtered through HR. But the bathroom tells the truth. A company
+          that doesn't maintain its restrooms doesn't maintain its people.
+        </p>
+        <p>
+          There was no product that treated this signal seriously — or absurdly
+          seriously enough to be interesting.
+        </p>
+      </section>
+
+      <!-- ==================== THE DESIGN CHALLENGE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-challenge">
+        <h2 id="s-challenge" class="story-section__title">The Design Challenge</h2>
+        <p>Build a product that:</p>
+        <ul class="story-list">
+          <li>Felt completely institutional while being inherently ridiculous</li>
+          <li>Worked in a single hand, in a stall, in under two minutes</li>
+          <li>Protected user anonymity completely</li>
+          <li>Generated data valuable enough to build a real index from</li>
+        </ul>
+      </section>
+
+      <!-- ==================== THE CORE DESIGN PRINCIPLE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-principle">
+        <h2 id="s-principle" class="story-section__title">The Core Design Principle</h2>
+        <p><em>The organization never laughs. The user laughs.</em></p>
+        <p>
+          Every design decision flowed from this. Corporate Dump doesn't wink at the
+          user. It presents itself as a completely serious regulatory and research
+          institution dedicated to documenting workplace restroom infrastructure. The
+          humor emerges entirely from the contrast between the deadpan institutional
+          voice and the subject matter.
+        </p>
+        <p>
+          This distinction was protected aggressively throughout development. Features
+          that broke the illusion were rejected. Copy that felt like a joke was
+          rewritten to feel like a filing.
+        </p>
+      </section>
+
+      <!-- ==================== PRODUCT DECISION FILTER ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-filter">
+        <h2 id="s-filter" class="story-section__title">Product Decision Filter</h2>
+        <p>Every feature was evaluated against three questions:</p>
+        <ol class="story-list">
+          <li>Does this strengthen the illusion?</li>
+          <li>Does it help someone browse or submit a field report?</li>
+          <li>Does it make future data more valuable?</li>
+        </ol>
+        <p>
+          Features that failed all three were cut. Features that passed all three —
+          even unglamorous ones like Edit and Delete — were prioritized for exactly
+          the reasons they weren't exciting. Edit improves data quality. Delete
+          improves legal posture. Both strengthen user trust.
+        </p>
+      </section>
+
+      <!-- ==================== KEY UX DECISIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-ux">
+        <h2 id="s-ux" class="story-section__title">Key UX Decisions</h2>
+
+        <h3 class="story-h3">Submit as a full page, not a bottom sheet</h3>
+        <p>
+          The original submit flow used a bottom sheet modal — standard pattern,
+          contextually appropriate. It was replaced with a full navigation page with a
+          header and back button. Reason: the submit form had grown to include GPS
+          auto-tagging, five rating categories, a floor/location note, and a field
+          notes area. A bottom sheet was no longer appropriate for that cognitive
+          load. The full page also solved a keyboard interaction problem where the
+          field notes area was obscured.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ Full-page submit flow — GPS auto-tag, five rating categories, floor/location note, and field notes area ]
+        </div>
+
+        <h3 class="story-h3">No explicit close buttons</h3>
+        <p>
+          Every modal in the app dismisses by tapping outside. No X buttons anywhere.
+          This decision was made after recognizing that X buttons were adding visual
+          noise and implying an escape hatch the product didn't need. The app is one
+          layer deep from every tab. There is nowhere the user is trapped.
+        </p>
+
+        <h3 class="story-h3">GPS auto-tag with graceful fallback</h3>
+        <p>
+          Location tagging on submissions was designed with three states: auto-match
+          within 500 meters (silent, no friction), manual pick from a list (for remote
+          submitters), and skip entirely. The user is never asked a question they
+          can't answer. The flow degrades gracefully without ever blocking submission.
+        </p>
+
+        <h3 class="story-h3">Cold-start UX</h3>
+        <p>
+          Launching with no data is a known failure mode for review apps. Corporate
+          Dump solved this with 30 seeded field reports written in the app's exact
+          institutional voice, sequenced so high-quality reports appear every 2–5
+          cards. These reviews don't just fill the feed — they establish the culture.
+          They teach users how a Corporate Dump field report sounds before they write
+          their first one.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ Field report feed — seeded institutional reviews sequenced so high-quality reports appear every 2–5 cards ]
+        </div>
+
+        <h3 class="story-h3">Commode toggle</h3>
+        <p>
+          Light/dark mode was implemented as "Commode?" with the subtitle "Light or
+          dark. Read the room." The toggle required building a complete theme system
+          from scratch — both palettes, semantic color tokens, and a live mutation
+          pattern that re-themes the entire app without remounting the navigation tree.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ "Commode?" light/dark toggle — full theme system re-theming the app without remounting navigation ]
+        </div>
+      </section>
+
+      <!-- ==================== ACCESSIBILITY ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-a11y">
+        <h2 id="s-a11y" class="story-section__title">Accessibility</h2>
+        <p>A dedicated accessibility audit identified and corrected:</p>
+        <ul class="story-list">
+          <li>All Space Mono and Georgia font sizes increased by 1pt across 17 files</li>
+          <li>Dark mode text ramp lightened for contrast against near-black backgrounds</li>
+          <li>Light mode grays and yellows darkened for contrast</li>
+          <li>Unverified badge color tokenized with separate dark/light values</li>
+          <li>FAB glow replaced with subtle neutral drop shadow</li>
+          <li>Back chevron enlarged for easier tapping</li>
+        </ul>
+      </section>
+
+      <!-- ==================== THE BRAND VOICE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-voice">
+        <h2 id="s-voice" class="story-section__title">The Brand Voice</h2>
+        <p>Corporate Dump developed its own vocabulary:</p>
+        <div class="vocab-panel">
+          <table class="vocab-table">
+            <thead>
+              <tr>
+                <th scope="col">Generic</th>
+                <th scope="col">Corporate Dump</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Review</td><td class="cd">Field Report</td></tr>
+              <tr><td>Delete</td><td class="cd">Strike from the Record</td></tr>
+              <tr><td>Post</td><td class="cd">Log / Deposit</td></tr>
+              <tr><td>User</td><td class="cd">Operative</td></tr>
+              <tr><td>Error</td><td class="cd">The tribunal has been notified</td></tr>
+              <tr><td>Success</td><td class="cd">Logged to the permanent record</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Consistency of voice became one of the product's defining characteristics.
+          Every loading state, error message, success dialog, and empty state was
+          audited to ensure it could have come from the same fictional institution.
+        </p>
+      </section>
+
+      <!-- ==================== TECHNICAL IMPLEMENTATION ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-tech">
+        <h2 id="s-tech" class="story-section__title">Technical Implementation</h2>
+        <p>
+          The app was built entirely by a UX Designer using AI-directed development.
+          Key technical achievements:
+        </p>
+        <ul class="story-list">
+          <li>React Native / Expo SDK 54 with file-based routing</li>
+          <li>Firebase Firestore for real-time anonymous data</li>
+          <li>Google Maps / Places API for GPS auto-tagging</li>
+          <li>Google AdMob for post-submission interstitials and feed banner slots</li>
+          <li>EAS Build for iOS distribution via TestFlight (20 builds shipped)</li>
+          <li>Full light/dark theme system with semantic token architecture</li>
+          <li>Geolocation-based facility discovery and ranking</li>
+          <li>Anonymous device ID for review ownership without accounts</li>
+          <li>Weighted ticker algorithm using Hacker News-style time decay</li>
+        </ul>
+      </section>
+
+      <!-- ==================== RESULTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-results">
+        <h2 id="s-results" class="story-section__title">Results</h2>
+        <ul class="story-list">
+          <li>20 TestFlight builds shipped across ~45 days</li>
+          <li>Submitted to the App Store July 4, 2026</li>
+          <li>Fully functional iOS app with real Firebase data</li>
+          <li>Complete design system documented in an 11-page PDF</li>
+          <li>Product philosophy codified and version-controlled</li>
+          <li>corporatedump.com live on Vercel with Terms and Privacy pages</li>
+          <li>30 seeded field reports establishing institutional voice at launch</li>
+        </ul>
+      </section>
+
+      <!-- ==================== WHAT I'D MEASURE NEXT ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-measure">
+        <h2 id="s-measure" class="story-section__title">What I'd Measure Next</h2>
+        <ul class="story-list">
+          <li><strong>Day 1 / Day 7 / Day 30 retention</strong> — the baseline signal for whether the product has real legs beyond the novelty of the concept</li>
+          <li><strong>Submit rate vs. browse rate</strong> — what percentage of users submit a field report versus read only? Low submit rate signals friction or audience mismatch</li>
+          <li><strong>GPS auto-tag success rate</strong> — how often does the silent 500-meter match succeed versus requiring manual input? High fallback rate may indicate the geo-matching radius needs tuning</li>
+          <li><strong>Session length and return frequency</strong> — is anyone coming back, or is this a one-visit curiosity? Return behavior determines whether the feed and discovery surfaces need investment</li>
+          <li><strong>Field report quality over time</strong> — do organic user submissions match the institutional voice established by seeded content, or does the tone drift? Voice drift is a product problem, not a copy problem</li>
+        </ul>
+      </section>
+
+      <!-- ==================== REFLECTIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-reflections">
+        <h2 id="s-reflections" class="story-section__title">Reflections</h2>
+        <p>
+          <strong>AI-directed development changes the designer's role, not the
+          designer's responsibility.</strong> Claude Code wrote the code. Every product
+          decision, every copy choice, every UX tradeoff was made by a human who
+          understood what the product was trying to be.
+        </p>
+        <p>
+          <strong>The copy is the design.</strong> In a product where the interface is
+          intentionally simple, the writing carries the personality. The vocabulary
+          list, the empty states, the error messages — these are design artifacts as
+          much as the color tokens or the component library.
+        </p>
+        <p>
+          <strong>Ship early and adjust.</strong> The app went from concept to App
+          Store submission in under 45 days. Real user behavior will determine what
+          gets built next. The data decides.
+        </p>
+      </section>
+
+      <!-- ==================== STORY FOOTER META ==================== -->
+      <footer class="story-footer reveal">
+        <p class="story-meta">
+          Stack: React Native · Expo SDK 54 · Firebase Firestore · Google Maps/Places API · Google AdMob · EAS Build<br />
+          Tools: Claude · Claude Code<br />
+          Timeline: June–July 2026<br />
+          Corporate Dump™ v2.0 — © 2026 Corporate Dump, Inc. All deposits reserved. 🚽
+        </p>
+        <a href="../index.html#work" class="story-back">
+          <span aria-hidden="true">←</span> All Product Stories
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

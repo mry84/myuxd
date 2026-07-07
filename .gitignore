@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Local tooling / editor config
+.claude/
+
+# Source materials — reference copy, not part of the deployed site
+assests/context/

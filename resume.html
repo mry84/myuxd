@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Mark Young, Senior Product Designer</title>
+  <meta
+    name="description"
+    content="Resume of Mark Young, Senior Product Designer. 15+ years of enterprise UX, design systems governance, and mobile product strategy, now paired with AI-directed product development."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Resume — Mark Young, Senior Product Designer" />
+  <meta
+    property="og:description"
+    content="15+ years of enterprise UX and design systems leadership, paired with AI-directed product development."
+  />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://myuxd.work/resume.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="work/destin-elite.html">Destin Elite Carts</a></li>
+            <li><a href="work/corporate-dump.html">Corporate Dump™</a></li>
+            <li><a href="work/athlink.html">AthLink</a></li>
+            <li><a href="work/blue-force-gear.html">Blue Force Gear</a></li>
+          </ul>
+        </div>
+
+        <a href="resume.html" class="nav__link" aria-current="page">Resume</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="resume container">
+    <!-- ==================== MASTHEAD ==================== -->
+    <header class="resume-head reveal">
+      <h1 class="resume-head__name">Mark Young</h1>
+      <p class="resume-head__title">Senior Product Designer</p>
+      <p class="resume-head__disciplines">
+        Enterprise UX · Product Strategy · AI-Directed Product Development
+      </p>
+      <div class="resume-head__meta">
+        <a href="https://myuxd.work">myuxd.work</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:markyoung84@gmail.com">markyoung84@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+14798993403">479.899.3403</a>
+      </div>
+      <div class="resume-head__actions">
+        <a href="assets/Mark-Young-Resume.pdf" class="btn btn--primary" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+    </header>
+
+    <!-- ==================== SUMMARY ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-summary">
+      <h2 id="rs-summary" class="resume-section__title">Summary</h2>
+      <div class="resume-section__body resume-prose">
+        <p class="resume-lead">
+          Senior Product Designer with 15+ years designing enterprise software,
+          leading mobile product strategy, and governing design systems at scale.
+        </p>
+        <p>
+          I served as mobile design authority for a revenue-critical logistics
+          marketplace supporting 175,000+ carriers and tens of thousands of daily
+          users while co-leading enterprise design system governance across 30+
+          products with 70%+ adoption.
+        </p>
+        <p>
+          I now combine that foundation with AI-directed development to move from
+          product decisions to working web and native software much faster — while
+          keeping full ownership of UX strategy, accessibility, architecture, and
+          quality. The result is compressed timelines without giving up the rigor
+          that comes from nearly two decades of complex, data-heavy product work.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== AI-DIRECTED PRODUCT DEVELOPMENT ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-ai">
+      <h2 id="rs-ai" class="resume-section__title">AI-Directed Product Development</h2>
+      <div class="resume-section__body">
+        <p class="resume-prose">
+          After Stova, I rebuilt my practice around directing AI agents for
+          implementation. The goal isn't to replace design judgment — it's to close
+          the gap between decisions and working software so ideas can be tested in
+          production faster while I retain control over user experience,
+          accessibility, information architecture, and long-term maintainability.
+        </p>
+        <div>
+          <p class="resume-subhead">Highlights</p>
+          <ul class="resume-bullets">
+            <li>Direct AI coding agents to turn product strategy and UX decisions into production web and native applications, keeping ownership of user experience, accessibility, architecture, and quality.</li>
+            <li>Built repeatable AI-assisted workflows for discovery, implementation, debugging, testing, deployment, and iteration — cutting concept-to-shipped timelines from months to weeks.</li>
+            <li>Shipped applications with multi-tenant content management, real-time data sync, geolocation, adaptive theming systems, and scalable architectures.</li>
+            <li>Use 15+ years of product design experience to steer AI work through structured decision-making, lifecycle modeling, accessibility standards, and product strategy.</li>
+            <li>Run modern development workflows (Git, deployment pipelines, TestFlight) as a designer who ships real software.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INDEPENDENT WORK ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-independent">
+      <h2 id="rs-independent" class="resume-section__title">
+        Independent Product Design &amp; AI Development
+        <span class="resume-entry__meta" style="display:block; margin-top:0.5rem;">2025–Present</span>
+      </h2>
+      <div class="resume-section__body">
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">Destin Elite Carts</h3>
+          </div>
+          <p class="resume-entry__role">Client Website Rebuild + Multi-Tenant CMS Platform</p>
+          <p class="resume-entry__desc">
+            Rebuilt the consumer website and built a lightweight multi-tenant CMS so
+            a non-technical owner could manage content, inventory, branding, and
+            hours without developer help — while laying groundwork for additional
+            clients.
+          </p>
+          <p class="resume-subhead">Key Contributions</p>
+          <ul class="resume-bullets">
+            <li>Delivered an 8-page production site with a custom 4-step booking flow that kept users on-site instead of redirecting to third-party software.</li>
+            <li>Designed a local-first JSON + File System Access CMS with slide-in editing, visual image picker, status management, and live content rendering on the consumer site.</li>
+            <li>Architected multi-tenancy from day one so new clients could be added with minimal new work.</li>
+            <li>Preserved every piece of original legal, pricing, and policy content exactly while improving UX, information architecture, and visual presentation.</li>
+          </ul>
+        </article>
+
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">Corporate Dump™</h3>
+          </div>
+          <p class="resume-entry__role">Solo Native Product</p>
+          <p class="resume-entry__desc">
+            Designed an original consumer product on the thesis that workplace
+            restroom quality is a measurable signal of company culture, then used
+            AI-directed development to take it from concept to TestFlight in roughly
+            30 days while owning strategy, UX, branding, accessibility, and
+            deployment end-to-end.
+          </p>
+          <p class="resume-subhead">Key Contributions</p>
+          <ul class="resume-bullets">
+            <li>Created a deadpan institutional product philosophy where the interface stays completely serious and humor comes from the subject matter itself.</li>
+            <li>Went from no React Native experience to shipping 16 TestFlight builds using React Native, Expo, Firebase, Google Maps, and modern deployment pipelines.</li>
+            <li>Designed a one-handed submission flow that balances anonymity, speed, GPS tagging with graceful fallback, and structured review data.</li>
+            <li>Built a semantic theming system that supports live light/dark changes without remounting navigation or UI.</li>
+            <li>Established a consistent institutional voice and custom vocabulary across every screen, empty state, error, and success state.</li>
+            <li>Ran a full accessibility audit and fixes covering typography, contrast, color tokens, shadows, and touch targets.</li>
+            <li>Used a strict product decision filter on every feature: strengthen identity, improve the submit/browse experience, or increase long-term data value.</li>
+          </ul>
+        </article>
+
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">AthLink</h3>
+          </div>
+          <p class="resume-entry__role">Pre-Seed Product Strategy &amp; Product Architecture</p>
+          <ul class="resume-bullets">
+            <li>Designed foundational architecture for an invite-only network connecting former collegiate athletes with mentors and recruiters.</li>
+            <li>Defined multi-role permissions, trust models, and scalable governance.</li>
+            <li>Helped shift strategy toward a curated, high-trust model during early founder conversations.</li>
+            <li>Established an early design system to support future engineering work.</li>
+          </ul>
+        </article>
+
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">Blue Force Gear</h3>
+          </div>
+          <p class="resume-entry__role">E-Commerce Design System</p>
+          <ul class="resume-bullets">
+            <li>Built a scalable design system foundation for a tactical e-commerce platform.</li>
+            <li>Created reusable components and UI standards for long-term consistency.</li>
+            <li>Acted as design authority for visual and cross-product alignment.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== ENTERPRISE LEADERSHIP ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-enterprise">
+      <h2 id="rs-enterprise" class="resume-section__title">Enterprise Product Leadership</h2>
+      <div class="resume-section__body">
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">Stova</h3>
+            <span class="resume-entry__meta">2024–2025</span>
+          </div>
+          <p class="resume-entry__role">Senior Product Designer</p>
+          <ul class="resume-bullets">
+            <li>Sole product designer brought in to modernize fragmented SaaS web and mobile surfaces.</li>
+            <li>Simplified global navigation and reduced interface complexity across the product.</li>
+            <li>Established foundational design system architecture for future consistency.</li>
+            <li>Partnered with Product and Engineering on roadmap priorities.</li>
+            <li>Role ended due to company-wide restructuring.</li>
+          </ul>
+        </article>
+
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">J.B. Hunt Transportation</h3>
+            <span class="resume-entry__meta">2018–2024</span>
+          </div>
+          <p class="resume-entry__role">Senior UX Designer</p>
+
+          <p class="resume-subhead">Carrier 360 Mobile Product Leadership</p>
+          <ul class="resume-bullets">
+            <li>Led mobile UX for a revenue-critical logistics marketplace supporting 175,000+ carriers and tens of thousands of daily users.</li>
+            <li>Re-architected workflows around contextual lifecycle information, reducing cognitive load and improving driver decision-making.</li>
+            <li>Delivered search and filtering that became the primary surface for discovering and booking freight.</li>
+            <li>Guided iterative modernization across releases while balancing engineering constraints and executive priorities.</li>
+          </ul>
+
+          <p class="resume-subhead">Enterprise Design Systems</p>
+          <ul class="resume-bullets">
+            <li>Co-led a CIO-sponsored enterprise design system initiative, directing 4–5 dedicated designers and partnering with principal engineering.</li>
+            <li>Built governance supporting 50+ designers across 30+ web and mobile products.</li>
+            <li>Drove 70%+ adoption on web and identified a &lt;10% mobile adoption baseline with critical implementation gaps.</li>
+            <li>Served as primary design authority for standards enforcement and executive/cross-product reviews.</li>
+          </ul>
+
+          <p class="resume-subhead">Strategic Navigation Initiative</p>
+          <ul class="resume-bullets">
+            <li>Selected as mobile design lead for a CIO-sponsored navigation initiative developed with Google.</li>
+            <li>Defined core mobile workflows before priorities shifted.</li>
+          </ul>
+        </article>
+
+        <article class="resume-entry">
+          <div class="resume-entry__head">
+            <h3 class="resume-entry__org">Movista</h3>
+            <span class="resume-entry__meta">2013–2018</span>
+          </div>
+          <p class="resume-entry__role">UX Designer &amp; Mobile Front-End Developer</p>
+          <ul class="resume-bullets">
+            <li>Owned end-to-end UX and front-end implementation for the flagship ONE by Movista mobile platform (600,000+ global users).</li>
+            <li>Designed enterprise workforce management tools used by clients including Walmart and Meijer.</li>
+            <li>Worked directly with the CEO, President, and senior engineering on product strategy and roadmap.</li>
+            <li>Redesigned time-tracking, geofencing, and inventory workflows while serving as the design-to-development bridge.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== EARLIER EXPERIENCE ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-earlier">
+      <h2 id="rs-earlier" class="resume-section__title">Earlier Experience</h2>
+      <div class="resume-section__body">
+        <ul class="resume-bullets">
+          <li>Shoptology — Digital Art Director (2012–2013)</li>
+          <li>Appriss — Mobile UX Designer (2011–2012)</li>
+          <li>Interactive Digital Systems — UX Designer (2009–2010)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERTISE ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-expertise">
+      <h2 id="rs-expertise" class="resume-section__title">Areas of Expertise</h2>
+      <div class="resume-section__body">
+        <div class="resume-group">
+          <p class="resume-group__label">Product Strategy &amp; UX</p>
+          <div class="chip-row">
+            <span class="chip">Product Architecture</span>
+            <span class="chip">Complex Workflow Design</span>
+            <span class="chip">Information Architecture</span>
+            <span class="chip">Mobile Product Strategy</span>
+            <span class="chip">Interaction Design</span>
+            <span class="chip">Accessibility (WCAG)</span>
+            <span class="chip">Research Synthesis</span>
+            <span class="chip">Design Thinking</span>
+            <span class="chip">UX Writing</span>
+          </div>
+        </div>
+
+        <div class="resume-group">
+          <p class="resume-group__label">AI-Directed Product Development</p>
+          <div class="chip-row">
+            <span class="chip">AI-Assisted Implementation</span>
+            <span class="chip">Rapid Validation &amp; Shipping</span>
+            <span class="chip">Native Mobile &amp; Web Delivery</span>
+            <span class="chip">Deployment Pipelines</span>
+            <span class="chip">Git Workflows</span>
+            <span class="chip">Technical Documentation</span>
+          </div>
+        </div>
+
+        <div class="resume-group">
+          <p class="resume-group__label">Leadership</p>
+          <div class="chip-row">
+            <span class="chip">Design Systems &amp; Governance</span>
+            <span class="chip">Enterprise Standards</span>
+            <span class="chip">Executive Communication</span>
+            <span class="chip">Cross-Functional Alignment</span>
+            <span class="chip">Sprint &amp; Roadmap Collaboration</span>
+            <span class="chip">Design-to-Development Partnership</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TOOLS ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-tools">
+      <h2 id="rs-tools" class="resume-section__title">Tools</h2>
+      <div class="resume-section__body">
+        <div class="chip-row">
+          <span class="chip">Figma</span>
+          <span class="chip">React Native</span>
+          <span class="chip">Expo</span>
+          <span class="chip">Firebase</span>
+          <span class="chip">Firestore</span>
+          <span class="chip">HTML/CSS/JavaScript</span>
+          <span class="chip">Git</span>
+          <span class="chip">EAS Build</span>
+          <span class="chip">TestFlight</span>
+          <span class="chip">Adobe Creative Cloud</span>
+          <span class="chip">Miro</span>
+          <span class="chip">Claude / Claude Code</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-certs">
+      <h2 id="rs-certs" class="resume-section__title">Certifications</h2>
+      <div class="resume-section__body">
+        <div class="resume-fact">
+          <p class="resume-fact__primary">Nielsen Norman Group UX Certification</p>
+        </div>
+        <ul class="resume-bullets">
+          <li>Designing Complex Apps for Specialized Domains</li>
+          <li>Writing Compelling Digital Copy</li>
+          <li>User Interviews</li>
+          <li>Storytelling to Present UX Work</li>
+          <li>Measuring UX and ROI</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== MILITARY ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-military">
+      <h2 id="rs-military" class="resume-section__title">Military</h2>
+      <div class="resume-section__body">
+        <div class="resume-fact">
+          <p class="resume-fact__primary">United States Marine Corps Reserve</p>
+          <p class="resume-fact__secondary">Mortarman (0341) · 2010–2013</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section class="resume-section reveal" aria-labelledby="rs-education">
+      <h2 id="rs-education" class="resume-section__title">Education</h2>
+      <div class="resume-section__body">
+        <div class="resume-fact">
+          <p class="resume-fact__primary">Full Sail University</p>
+          <p class="resume-fact__secondary">
+            B.S. Entertainment Business · A.S. Film Production · 2003–2006
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

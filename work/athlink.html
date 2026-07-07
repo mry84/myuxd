@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AthLink — Product Story | Mark Young</title>
+  <meta
+    name="description"
+    content="AthLink: 0–1 product architecture for a curated, invite-only network connecting former collegiate athletes with coaches, mentors, and recruiters. A product story by Mark Young — independent product design consultant."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AthLink — Product Story | Mark Young" />
+  <meta
+    property="og:description"
+    content="Zero-to-one product architecture for an invite-only collegiate athlete network."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myuxd.work/work/athlink.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="../index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="destin-elite.html">Destin Elite Carts</a></li>
+            <li><a href="corporate-dump.html">Corporate Dump™</a></li>
+            <li><a href="athlink.html" aria-current="page">AthLink</a></li>
+            <li><a href="carrier-360.html">Carrier 360</a></li>
+          </ul>
+        </div>
+
+        <a href="../resume.html" class="nav__link">Resume</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="story">
+    <div class="story__wrap">
+      <!-- ==================== MASTHEAD ==================== -->
+      <header class="story-head reveal">
+        <p class="eyebrow">Product Story</p>
+        <h1 class="story-head__title">AthLink</h1>
+        <p class="story-head__subtitle">
+          0–1 Product Architecture for a Curated Athlete Network
+        </p>
+      </header>
+
+      <div class="placeholder placeholder--story reveal">
+        [ AthLink — profile cards, endorsement badges, and Legacy Tree visualization screens ]
+      </div>
+
+      <!-- ==================== AT A GLANCE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-glance">
+        <h2 id="s-glance" class="story-section__title">At a Glance</h2>
+        <div class="glance-panel">
+          <table class="glance">
+            <tbody>
+              <tr>
+                <th scope="row">Role</th>
+                <td>Independent Product Design Consultant</td>
+              </tr>
+              <tr>
+                <th scope="row">Engagement Type</th>
+                <td>Pre-Seed, 0–1 Product Architecture</td>
+              </tr>
+              <tr>
+                <th scope="row">Timeline</th>
+                <td>2025</td>
+              </tr>
+              <tr>
+                <th scope="row">Tools</th>
+                <td>Figma · Claude</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Outcomes</th>
+                <td>
+                  Multi-role permission architecture defined · Trust model and
+                  governance established · Foundational design system delivered ·
+                  Product repositioned toward curated high-trust network model ·
+                  Engineering-ready roadmap handed off to founder
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== OVERVIEW ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-overview">
+        <h2 id="s-overview" class="story-section__title">Overview</h2>
+        <p>
+          AthLink is a pre-seed platform connecting former collegiate athletes with
+          coaches, mentors, recruiters, and career opportunities in a high-trust,
+          invite-only environment. By leveraging shared athletic legacies, it enables
+          endorsements that carry real weight and opportunities that feel earned — not
+          algorithmic.
+        </p>
+        <p>
+          As an independent consultant in the earliest phase, I collaborated with the
+          founder to define the core architecture, ensuring scalability while
+          preserving the exclusivity that makes the platform valuable. The engagement
+          was scoped to deliver a clear, executable foundation for engineering handoff.
+        </p>
+      </section>
+
+      <!-- ==================== THE PROBLEM ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-problem">
+        <h2 id="s-problem" class="story-section__title">The Problem</h2>
+        <p>
+          Early strategy sessions surfaced the core tension: balancing network growth
+          with trust. Unlike open platforms, AthLink's value depends entirely on
+          verified, curated connections. Too open and it becomes LinkedIn. Too closed
+          and it stagnates.
+        </p>
+        <p>Three distinct user types each brought their own demands:</p>
+        <ul class="story-list">
+          <li><strong>Athletes</strong> needed fair pathways to opportunities without having to beg for visibility</li>
+          <li><strong>Coaches</strong> wanted to extend their legacy and track the impact of their endorsements</li>
+          <li><strong>Recruiters</strong> needed character signals over noise — verified credibility, not self-reported credentials</li>
+        </ul>
+        <p>
+          The architecture had to serve all three simultaneously without collapsing the
+          trust model that made the platform worth building.
+        </p>
+      </section>
+
+      <!-- ==================== APPROACH ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-approach">
+        <h2 id="s-approach" class="story-section__title">Approach</h2>
+        <p>
+          I synthesized founder insights into a multi-role permission system defining
+          how athletes, coaches, mentors, and recruiters interact — and more
+          importantly, how they don't. The system was built around invite-driven,
+          relationship-based connections rather than open requests.
+        </p>
+        <p>Key architectural decisions:</p>
+
+        <p class="story-h4">Endorsements as trust infrastructure</p>
+        <p>
+          Endorsements aren't social gestures — they're the primary trust signal in the
+          system. A coach endorsing an athlete triggers recruiter visibility in a way
+          that self-promotion cannot. This distinction shaped every permission and flow
+          downstream.
+        </p>
+
+        <p class="story-h4">Legacy Trees</p>
+        <p>
+          Coaches needed a way to track the downstream impact of their endorsements over
+          time. Legacy Trees visualize this — who a coach endorsed, where those athletes
+          landed, and what the chain of impact looks like. This turned coach engagement
+          from a one-time action into an ongoing relationship with the platform.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ Legacy Trees — visualization of a coach's endorsement chain: who they endorsed, where those athletes landed, and downstream impact ]
+        </div>
+
+        <p class="story-h4">Scenario-informed architecture</p>
+        <p>
+          Rather than designing in the abstract, I modeled key interaction sequences: a
+          coach endorses an athlete, recruiter visibility is triggered, an introduction
+          is made, a hire closes. Working from real scenarios kept the architecture
+          grounded in actual user behavior rather than theoretical permission models.
+        </p>
+
+        <p class="story-h4">Mobile-first from day one</p>
+        <p>
+          All flows were prototyped mobile-first. Athletes and coaches are not desk
+          workers — the platform had to function in the context of their actual lives.
+        </p>
+      </section>
+
+      <!-- ==================== KEY COMPONENTS DELIVERED ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-components">
+        <h2 id="s-components" class="story-section__title">Key Components Delivered</h2>
+
+        <p class="story-h4">Endorsement Badges</p>
+        <p>
+          Coach-verified icons surfacing trust signals directly on profiles. Designed to
+          reduce the open-network risk of unverified credentials while giving recruiters
+          an immediate signal they can act on.
+        </p>
+
+        <p class="story-h4">Profile Cards</p>
+        <p>
+          Modular cards with role-specific fields — athlete major and endorsements,
+          recruiter hiring tags, coach legacy metrics. Built for fast iteration and
+          branding overlays without rebuilding core structure.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ Profile cards with endorsement badges — role-specific fields for athletes, coaches, and recruiters ]
+        </div>
+
+        <p class="story-h4">Foundational Design System</p>
+        <p>
+          Component library established before engineering engagement to ensure scalable
+          iteration without rework. Badges, profile cards, and core interaction patterns
+          documented and handed off.
+        </p>
+      </section>
+
+      <!-- ==================== HANDOFF & RECOMMENDATIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-handoff">
+        <h2 id="s-handoff" class="story-section__title">Handoff &amp; Recommendations</h2>
+        <p>
+          The engagement concluded with a documented architecture and component
+          foundation ready for engineering handoff. Recommendations to the founder:
+        </p>
+        <ul class="story-list">
+          <li><strong>Protect the trust model above all else</strong> — every growth decision should be evaluated against whether it dilutes or strengthens the invite-only signal</li>
+          <li><strong>Instrument endorsement behavior early</strong> — endorsement velocity, downstream hire rates, and Legacy Tree depth are the metrics that will tell you if the trust model is working</li>
+          <li><strong>Resist open-network pressure</strong> — as the platform grows there will be pressure to open access; the architecture was designed to scale without that compromise</li>
+          <li><strong>Prioritize the coach relationship</strong> — coaches are the network's engine; their endorsement behavior drives athlete visibility and recruiter engagement. Features that serve coaches serve everyone</li>
+        </ul>
+      </section>
+
+      <!-- ==================== REFLECTIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-reflections">
+        <h2 id="s-reflections" class="story-section__title">Reflections</h2>
+        <p>
+          The hardest product problem on AthLink wasn't the architecture — it was the
+          positioning. An invite-only network for former collegiate athletes sounds
+          niche until you map the actual user base: millions of former athletes,
+          thousands of coaches with active recruiter relationships, and a recruiting
+          industry starving for verified character signals.
+        </p>
+        <p>
+          The reframe — from "athlete networking app" to "curated high-trust
+          professional network anchored in verified athletic legacy" — changed what the
+          product needed to be and what it needed to protect. That positioning decision
+          shaped every architectural choice downstream.
+        </p>
+      </section>
+
+      <!-- ==================== STORY FOOTER META ==================== -->
+      <footer class="story-footer reveal">
+        <p class="story-meta">
+          Tools: Figma · Claude<br />
+          Timeline: 2025<br />
+          Engagement: Independent Consulting — Pre-Seed Product Architecture
+        </p>
+        <a href="../index.html#work" class="story-back">
+          <span aria-hidden="true">←</span> All Product Stories
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destin Elite Carts — Product Story | Mark Young</title>
+  <meta
+    name="description"
+    content="Destin Elite Carts: a golf cart rental website rebuild that became a multi-tenant CMS platform. A product story by Mark Young — solo product designer and AI-directed developer."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Destin Elite Carts — Product Story | Mark Young" />
+  <meta
+    property="og:description"
+    content="A website rebuild that became a multi-tenant CMS platform."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myuxd.work/work/destin-elite.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="../index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="destin-elite.html" aria-current="page">Destin Elite Carts</a></li>
+            <li><a href="corporate-dump.html">Corporate Dump™</a></li>
+            <li><a href="athlink.html">AthLink</a></li>
+            <li><a href="carrier-360.html">Carrier 360</a></li>
+          </ul>
+        </div>
+
+        <a href="../resume.html" class="nav__link">Resume</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="story">
+    <div class="story__wrap">
+      <!-- ==================== MASTHEAD ==================== -->
+      <header class="story-head reveal">
+        <p class="eyebrow">Product Story</p>
+        <h1 class="story-head__title">Destin Elite Carts</h1>
+        <p class="story-head__subtitle">
+          Website Rebuild + Multi-Tenant CMS Platform
+        </p>
+      </header>
+
+      <div class="placeholder placeholder--story reveal">
+        [ Destin Elite Carts — homepage hero: coastal beach photography with frosted-glass container and "Reserve a Cart" CTA ]
+      </div>
+
+      <!-- ==================== AT A GLANCE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-glance">
+        <h2 id="s-glance" class="story-section__title">At a Glance</h2>
+        <div class="glance-panel">
+          <table class="glance">
+            <tbody>
+              <tr>
+                <th scope="row">Role</th>
+                <td>Solo Product Designer + AI-Directed Developer</td>
+              </tr>
+              <tr>
+                <th scope="row">Timeline</th>
+                <td>June 2026</td>
+              </tr>
+              <tr>
+                <th scope="row">Stack</th>
+                <td>HTML · CSS · Vanilla JavaScript · JSON · File System Access API · Git</td>
+              </tr>
+              <tr>
+                <th scope="row">Tools</th>
+                <td>Claude · Claude Code</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Outcomes</th>
+                <td>
+                  8-page production site shipped · Custom booking flow eliminated
+                  third-party redirect · Content updates reduced from
+                  developer-dependent to self-serve in under 5 minutes ·
+                  Multi-tenant CMS architecture ready for second client
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== OVERVIEW ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-overview">
+        <h2 id="s-overview" class="story-section__title">Overview</h2>
+        <p>
+          Destin Elite Carts is a golf cart rental business operating in Destin,
+          Florida. The existing website was outdated, dependent on a third-party
+          booking system, and offered no way for the business owner to manage
+          content without developer involvement.
+        </p>
+        <p>The engagement had two phases:</p>
+        <ol class="story-list">
+          <li><strong>Rebuild the consumer-facing website</strong> — modern, fast, and built to convert</li>
+          <li><strong>Build a CMS</strong> — so the business owner could manage the site without touching code</li>
+        </ol>
+        <p>What started as a website project became a product architecture project.</p>
+      </section>
+
+      <!-- ==================== THE PROBLEM ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-problem">
+        <h2 id="s-problem" class="story-section__title">The Problem</h2>
+
+        <p class="story-h4">For the customer</p>
+        <ul class="story-list">
+          <li>Outdated site that didn't reflect the quality of the product</li>
+          <li>Booking experience redirected to an external third-party system with no visual continuity</li>
+          <li>No easy way to browse the fleet and understand what they were renting</li>
+        </ul>
+
+        <p class="story-h4">For the business owner</p>
+        <ul class="story-list">
+          <li>Every content change required a developer</li>
+          <li>Cart inventory, pricing, hours, and contact info were scattered and inconsistent across pages</li>
+          <li>No control over the site without technical help</li>
+          <li>Dependent on BookingCentral for all reservations — an external system with limited customization</li>
+        </ul>
+
+        <p class="story-h4">The core insight</p>
+        <p>
+          The website wasn't just a marketing problem. It was an operations problem.
+          The business owner needed ownership of her own content.
+        </p>
+      </section>
+
+      <!-- ==================== CONSTRAINTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-constraints">
+        <h2 id="s-constraints" class="story-section__title">Constraints</h2>
+        <ul class="story-list">
+          <li><strong>Time:</strong> Initial website build completed in a single focused build session. CMS POC scoped to 5 hours</li>
+          <li><strong>Stack:</strong> Plain HTML/CSS/JS — no frameworks, no build step, no backend server</li>
+          <li><strong>Budget:</strong> No third-party services beyond what was already in use</li>
+          <li><strong>Audience:</strong> Business owner is technically capable but time-constrained across multiple companies</li>
+        </ul>
+      </section>
+
+      <!-- ==================== PHASE 1 ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-phase1">
+        <h2 id="s-phase1" class="story-section__title">Phase 1: Website Rebuild</h2>
+
+        <h3 class="story-h3">Approach</h3>
+        <p>
+          Rather than redesign from scratch, the existing site was audited for
+          content, structure, and user flow. Key decisions were made before writing
+          a single line of code:
+        </p>
+        <ul class="story-list">
+          <li><strong>Keep the stack simple</strong> — HTML/CSS/JS only. Easier to hand off, faster to build, no framework overhead</li>
+          <li><strong>Replace BookingCentral</strong> — build a custom booking UX that keeps the customer on-site</li>
+          <li><strong>Match existing navigation</strong> — the business owner had already introduced the new site to customers. Changing the nav structure caused confusion in early review. Match what exists, modernize the presentation</li>
+        </ul>
+
+        <h3 class="story-h3">Key UX Decisions</h3>
+
+        <p class="story-h4">Navigation</p>
+        <p>
+          Preserved the existing nav structure after client feedback flagged
+          confusion with the rebuilt version. Added "Available Carts" as a dedicated
+          page — a new addition that didn't exist on the original site.
+        </p>
+
+        <p class="story-h4">Hero Section</p>
+        <p>
+          Stripped back a complex hero with multiple CTAs, stat strips, and body
+          copy to a single focused message:
+        </p>
+        <ul class="story-list">
+          <li>Logo</li>
+          <li>Heading: <em>Welcome to Destin Elite Carts!</em></li>
+          <li>One CTA: <em>Reserve a Cart</em></li>
+        </ul>
+        <p>
+          Beach photography with a frosted glass container replaced a flat blue
+          gradient. The result felt coastal and premium without being overdesigned.
+        </p>
+
+        <p class="story-h4">Cart Fleet</p>
+        <p>
+          Named carts (Blue Lagoon, Lady Bug, Thunderball, etc.) are a core part of
+          the brand. Each cart got its own photo, personality blurb, and a More Info
+          modal with full details — pulling customers into the product rather than
+          pushing them directly to booking.
+        </p>
+        <p>
+          Home page carousel shows active carts only. Available Carts page shows full
+          inventory with filtering by power type and passenger count.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ Cart fleet carousel — named carts (Blue Lagoon, Lady Bug, Thunderball) with photos, personality blurbs, and More Info modal ]
+        </div>
+
+        <p class="story-h4">Customer Reviews</p>
+        <p>
+          Moved from a static grid to a carousel with modal expansion. "Read More"
+          opens a full review in a modal rather than expanding the card — cleaner on
+          mobile, better for longer reviews.
+        </p>
+
+        <p class="story-h4">Booking Flow</p>
+        <p>
+          Replaced the BookingCentral redirect with a custom 4-step booking flow:
+        </p>
+        <ol class="story-list">
+          <li>Select date (calendar)</li>
+          <li>Select rental length (with live pricing)</li>
+          <li>Delivery/pickup time</li>
+          <li>Additional options (delivery address, add-ons, insurance)</li>
+        </ol>
+        <p>
+          Live order summary sidebar updates in real time as selections are made. No
+          values populate until the user has actually made the corresponding
+          selection — a deliberate guard against premature price display.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ Custom 4-step booking flow — calendar, rental length with live pricing, delivery/pickup time, add-ons, and live order summary sidebar ]
+        </div>
+
+        <p class="story-h4">Rules Page</p>
+        <p>
+          Original legal/policy content was preserved verbatim. A known pain point
+          with AI-assisted development is invented content on legal pages. All copy
+          was sourced directly from the live site and verified before publishing.
+        </p>
+
+        <p class="story-h4">Services Page</p>
+        <p>
+          Same approach — exact original pricing and service descriptions used. No
+          paraphrasing.
+        </p>
+
+        <h3 class="story-h3">Design System</h3>
+        <p>
+          A single stylesheet with CSS custom properties as design tokens. Ocean blue
+          + white primary. Sand/coral accents. Fluid sizing via <code>clamp()</code>.
+          Pill buttons, hover-lift cards, scroll-reveal animations.
+        </p>
+        <p>
+          All page heroes use local banner images — no third-party API URLs that
+          could break. Cart images organized in <code>Images/carts/</code> with a
+          consistent naming convention for easy replacement.
+        </p>
+      </section>
+
+      <!-- ==================== PHASE 2 ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-phase2">
+        <h2 id="s-phase2" class="story-section__title">Phase 2: CMS — Control Center</h2>
+
+        <h3 class="story-h3">The Problem with Static Sites</h3>
+        <p>
+          The website looked great. But every content change — a price update, a new
+          cart, corrected hours — required opening a code editor. For a business owner
+          running multiple companies, that's not sustainable.
+        </p>
+        <p>
+          The question became: <em>what information changes frequently enough that the
+          business owner shouldn't have to call a developer?</em>
+        </p>
+        <ul class="story-list">
+          <li>Cart inventory (new carts, status changes, pricing)</li>
+          <li>Hero copy and page content</li>
+          <li>Contact info and hours</li>
+          <li>Brand colors and logos</li>
+          <li>Partner listings</li>
+        </ul>
+        <p>That list became the feature set.</p>
+
+        <h3 class="story-h3">Architecture Decision: Local-First JSON</h3>
+        <p class="story-h4">Options considered</p>
+        <ul class="story-list">
+          <li>Supabase (hosted database, auth, API)</li>
+          <li>Firebase (already in use on another project)</li>
+          <li>Local JSON files</li>
+        </ul>
+        <p class="story-h4">Decision</p>
+        <p>Local-first JSON for the POC.</p>
+        <p class="story-h4">Reasoning</p>
+        <ul class="story-list">
+          <li>Fastest to build and prove</li>
+          <li>No third-party dependencies</li>
+          <li>The File System Access API (a modern browser capability) handles writing files directly from the browser</li>
+          <li>Schema designed to migrate to a hosted backend later without rewriting the app</li>
+        </ul>
+
+        <h3 class="story-h3">Multi-Tenant From Day One</h3>
+        <p>The CMS wasn't built for Destin Elite Carts. It was built for <em>any</em> site.</p>
+        <p>
+          A multi-site registry (<code>data/sites.json</code>) acts as the top-level
+          directory. Each client gets a per-site folder
+          (<code>data/sites/destin-elite/content.json</code>). Adding a second client
+          is a folder and a registry entry — not a rewrite.
+        </p>
+        <p>
+          This decision was made on day one before a single CMS screen was designed.
+        </p>
+
+        <h3 class="story-h3">The Control Center</h3>
+
+        <p class="story-h4">Sites Dashboard (cms/index.html)</p>
+        <p>
+          Landing page showing all managed sites. Table view by default, grid view
+          toggle. Each site shows name, domain, status badge, and last updated date.
+          One click to enter a site's editor.
+        </p>
+
+        <p class="story-h4">Site Control Center (cms/site.html)</p>
+        <p>
+          Fixed left sidebar navigation — no doom-scroll. Each section is its own
+          focused view:
+        </p>
+        <ul class="story-list">
+          <li><strong>Dashboard</strong> — operational stats (total carts, active carts, carts missing photos, partners, last updated)</li>
+          <li><strong>Fleet</strong> — table/grid toggle, status badges, slide-in edit panel, visual image picker</li>
+          <li><strong>Partners</strong> — partner listings with logo paths and URLs</li>
+          <li><strong>Content</strong> — homepage copy, taglines, hero heading, CTA text</li>
+          <li><strong>Contact &amp; Hours</strong> — NAP (name/address/phone), social links, hours table</li>
+          <li><strong>Brand &amp; Theme</strong> — logo paths, color palette with visual swatches</li>
+        </ul>
+
+        <p class="story-h4">Fleet Manager</p>
+        <p>
+          The centerpiece of the CMS. Table view shows all carts with photo
+          thumbnails, power type, seat count, nightly rate, and color-coded status
+          badges:
+        </p>
+        <ul class="story-list">
+          <li>🟢 Active — visible on consumer site</li>
+          <li>🔴 Inactive — hidden from consumer site, manageable in admin</li>
+          <li>🟡 Maintenance — out for repair</li>
+          <li>⚫ Retired — permanently removed, kept for records</li>
+        </ul>
+        <p>
+          Edit panel slides in from the right — no navigation away from the page.
+          Visual image picker shows thumbnails of all existing cart photos pulled
+          directly from <code>Images/carts/</code>. Click to assign.
+        </p>
+
+        <div class="placeholder placeholder--inline">
+          [ CMS Fleet Manager — table view with photo thumbnails, color-coded status badges, and slide-in edit panel with visual image picker ]
+        </div>
+
+        <p class="story-h4">The Save Model</p>
+        <p>A deliberate two-level save:</p>
+        <ol class="story-list">
+          <li><strong>Panel "Save Cart"</strong> — updates in-memory, re-renders the table</li>
+          <li><strong>Header "Save Changes"</strong> — writes to <code>content.json</code> via the File System Access API</li>
+        </ol>
+        <p>Changes reflect on the consumer site on reload.</p>
+
+        <h3 class="story-h3">Consumer Rendering Engine</h3>
+        <p>
+          <code>js/content.js</code> — a ~230-line vanilla JS data-binder that:
+        </p>
+        <ul class="story-list">
+          <li>Fetches <code>content.json</code> on page load</li>
+          <li>Injects brand colors into CSS custom properties site-wide</li>
+          <li>Renders fleet inventory dynamically on both the home carousel and Available Carts page</li>
+          <li>Filters active carts only for the consumer site</li>
+          <li>Degrades gracefully to static HTML if the data layer fails (progressive enhancement)</li>
+        </ul>
+
+        <h3 class="story-h3">A Bug Worth Documenting</h3>
+        <div class="story-callout">
+          <p>
+            During Brand &amp; Theme testing, a save wrote the content model to
+            <code>data/sites.json</code> (the registry) instead of
+            <code>data/sites/destin-elite/content.json</code>. The registry was
+            corrupted. The CMS crashed.
+          </p>
+          <p class="story-h4">Diagnosis</p>
+          <p>
+            The File System Access API save target isn't locked — whatever file the
+            user picks gets written to.
+          </p>
+          <p class="story-h4">Fix</p>
+          <p>
+            A write-target guard in <code>editor.js</code> that validates the filename
+            before writing. If the picked file isn't named <code>content.json</code>,
+            the save is rejected, the handle is cleared, and the user is re-prompted.
+          </p>
+          <p>
+            This is the kind of bug that only surfaces in real use — and the kind of
+            fix that makes a prototype production-ready.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== RESULTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-results">
+        <h2 id="s-results" class="story-section__title">Results</h2>
+
+        <p class="story-h4">Consumer site</p>
+        <ul class="story-list">
+          <li>8-page production website shipped</li>
+          <li>Custom 4-step booking flow keeping customers on-site</li>
+          <li>Fleet of 11 named carts with real photography</li>
+          <li>Reviews carousel with modal expansion</li>
+          <li>Fully responsive</li>
+        </ul>
+
+        <p class="story-h4">CMS</p>
+        <ul class="story-list">
+          <li>Working end-to-end — edit in CMS → save → consumer site reflects changes on reload</li>
+          <li>Content updates reduced from developer-dependent to self-serve in under 5 minutes</li>
+          <li>Fleet management with active/inactive filtering</li>
+          <li>Site-wide brand color theming from a single edit</li>
+          <li>Visual image picker from existing site assets</li>
+          <li>Multi-tenant architecture ready for second client</li>
+        </ul>
+      </section>
+
+      <!-- ==================== WHAT I'D MEASURE NEXT ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-measure">
+        <h2 id="s-measure" class="story-section__title">What I'd Measure Next</h2>
+        <ul class="story-list">
+          <li><strong>Booking conversion rate</strong> — does the custom flow convert better than the BookingCentral redirect?</li>
+          <li><strong>Time-to-content-update</strong> — baseline how long updates actually take versus the developer-dependent model</li>
+          <li><strong>CMS session frequency</strong> — how often is the business owner actually using it? Low frequency could signal friction; high frequency validates the investment</li>
+          <li><strong>Second client onboarding time</strong> — the real proof of the multi-tenant architecture is how long it takes to add client two</li>
+        </ul>
+      </section>
+
+      <!-- ==================== REFLECTIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-reflections">
+        <h2 id="s-reflections" class="story-section__title">Reflections</h2>
+        <p>
+          The most important UX decision on this project wasn't a design decision. It
+          was an architecture decision: <em>build a system, not a website.</em>
+        </p>
+        <p>
+          A website serves one business. A system serves many. Choosing multi-tenancy
+          on day one — when the scope was still "rebuild destinelitecarts.com" — is
+          the difference between a project and a platform.
+        </p>
+        <p>
+          The other lesson: the business owner's time is the scarcest resource. Every
+          feature in the CMS was evaluated against one question: <em>does this
+          eliminate a reason to call a developer?</em> If yes, build it. If no, defer
+          it.
+        </p>
+        <p>That filter produced a focused, functional tool in 5 hours.</p>
+      </section>
+
+      <!-- ==================== STORY FOOTER META ==================== -->
+      <footer class="story-footer reveal">
+        <p class="story-meta">
+          Stack: HTML · CSS · Vanilla JavaScript · JSON · File System Access API · Git<br />
+          Tools: Claude · Claude Code<br />
+          Timeline: June 2026
+        </p>
+        <a href="../index.html#work" class="story-back">
+          <span aria-hidden="true">←</span> All Product Stories
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
