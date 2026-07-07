@@ -110,9 +110,22 @@
         </p>
       </header>
 
-      <div class="placeholder placeholder--story reveal">
-        [ AthLink — profile cards, endorsement badges, and Legacy Tree visualization screens ]
-      </div>
+      <figure class="device-shot device-shot--hero reveal">
+        <div class="device-shot__stage">
+          <img
+            class="device-shot__img"
+            src="../assets/docs/athlink/home.PNG"
+            alt="AthLink home screen showing 'Actively Recruiting' and 'Former Teammates' connection cards"
+            width="1320"
+            height="2868"
+            loading="eager"
+          />
+        </div>
+        <figcaption class="device-shot__caption">
+          The AthLink home surface — recruiters actively recruiting and former
+          teammates, one tap to connect.
+        </figcaption>
+      </figure>
 
       <!-- ==================== AT A GLANCE ==================== -->
       <section class="story-section reveal" aria-labelledby="s-glance">
@@ -198,6 +211,24 @@
           importantly, how they don't. The system was built around invite-driven,
           relationship-based connections rather than open requests.
         </p>
+
+        <figure class="device-shot reveal">
+          <div class="device-shot__stage">
+            <img
+              class="device-shot__img"
+              src="../assets/docs/athlink/login.PNG"
+              alt="AthLink invite-only login screen"
+              width="1320"
+              height="2868"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="device-shot__caption">
+            Invite-only login — access is gated to protect the curated, high-trust
+            network.
+          </figcaption>
+        </figure>
+
         <p>Key architectural decisions:</p>
 
         <p class="story-h4">Endorsements as trust infrastructure</p>
@@ -216,9 +247,23 @@
           from a one-time action into an ongoing relationship with the platform.
         </p>
 
-        <div class="placeholder placeholder--inline">
-          [ Legacy Trees — visualization of a coach's endorsement chain: who they endorsed, where those athletes landed, and downstream impact ]
-        </div>
+        <figure class="device-shot reveal">
+          <div class="device-shot__stage">
+            <img
+              class="device-shot__img"
+              src="../assets/docs/athlink/althink.PNG"
+              alt="AthLink connection graph — a member at the center linked to a web of coaches, recruiters, and teammates"
+              width="1320"
+              height="2868"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="device-shot__caption">
+            The connection graph — a member at the center, linked to the web of
+            coaches, recruiters, and teammates whose endorsements carry the chain of
+            impact forward.
+          </figcaption>
+        </figure>
 
         <p class="story-h4">Scenario-informed architecture</p>
         <p>
@@ -253,9 +298,22 @@
           branding overlays without rebuilding core structure.
         </p>
 
-        <div class="placeholder placeholder--inline">
-          [ Profile cards with endorsement badges — role-specific fields for athletes, coaches, and recruiters ]
-        </div>
+        <figure class="device-shot reveal">
+          <div class="device-shot__stage">
+            <img
+              class="device-shot__img"
+              src="../assets/docs/athlink/profile.PNG"
+              alt="AthLink athlete profile showing a 'Coach Endorsed' badge, status pills, and an endorsements section"
+              width="1320"
+              height="2868"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="device-shot__caption">
+            An athlete profile — the "Coach Endorsed" badge surfaces the primary trust
+            signal directly on the profile, with role-specific fields below.
+          </figcaption>
+        </figure>
 
         <p class="story-h4">Foundational Design System</p>
         <p>
@@ -263,6 +321,48 @@
           iteration without rework. Badges, profile cards, and core interaction patterns
           documented and handed off.
         </p>
+      </section>
+
+      <!-- ==================== PROJECT MATERIALS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-materials">
+        <h2 id="s-materials" class="story-section__title">Project Materials</h2>
+        <div class="story-materials">
+          <a
+            href="https://www.figma.com/proto/XNKACbYSlWa8Q61OLQ6tAq/Athlink-Design?page-id=652%3A16823&node-id=652-17872&viewport=597%2C273%2C0.16&t=ffSHm4yVqCAkLsNc-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=652%3A17872"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener"
+          >
+            View Interactive Prototype <span aria-hidden="true">→</span>
+          </a>
+
+          <div class="story-downloads">
+            <a
+              href="../assets/docs/athlink/Personas.pdf"
+              class="btn btn--secondary"
+              download
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Personas
+            </a>
+            <a
+              href="../assets/docs/athlink/Personas-Cross%20Reference.pdf"
+              class="btn btn--secondary"
+              download
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Personas Cross Reference
+            </a>
+          </div>
+        </div>
       </section>
 
       <!-- ==================== HANDOFF & RECOMMENDATIONS ==================== -->
