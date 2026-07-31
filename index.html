@@ -102,12 +102,31 @@
   <main>
     <!-- ==================== HERO ==================== -->
     <section class="hero" aria-labelledby="hero-name">
-      <!-- Full-bleed placeholder frame — spans the hero edge to edge -->
-      <div class="hero__frame">
-        [ Full-bleed hero image — Mark Young / signature product mockups ]
-      </div>
+      <!-- Full-bleed hero image — spans the hero edge to edge.
+           WebP is the primary source at two widths (1800w ~97KB standard,
+           2560w ~163KB retina); the browser picks by viewport × DPR.
+           The original PNG is the fallback where WebP isn't supported. -->
+      <picture class="hero__picture">
+        <source
+          type="image/webp"
+          srcset="
+            assets/images/home_hero.webp    1800w,
+            assets/images/home_hero@2x.webp 2560w
+          "
+          sizes="100vw"
+        />
+        <img
+          class="hero__img"
+          src="assets/images/home_hero.png"
+          alt="The Destin Elite Carts website and CMS control center shown across a desktop monitor, laptop, tablet, and phone."
+          width="3000"
+          height="2000"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
 
-      <!-- Centered, stacked content layered over the frame -->
+      <!-- Centered, stacked content layered over the image -->
       <div class="hero__content container">
         <h1 id="hero-name" class="hero__name hero-anim" style="--hero-delay: 0ms">
           Mark Young
