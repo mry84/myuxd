@@ -110,9 +110,35 @@
         </p>
       </header>
 
-      <div class="placeholder placeholder--story reveal">
-        [ Destin Elite Carts — homepage hero: coastal beach photography with frosted-glass container and "Reserve a Cart" CTA ]
-      </div>
+      <figure class="shot shot--hero reveal">
+        <button
+          class="shot__btn"
+          type="button"
+          data-lightbox
+          data-full="../assets/images/home_hero@2x.webp"
+          data-full-fallback="../assets/images/home_hero.png"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ../assets/images/home_hero.webp    1800w,
+                ../assets/images/home_hero@2x.webp 2560w
+              "
+              sizes="(min-width: 1140px) 1044px, 100vw"
+            />
+            <img
+              class="shot__img"
+              src="../assets/images/home_hero.png"
+              alt="Destin Elite Carts website on multiple devices"
+              width="3000"
+              height="2000"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
+        </button>
+      </figure>
 
       <!-- ==================== AT A GLANCE ==================== -->
       <section class="story-section reveal" aria-labelledby="s-glance">
@@ -256,8 +282,64 @@
           inventory with filtering by power type and passenger count.
         </p>
 
-        <div class="placeholder placeholder--inline">
-          [ Cart fleet carousel — named carts (Blue Lagoon, Lady Bug, Thunderball) with photos, personality blurbs, and More Info modal ]
+        <div class="shot-grid reveal">
+          <figure class="shot">
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/de_fleet_1@2x.webp"
+              data-full-fallback="../assets/images/de_fleet_1.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/de_fleet_1.webp    1200w,
+                    ../assets/images/de_fleet_1@2x.webp 1936w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/de_fleet_1.png"
+                  alt="Available Carts page — filter chips for power type and passenger count above a grid of cart cards including Blue Lagoon, Lady Bug, and Quicksilver"
+                  width="1936"
+                  height="1287"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
+          </figure>
+
+          <figure class="shot">
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/de_fleet_2@2x.webp"
+              data-full-fallback="../assets/images/de_fleet_2.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/de_fleet_2.webp    1200w,
+                    ../assets/images/de_fleet_2@2x.webp 1936w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/de_fleet_2.png"
+                  alt="More Info modal for the Blue Lagoon cart, opened over the dimmed fleet grid"
+                  width="1936"
+                  height="1287"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
+          </figure>
         </div>
 
         <p class="story-h4">Customer Reviews</p>
@@ -283,9 +365,34 @@
           selection — a deliberate guard against premature price display.
         </p>
 
-        <div class="placeholder placeholder--inline">
-          [ Custom 4-step booking flow — calendar, rental length with live pricing, delivery/pickup time, add-ons, and live order summary sidebar ]
-        </div>
+        <figure class="shot reveal">
+          <button
+            class="shot__btn"
+            type="button"
+            data-lightbox
+            data-full="../assets/images/de_booking@2x.webp"
+            data-full-fallback="../assets/images/de_booking.png"
+          >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ../assets/images/de_booking.webp    1200w,
+                  ../assets/images/de_booking@2x.webp 1936w
+                "
+                sizes="(min-width: 1140px) 1044px, 100vw"
+              />
+              <img
+                class="shot__img"
+                src="../assets/images/de_booking.png"
+                alt="Step 1 of the custom booking flow — a date calendar beside the live Order Summary sidebar"
+                width="1936"
+                height="1287"
+                loading="lazy"
+              />
+            </picture>
+          </button>
+        </figure>
 
         <p class="story-h4">Rules Page</p>
         <p>
@@ -406,8 +513,122 @@
           directly from <code>Images/carts/</code>. Click to assign.
         </p>
 
-        <div class="placeholder placeholder--inline">
-          [ CMS Fleet Manager — table view with photo thumbnails, color-coded status badges, and slide-in edit panel with visual image picker ]
+        <div class="shot-grid reveal">
+          <figure class="shot">
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/de_dashboard@2x.webp"
+              data-full-fallback="../assets/images/de_dashboard.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/de_dashboard.webp    1200w,
+                    ../assets/images/de_dashboard@2x.webp 2400w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/de_dashboard.png"
+                  alt="Control Center dashboard — counts for carts, active carts, partners, and hours rows above a site details panel"
+                  width="2991"
+                  height="1550"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
+          </figure>
+
+          <figure class="shot">
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/de_fleet@2x.webp"
+              data-full-fallback="../assets/images/de_fleet.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/de_fleet.webp    1200w,
+                    ../assets/images/de_fleet@2x.webp 2400w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/de_fleet.png"
+                  alt="Fleet manager — table of carts with photo, power type, seats, nightly price, and color-coded status badges"
+                  width="2991"
+                  height="1550"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
+          </figure>
+
+          <figure class="shot">
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/de_ds@2x.webp"
+              data-full-fallback="../assets/images/de_ds.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/de_ds.webp    1200w,
+                    ../assets/images/de_ds@2x.webp 2400w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/de_ds.png"
+                  alt="Brand and Theme panel — header and footer logo path fields above the site color palette as labeled swatches"
+                  width="2991"
+                  height="1550"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
+          </figure>
+
+          <figure class="shot">
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/de_contact@2x.webp"
+              data-full-fallback="../assets/images/de_contact.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/de_contact.webp    1200w,
+                    ../assets/images/de_contact@2x.webp 2400w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/de_contact.png"
+                  alt="Contact and Hours panel — phone, email, address, and social URL fields above an editable hours table"
+                  width="2991"
+                  height="1550"
+                  loading="lazy"
+                />
+              </picture>
+            </button>
+          </figure>
         </div>
 
         <p class="story-h4">The Save Model</p>

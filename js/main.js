@@ -1,7 +1,8 @@
 /* ==========================================================================
    myuxd.work — Main Script
    Vanilla JS. No dependencies.
-   Handles: theme toggle, nav dropdown, mobile menu, scroll reveal.
+   Handles: theme toggle, nav dropdown, mobile menu, scroll reveal,
+            image lightbox.
    ========================================================================== */
 
 (function () {
@@ -121,6 +122,114 @@
 
     revealEls.forEach(function (el) {
       observer.observe(el);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Image lightbox
+
+     Any [data-lightbox] trigger opens its full-size image over the page.
+     The trigger carries data-full (WebP) and data-full-fallback (PNG) so
+     the overlay shows a higher-resolution file than the inline thumbnail.
+     Closes on the X button, on a click outside the image, and on Escape.
+     ------------------------------------------------------------------ */
+  const lightboxTriggers = document.querySelectorAll("[data-lightbox]");
+
+  if (lightboxTriggers.length) {
+    let overlay = null;
+    let overlaySource = null;
+    let overlayImg = null;
+    let closeBtn = null;
+    let lastFocused = null;
+
+    // Built once, on first open — no cost to pages without images.
+    function buildOverlay() {
+      overlay = document.createElement("div");
+      overlay.className = "lightbox";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-label", "Expanded image");
+      overlay.hidden = true;
+
+      closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.className = "lightbox__close";
+      closeBtn.setAttribute("aria-label", "Close image");
+      closeBtn.innerHTML = "&times;";
+
+      const figure = document.createElement("div");
+      figure.className = "lightbox__figure";
+
+      const picture = document.createElement("picture");
+      overlaySource = document.createElement("source");
+      overlaySource.type = "image/webp";
+      overlayImg = document.createElement("img");
+      overlayImg.className = "lightbox__img";
+
+      picture.appendChild(overlaySource);
+      picture.appendChild(overlayImg);
+      figure.appendChild(picture);
+      overlay.appendChild(closeBtn);
+      overlay.appendChild(figure);
+      document.body.appendChild(overlay);
+
+      closeBtn.addEventListener("click", closeLightbox);
+
+      // Anything outside the image itself dismisses — the backdrop is the
+      // overlay, so only clicks landing inside .lightbox__figure survive.
+      overlay.addEventListener("click", function (e) {
+        if (!e.target.closest(".lightbox__figure")) closeLightbox();
+      });
+
+      // Only the close button is focusable in here, so a Tab trap is just
+      // "keep focus on it".
+      overlay.addEventListener("keydown", function (e) {
+        if (e.key === "Tab") {
+          e.preventDefault();
+          closeBtn.focus();
+        }
+      });
+    }
+
+    function openLightbox(trigger) {
+      if (!overlay) buildOverlay();
+
+      const inlineImg = trigger.querySelector("img");
+      const webp = trigger.getAttribute("data-full");
+      const fallback =
+        trigger.getAttribute("data-full-fallback") ||
+        (inlineImg ? inlineImg.getAttribute("src") : "");
+
+      overlaySource.srcset = webp || "";
+      overlayImg.src = fallback;
+      overlayImg.alt = inlineImg ? inlineImg.getAttribute("alt") || "" : "";
+
+      lastFocused = document.activeElement;
+      overlay.hidden = false;
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      if (!overlay || overlay.hidden) return;
+      overlay.hidden = true;
+      document.body.style.overflow = "";
+      // Release the image so it isn't decoded in the background.
+      overlaySource.srcset = "";
+      overlayImg.removeAttribute("src");
+      if (lastFocused && typeof lastFocused.focus === "function") {
+        lastFocused.focus();
+      }
+    }
+
+    lightboxTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        openLightbox(trigger);
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeLightbox();
     });
   }
 })();
