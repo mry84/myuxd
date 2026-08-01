@@ -1177,6 +1177,31 @@ ul {
   .shot-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .shot-grid--trio {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Portrait phone screenshots (roughly 1:2) are centered on a panel rather
+   than stretched to the column width — the same treatment as .device-shot.
+   At full container width an uncapped 1:2 image would run over 2000px tall. */
+.shot--phone .shot__btn {
+  display: flex;
+  justify-content: center;
+  padding: clamp(var(--space-sm), 3vw, var(--space-md));
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease, border-color 0.2s ease;
+}
+
+.shot--phone .shot__img {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Standalone phone shot — a little larger since it has the row to itself */
+.shot--phone.shot--feature .shot__img {
+  max-width: 380px;
 }
 
 /* --------------------------------------------------------------------------
