@@ -3,3 +3,6 @@
 
 # Local tooling / editor config
 .claude/
+
+# Source materials — reference copy, not part of the deployed site
+assets/context/
