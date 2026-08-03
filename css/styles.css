@@ -1181,6 +1181,22 @@ ul {
   .shot-grid--trio {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .shot-grid--five {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .shot-grid--five .shot {
+    max-width: none;
+  }
+}
+
+/* Stacked below 720px — cap and centre so a single 1:2.2 promo card
+   doesn't run the full container width */
+.shot-grid--five .shot {
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
 }
 
 /* Portrait phone screenshots (roughly 1:2) are centered on a panel rather
