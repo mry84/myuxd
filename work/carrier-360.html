@@ -106,12 +106,12 @@
         <p class="eyebrow">Product Story</p>
         <h1 class="story-head__title">Carrier 360</h1>
         <p class="story-head__subtitle">
-          Lifecycle-Driven Mobile UX for a Revenue-Critical Logistics Marketplace
+          Mobile Product Leadership for a Revenue-Critical Logistics Marketplace
         </p>
       </header>
 
       <div class="placeholder placeholder--story reveal">
-        [ Carrier 360 — load board as primary home screen, lifecycle load cards, and full workflow screens ]
+        [ Carrier 360 — hero: load board, lifecycle load cards, and core carrier workflow screens ]
       </div>
 
       <!-- ==================== AT A GLANCE ==================== -->
@@ -139,11 +139,11 @@
               <tr>
                 <th scope="row">Key Outcomes</th>
                 <td>
-                  Load board repositioned as primary home screen · Lifecycle-based
-                  load card architecture shipped · Search and filtering redesigned as
-                  primary freight discovery surface · Design system governance
-                  established across 30+ products · 70%+ enterprise design system
-                  adoption achieved
+                  Mobile UX leadership across six years of iterative releases · Load
+                  board and filtering redesigned as the primary freight discovery
+                  surface · Lifecycle-based load card architecture shipped · Design
+                  system governance established across 30+ products · 70%+ enterprise
+                  design system adoption achieved · 175,000+ carriers supported
                 </td>
               </tr>
             </tbody>
@@ -155,123 +155,115 @@
       <section class="story-section reveal" aria-labelledby="s-overview">
         <h2 id="s-overview" class="story-section__title">Overview</h2>
         <p>
-          Carrier 360 is J.B. Hunt's core mobile marketplace connecting shippers and
-          carriers across North America. It serves as the primary operational tool for
-          tens of thousands of drivers handling real-time load discovery, booking,
-          execution, and payment — supporting 175,000+ carriers under demanding
-          on-the-road conditions where fast, reliable decision-making isn't a
-          nice-to-have, it's the job.
+          Carrier 360 is J.B. Hunt's core mobile marketplace connecting carriers and
+          shippers across North America. It's the primary operational tool for tens of
+          thousands of drivers managing real-time load discovery, booking, execution,
+          and payment — at a scale that makes every UX decision a business decision.
         </p>
         <p>
-          As Senior UX Designer leading mobile product design, I spent six years
-          evolving the experience to reduce friction in high-density workflows across
-          multiple major releases.
+          I joined as Senior UX Designer leading mobile product design at the launch of
+          the platform's third major version and spent six years evolving the
+          experience across multiple releases. The work spanned the full carrier
+          workflow: finding loads, booking freight, managing shipments in the field,
+          uploading documents, submitting check calls, and getting paid — all from a
+          phone, between stops, under real operational conditions.
         </p>
       </section>
 
-      <!-- ==================== THE PROBLEM ==================== -->
-      <section class="story-section reveal" aria-labelledby="s-problem">
-        <h2 id="s-problem" class="story-section__title">The Problem</h2>
+      <!-- ==================== THE PLATFORM ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-platform">
+        <h2 id="s-platform" class="story-section__title">The Platform</h2>
         <p>
-          Carrier 360 grew organically — and it showed. Fragmented information
-          architecture and inconsistent patterns had accumulated over time, creating a
-          product that worked but worked against its users.
+          Carrier 360 serves a specific, demanding user: professional drivers and fleet
+          operators running a business in the field. The product has to work reliably
+          between stops, under time pressure, across every load type and route
+          configuration in North America.
         </p>
-        <p>
-          Drivers had to navigate multiple screens to track a single load across its
-          full lifecycle — discovery, booking, execution, and payment — each stage
-          living in a different part of the app. The cognitive load was high, the
-          navigation was redundant, and the most important surface in the app was
-          buried.
-        </p>
-        <p>
-          The load board — the primary revenue-generating surface where drivers find
-          and book freight — required navigating through the home screen, into a menu,
-          past nearly a dozen primary options, before a driver could even see
-          available loads.
-        </p>
-        <p><strong>Old flow:</strong> Home → Menu → Load Board → Filters → Results</p>
-        <p>
-          That's four steps before a driver can do the one thing they opened the app
-          to do.
-        </p>
-      </section>
-
-      <!-- ==================== CONSTRAINTS ==================== -->
-      <section class="story-section reveal" aria-labelledby="s-constraints">
-        <h2 id="s-constraints" class="story-section__title">Constraints</h2>
+        <p>The core workflow covers the complete load lifecycle:</p>
         <ul class="story-list">
-          <li><strong>Scale:</strong> 175,000+ carriers, tens of thousands of daily active users — changes had to ship without disrupting a platform people depend on for their livelihood</li>
-          <li><strong>Incremental delivery:</strong> All changes rolled out across multiple releases aligned to engineering timelines and executive roadmap priorities — no big-bang redesigns</li>
-          <li><strong>On-road context:</strong> Users are drivers, not desk workers. The interface had to function in demanding physical environments: one hand, moving, time-pressured</li>
-          <li><strong>Executive visibility:</strong> The platform was revenue-critical at the Fortune 250 level — UX decisions required executive alignment and cross-functional coordination</li>
+          <li><strong>Load discovery</strong> — searching, filtering, and evaluating available freight</li>
+          <li><strong>Booking</strong> — instant booking or negotiated offers in-app</li>
+          <li><strong>Execution</strong> — check calls, status updates, and detention management without phone calls</li>
+          <li><strong>Documentation and payment</strong> — document upload via phone camera, electronic invoice creation, and Quick Pay within 2 days</li>
         </ul>
+        <p>
+          Each stage has distinct information needs. A driver evaluating a load needs
+          rate, route, and equipment details. A driver executing a delivery needs stop
+          sequence, appointment windows, and check call status. Designing for this
+          lifecycle — rather than treating the app as a single flat experience — was
+          the central UX challenge of the engagement.
+        </p>
       </section>
 
       <!-- ==================== KEY UX DECISIONS ==================== -->
-      <section class="story-section reveal" aria-labelledby="s-ux">
-        <h2 id="s-ux" class="story-section__title">Key UX Decisions</h2>
+      <section class="story-section reveal" aria-labelledby="s-decisions">
+        <h2 id="s-decisions" class="story-section__title">Key UX Decisions</h2>
 
-        <p class="story-h4">Repositioning the load board as the primary home screen</p>
+        <p class="story-h4">Load board and filtering as the primary freight discovery surface</p>
         <p>
-          The single highest-impact decision of the engagement. Elevating the load
-          board from buried navigation to the primary home screen eliminated four steps
-          of overhead and aligned the app directly with user intent. Drivers open
-          Carrier 360 to find loads. The app now opens to loads.
+          Freight matching is a complex filtering problem — drivers need to match by
+          location, route, equipment type, distance, rate, and appointment constraints
+          simultaneously. The load board was redesigned as the primary surface with a
+          first-class filtering system and Favorites saved search capability. Drivers
+          can surface relevant loads quickly and save frequently used search parameters
+          rather than rebuilding them each session.
         </p>
 
         <div class="placeholder placeholder--inline">
-          [ Load board repositioned as the primary home screen — replacing buried menu navigation with immediate load visibility ]
+          [ Load board and filtering surface — 35 results, Save to Favorite Searches, Appointment Date sort, load cards with Live Load/Live Unload status ]
         </div>
 
         <p class="story-h4">Lifecycle-based load card architecture</p>
         <p>
-          I mapped the complete load lifecycle across four stages — discovery, booking
-          and confirmation, shipment execution, delivery and payment — and restructured
-          the load card to surface contextual, stage-relevant information at each point.
-          A driver looking at a load they haven't booked sees different information than
-          a driver actively executing a delivery. The card adapts to where they are in
-          the workflow rather than showing everything all the time.
-        </p>
-        <p>
-          This reduced cognitive load across high-density mobile workflows and improved
-          decision clarity at each stage — particularly during time-sensitive moments
-          on the road.
+          Load cards were redesigned to surface contextual, stage-relevant information
+          rather than presenting a fixed set of fields regardless of where a driver was
+          in the workflow. The card adapts to the lifecycle stage — discovery, booked,
+          in transit, delivered — showing what matters now rather than everything at
+          once. This reduced cognitive load in high-density workflows and improved
+          decision clarity at each stage.
         </p>
 
         <div class="placeholder placeholder--inline">
-          [ Lifecycle-based load cards — discovery, booking/confirmation, execution, and delivery/payment stages each surfacing stage-relevant information ]
+          [ Lifecycle load cards — booked loads with Upload Documents and Create Invoice CTAs, contextual stage-relevant actions ]
         </div>
 
-        <p class="story-h4">Search and filtering architecture</p>
+        <p class="story-h4">Detention and document management</p>
         <p>
-          The existing filtering system was insufficient for the complexity of freight
-          matching. Drivers needed to filter by location, timing, route constraints,
-          equipment type, and rate — quickly, reliably, and without leaving the load
-          board. I redesigned search and filtering as a first-class surface, not an
-          afterthought. It became the primary method for relevant load discovery and
-          booking.
+          Two historically phone-dependent workflows — detention charging and document
+          submission — were brought into the app. Detention is now tracked
+          automatically with location services. Documents are captured via phone camera
+          and uploaded in-app. Both eliminate calls that pulled drivers out of their
+          workflow and introduced friction at critical moments in load execution.
+        </p>
+
+        <p class="story-h4">Check call submission</p>
+        <p>
+          Status updates were redesigned as a structured, step-guided flow tied to
+          specific stops and appointment windows. The form surfaces the relevant stop
+          details — location, appointment time, expected arrival — and guides the
+          driver through a single focused step rather than a generic free-form update.
         </p>
 
         <div class="placeholder placeholder--inline">
-          [ Search & filtering surface — filter by location, timing, route, equipment type, and rate without leaving the load board ]
+          [ Check call submission — Step 1/1 Date and Time Information, Stop 2 META WAREHOUSE, set arrival time form ]
         </div>
 
         <p class="story-h4">Incremental modernization</p>
         <p>
-          Six years of changes didn't ship all at once. Each improvement was scoped,
-          sequenced, and aligned to engineering constraints and executive priorities.
-          This approach preserved platform stability while steadily raising the
-          experience quality across multiple releases.
+          Six years of improvements didn't ship as a single redesign. Each change was
+          scoped, sequenced, and aligned to engineering constraints and executive
+          roadmap priorities at a Fortune 500 company. This approach preserved platform
+          stability while continuously raising the experience quality across one of
+          J.B. Hunt's most revenue-critical products.
         </p>
       </section>
 
       <!-- ==================== ENTERPRISE DESIGN SYSTEM ==================== -->
-      <section class="story-section reveal" aria-labelledby="s-eds">
-        <h2 id="s-eds" class="story-section__title">Enterprise Design System</h2>
+      <section class="story-section reveal" aria-labelledby="s-ds">
+        <h2 id="s-ds" class="story-section__title">Enterprise Design System</h2>
         <p>
-          Parallel to the Carrier 360 work, I co-led a CIO-sponsored enterprise design
-          system initiative that extended well beyond the mobile product.
+          Running parallel to the Carrier 360 work, I co-led a CIO-sponsored enterprise
+          design system initiative covering the broader J.B. Hunt product ecosystem.
         </p>
         <ul class="story-list">
           <li>Directed 4–5 dedicated designers and partnered with principal engineering leadership</li>
@@ -281,10 +273,8 @@
           <li>Served as primary design authority for standards enforcement and executive cross-product reviews</li>
         </ul>
         <p>
-          The mobile audit findings directly informed the roadmap for bringing Carrier
-          360 and other mobile products into alignment with the enterprise system — a
-          gap that existed precisely because mobile had been treated as secondary to
-          web.
+          The mobile audit directly informed the roadmap for bringing Carrier 360 and
+          other mobile products into alignment with the enterprise system.
         </p>
 
         <p class="story-h4">Strategic Navigation Initiative</p>
@@ -300,12 +290,12 @@
       <section class="story-section reveal" aria-labelledby="s-results">
         <h2 id="s-results" class="story-section__title">Results</h2>
         <ul class="story-list">
-          <li>Load board elevated to primary home screen — eliminating navigation overhead for the platform's most critical surface</li>
-          <li>Lifecycle-based load cards shipped across multiple releases — reducing cognitive load and improving decision clarity for drivers</li>
-          <li>Search and filtering redesigned as the primary freight discovery surface</li>
+          <li>Six years of mobile product leadership across multiple major releases at Fortune 500 scale — serving as the carrier-facing mobile interface for a digital freight marketplace that scaled from approximately $150M to over $1.5B in annual transactions during the engagement</li>
+          <li>Lifecycle-based load card architecture shipped — reducing cognitive load and improving decision clarity across the full carrier workflow</li>
+          <li>Search, filtering, and Favorites redesigned as the primary freight discovery surface for 175,000+ carriers</li>
+          <li>Detention and document workflows moved in-app — eliminating phone-dependent friction from load execution</li>
           <li>Enterprise design system governance established across 30+ products with 70%+ web adoption</li>
           <li>Mobile adoption gap identified and documented — creating the roadmap for future mobile system alignment</li>
-          <li>Platform stability maintained throughout six years of iterative modernization at Fortune 250 scale</li>
         </ul>
       </section>
 
@@ -313,10 +303,11 @@
       <section class="story-section reveal" aria-labelledby="s-measure">
         <h2 id="s-measure" class="story-section__title">What I'd Measure Next</h2>
         <ul class="story-list">
-          <li><strong>Load booking rate by filter usage</strong> — do drivers who use the redesigned filtering system book at a higher rate than those who don't? This is the clearest signal of whether the search architecture is working</li>
-          <li><strong>Time-to-book</strong> — from load board open to confirmed booking. Lifecycle card improvements should show up here as a reduction in time and navigation steps</li>
-          <li><strong>Mobile design system adoption</strong> — the audit identified &lt;10% baseline. Tracking adoption over subsequent releases would quantify the impact of the governance work</li>
-          <li><strong>Stage-appropriate information accuracy</strong> — are drivers seeing the right information at the right lifecycle stage, or are there drop-off points that suggest the card architecture needs refinement?</li>
+          <li><strong>Load booking rate by filter usage</strong> — do drivers who use saved Favorites book at a higher rate? This is the signal for whether the search architecture is actually working</li>
+          <li><strong>Time-to-book</strong> — from load board open to confirmed booking, across lifecycle card versions</li>
+          <li><strong>Detention auto-capture rate</strong> — what percentage of eligible detention events are captured automatically versus requiring manual intervention?</li>
+          <li><strong>Document upload completion rate</strong> — does in-app upload complete successfully or do drivers abandon and fall back to other methods?</li>
+          <li><strong>Mobile design system adoption</strong> — the audit established a &lt;10% baseline; tracking adoption across subsequent releases quantifies the governance work</li>
         </ul>
       </section>
 
@@ -326,31 +317,30 @@
         <p>
           Six years on a single product teaches you things a series of shorter
           engagements can't. The most important lesson from Carrier 360:
-          <strong>the highest-impact UX decisions are often the simplest ones that
-          nobody had prioritized yet.</strong>
+          <strong>the highest-impact UX decisions are often the ones that reduce what a
+          driver has to think about, not the ones that add new capabilities.</strong>
         </p>
         <p>
-          Moving the load board to the home screen wasn't technically complex. It was
-          organizationally complex — it required alignment across product, engineering,
-          and executive stakeholders at a Fortune 250 company. The design was the easy
-          part. The systems thinking, stakeholder navigation, and incremental execution
-          strategy were the actual work.
+          Every workflow that came off the phone and into the app — detention,
+          documents, check calls — was a decision made by a driver who was already
+          managing a complex operational environment. The job wasn't to make the app
+          more powerful. It was to make the parts that mattered most invisible in their
+          simplicity.
         </p>
         <p>
-          The lifecycle card architecture was the same story. The insight — that a
-          driver booking a load needs different information than a driver delivering one
-          — seems obvious in retrospect. Making it real across a platform of that scale,
-          without breaking anything, across multiple release cycles, is the work that
-          doesn't show up in a screenshot.
+          Doing that at Fortune 500 scale, across multiple release cycles, with
+          executive visibility on every major decision — that's a different kind of
+          design problem than shipping features fast. It's systems thinking applied to
+          an organization as much as to a product.
         </p>
       </section>
 
-      <!-- ==================== STORY FOOTER META ==================== -->
+      <!-- ==================== STORY FOOTER ==================== -->
       <footer class="story-footer reveal">
         <p class="story-meta">
           Tools: Figma · Miro · Adobe Creative Cloud<br />
           Timeline: 2018–2024<br />
-          Company: J.B. Hunt Transportation — Senior UX Designer
+          Company: J.B. Hunt Transportation — Senior UX Designer, Mobile Product Lead
         </p>
         <a href="../index.html#work" class="story-back">
           <span aria-hidden="true">←</span> All Product Stories
