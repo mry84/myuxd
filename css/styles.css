@@ -1199,6 +1199,12 @@ ul {
   margin-inline: auto;
 }
 
+/* These promo cards carry their own full-bleed background, so a frame
+   around them reads as a double edge */
+.shot-grid--five .shot__btn {
+  border: none;
+}
+
 /* Portrait phone screenshots (roughly 1:2) are centered on a panel rather
    than stretched to the column width — the same treatment as .device-shot.
    At full container width an uncapped 1:2 image would run over 2000px tall. */
