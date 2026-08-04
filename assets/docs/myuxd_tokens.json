@@ -1,0 +1,338 @@
+{
+  "global": {
+    "font": {
+      "family": {
+        "sans": {
+          "value": "Roboto",
+          "type": "fontFamilies",
+          "description": "The only family on the site. Loaded via a single Google Fonts import. CSS stack falls back to -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif."
+        }
+      },
+      "weight": {
+        "light": { "value": "300", "type": "fontWeights", "description": "--fw-light. Lead paragraphs and the hero headline." },
+        "regular": { "value": "400", "type": "fontWeights", "description": "--fw-regular. Body default." },
+        "medium": { "value": "500", "type": "fontWeights", "description": "--fw-medium. Uppercase section labels, buttons, nav." },
+        "bold": { "value": "700", "type": "fontWeights", "description": "--fw-bold. H2, H3, card titles, sub-heads." },
+        "black": { "value": "900", "type": "fontWeights", "description": "--fw-black. Display type only — hero name, story title, resume name." }
+      },
+      "size": {
+        "hero": { "value": "88px", "type": "fontSizes", "description": "--fs-hero. Desktop end of clamp(2.75rem, 8vw, 5.5rem). Mobile floor in font.sizeMin.hero." },
+        "resumeName": { "value": "72px", "type": "fontSizes", "description": "Resume masthead. Desktop end of clamp(2.5rem, 7vw, 4.5rem)." },
+        "storyTitle": { "value": "60px", "type": "fontSizes", "description": "Product story masthead. Desktop end of clamp(2.25rem, 6vw, 3.75rem)." },
+        "h2": { "value": "36px", "type": "fontSizes", "description": "--fs-h2. Desktop end of clamp(1.5rem, 3.5vw, 2.25rem)." },
+        "h3": { "value": "22.4px", "type": "fontSizes", "description": "--fs-h3. Desktop end of clamp(1.15rem, 2vw, 1.4rem)." },
+        "lead": { "value": "24px", "type": "fontSizes", "description": "--fs-lead. Desktop end of clamp(1.1rem, 2.2vw, 1.5rem)." },
+        "body": { "value": "16px", "type": "fontSizes", "description": "--fs-body. Fixed, not fluid." },
+        "small": { "value": "13px", "type": "fontSizes", "description": "--fs-small. Fixed. Labels, captions, chips, uppercase section titles." }
+      },
+      "sizeMin": {
+        "hero": { "value": "44px", "type": "fontSizes", "description": "Mobile floor of --fs-hero clamp." },
+        "resumeName": { "value": "40px", "type": "fontSizes", "description": "Mobile floor of the resume masthead clamp." },
+        "storyTitle": { "value": "36px", "type": "fontSizes", "description": "Mobile floor of the story masthead clamp." },
+        "h2": { "value": "24px", "type": "fontSizes", "description": "Mobile floor of --fs-h2 clamp." },
+        "h3": { "value": "18.4px", "type": "fontSizes", "description": "Mobile floor of --fs-h3 clamp." },
+        "lead": { "value": "17.6px", "type": "fontSizes", "description": "Mobile floor of --fs-lead clamp." },
+        "body": { "value": "16px", "type": "fontSizes", "description": "Not fluid — same as font.size.body." },
+        "small": { "value": "13px", "type": "fontSizes", "description": "Not fluid — same as font.size.small." }
+      },
+      "lineHeight": {
+        "display": { "value": "95%", "type": "lineHeights", "description": "Hero name and resume name. CSS line-height 0.95." },
+        "displayFlat": { "value": "100%", "type": "lineHeights", "description": "Story masthead title. CSS line-height 1." },
+        "headline": { "value": "140%", "type": "lineHeights", "description": "Hero headline. CSS line-height 1.4." },
+        "lead": { "value": "150%", "type": "lineHeights", "description": "Lead and positioning paragraphs. CSS line-height 1.5." },
+        "body": { "value": "160%", "type": "lineHeights", "description": "Body default from the body rule. H2 and H3 inherit this — no heading rule overrides line-height anywhere in the stylesheet." }
+      },
+      "letterSpacing": {
+        "tighter": { "value": "-2%", "type": "letterSpacing", "description": "-0.02em. Display type: hero name, story title, resume name." },
+        "tight": { "value": "-1%", "type": "letterSpacing", "description": "-0.01em. H2, H3, card titles." },
+        "normal": { "value": "0%", "type": "letterSpacing", "description": "Body and lead copy." },
+        "button": { "value": "2%", "type": "letterSpacing", "description": "0.02em. Buttons." },
+        "capsTight": { "value": "8%", "type": "letterSpacing", "description": "0.08em. Story sub-heads (.story-h4)." },
+        "capsSection": { "value": "16%", "type": "letterSpacing", "description": "0.16em. Story and resume section titles." },
+        "capsEyebrow": { "value": "18%", "type": "letterSpacing", "description": "0.18em. Eyebrow labels." },
+        "capsHeroTitle": { "value": "22%", "type": "letterSpacing", "description": "0.22em. The hero's SENIOR PRODUCT DESIGNER line — the widest tracking on the site." }
+      }
+    },
+
+    "type": {
+      "hero": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.black}",
+          "fontSize": "{font.size.hero}",
+          "lineHeight": "{font.lineHeight.display}",
+          "letterSpacing": "{font.letterSpacing.tighter}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "Homepage hero name. The largest type on the site."
+      },
+      "resumeName": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.black}",
+          "fontSize": "{font.size.resumeName}",
+          "lineHeight": "{font.lineHeight.display}",
+          "letterSpacing": "{font.letterSpacing.tighter}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "Resume masthead name."
+      },
+      "storyTitle": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.black}",
+          "fontSize": "{font.size.storyTitle}",
+          "lineHeight": "{font.lineHeight.displayFlat}",
+          "letterSpacing": "{font.letterSpacing.tighter}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "Product story masthead title."
+      },
+      "heroTitle": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.medium}",
+          "fontSize": "{font.size.small}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.capsHeroTitle}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "The role line under the hero name."
+      },
+      "heroHeadline": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.light}",
+          "fontSize": "{font.size.lead}",
+          "lineHeight": "{font.lineHeight.headline}",
+          "letterSpacing": "{font.letterSpacing.normal}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Hero headline sentence."
+      },
+      "eyebrow": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.medium}",
+          "fontSize": "{font.size.small}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.capsEyebrow}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "Small uppercase label above a section title, e.g. PRODUCT STORY."
+      },
+      "sectionTitle": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.medium}",
+          "fontSize": "{font.size.small}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.capsSection}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "Story and resume section headings. Set in secondary text colour."
+      },
+      "h2": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "{font.size.h2}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.tight}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Section headline, e.g. Product Stories. Inherits body line-height."
+      },
+      "h3": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "{font.size.h3}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.tight}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Card titles and story H3s. Inherits body line-height."
+      },
+      "subhead": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "{font.size.small}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.capsTight}",
+          "textCase": "uppercase"
+        },
+        "type": "typography",
+        "description": "Sub-heading inside a story section (.story-h4)."
+      },
+      "lead": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.light}",
+          "fontSize": "{font.size.lead}",
+          "lineHeight": "{font.lineHeight.lead}",
+          "letterSpacing": "{font.letterSpacing.normal}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Positioning statement and resume lead paragraph."
+      },
+      "body": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "{font.size.body}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.normal}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Default running text."
+      },
+      "small": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "{font.size.small}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.normal}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Captions, chips, meta text, placeholder labels."
+      },
+      "button": {
+        "value": {
+          "fontFamily": "{font.family.sans}",
+          "fontWeight": "{font.weight.medium}",
+          "fontSize": "{font.size.body}",
+          "lineHeight": "{font.lineHeight.body}",
+          "letterSpacing": "{font.letterSpacing.button}",
+          "textCase": "none"
+        },
+        "type": "typography",
+        "description": "Primary and secondary buttons."
+      }
+    },
+
+    "spacing": {
+      "xs": { "value": "8px", "type": "spacing", "description": "--space-xs (0.5rem)." },
+      "sm": { "value": "16px", "type": "spacing", "description": "--space-sm (1rem)." },
+      "md": { "value": "32px", "type": "spacing", "description": "--space-md (2rem)." },
+      "lg": { "value": "64px", "type": "spacing", "description": "--space-lg (4rem)." },
+      "xl": { "value": "96px", "type": "spacing", "description": "--space-xl (6rem)." },
+      "2xl": { "value": "144px", "type": "spacing", "description": "--space-2xl (9rem)." }
+    },
+
+    "radius": {
+      "none": { "value": "0", "type": "borderRadius", "description": "Default. Sharp edges everywhere — cards, images, panels, inputs." },
+      "button": { "value": "4px", "type": "borderRadius", "description": "--radius-btn. The only rounded corner in the system. A slight radius, deliberately not a pill." }
+    },
+
+    "borderWidth": {
+      "hairline": { "value": "1px", "type": "borderWidth", "description": "Card, image frame, and section dividers." },
+      "rule": { "value": "2px", "type": "borderWidth", "description": "Resume masthead underline." }
+    },
+
+    "layout": {
+      "maxWidth": { "value": "1140px", "type": "sizing", "description": "--max-width. Container ceiling." },
+      "gutter": { "value": "48px", "type": "sizing", "description": "--gutter. Desktop end of clamp(1.25rem, 5vw, 3rem); floor is 20px." },
+      "gutterMin": { "value": "20px", "type": "sizing", "description": "Mobile floor of the --gutter clamp." },
+      "navHeight": { "value": "68px", "type": "sizing", "description": "--nav-height. Fixed header height." },
+      "contentWidth": { "value": "1044px", "type": "sizing", "description": "Derived: maxWidth minus two desktop gutters. The real width images are laid out against." }
+    },
+
+    "motion": {
+      "duration": {
+        "base": { "value": "400ms", "type": "other", "description": "--dur. Scroll-reveal and hero entry animations." },
+        "hover": { "value": "200ms", "type": "other", "description": "Hover and focus state transitions on buttons and image frames." },
+        "theme": { "value": "300ms", "type": "other", "description": "Background and colour cross-fade when the light/dark toggle flips." }
+      },
+      "easing": {
+        "out": { "value": "cubic-bezier(0.16, 1, 0.3, 1)", "type": "other", "description": "--ease-out. The only custom curve. No bounce, no elastic, no overshoot." },
+        "linear": { "value": "ease", "type": "other", "description": "Default curve used for simple colour transitions." }
+      },
+      "stagger": {
+        "hero": { "value": "100ms", "type": "other", "description": "Delay step between hero elements on page load." },
+        "cards": { "value": "90ms", "type": "other", "description": "Delay step between cards in a revealed grid." }
+      }
+    }
+  },
+
+  "light": {
+    "color": {
+      "bg": {
+        "primary": { "value": "#FFFFFF", "type": "color", "description": "--bg-primary." },
+        "secondary": { "value": "#F5F5F5", "type": "color", "description": "--bg-secondary. Panels, image stages, alternating sections." }
+      },
+      "text": {
+        "primary": { "value": "#111111", "type": "color", "description": "--text-primary." },
+        "secondary": { "value": "#555555", "type": "color", "description": "--text-secondary. Section labels, captions, meta." }
+      },
+      "accent": { "value": "#0066FF", "type": "color", "description": "--accent. Identical in both modes. Used sparingly: CTAs, links, active nav, focus rings." },
+      "border": { "value": "#E4E4E4", "type": "color", "description": "--border. Hairline dividers and image frames." },
+      "placeholder": {
+        "frame": { "value": "#C8D0D8", "type": "color", "description": "--placeholder-frame. Fill for unshot image slots." },
+        "label": { "value": "#888888", "type": "color", "description": "--placeholder-label. Same value in both modes." }
+      },
+      "heroScrim": { "value": "rgba(255, 255, 255, 0.6)", "type": "color", "description": "--hero-scrim. Sits between the hero image and the overlaid text so type keeps contrast." }
+    }
+  },
+
+  "dark": {
+    "color": {
+      "bg": {
+        "primary": { "value": "#0D0D0D", "type": "color", "description": "--bg-primary, dark." },
+        "secondary": { "value": "#1A1A1A", "type": "color", "description": "--bg-secondary, dark." }
+      },
+      "text": {
+        "primary": { "value": "#F5F5F5", "type": "color", "description": "--text-primary, dark." },
+        "secondary": { "value": "#999999", "type": "color", "description": "--text-secondary, dark. Lightened from the light-mode value for contrast against near-black." }
+      },
+      "accent": { "value": "#0066FF", "type": "color", "description": "--accent. Deliberately unchanged across modes." },
+      "border": { "value": "#262626", "type": "color", "description": "--border, dark." },
+      "placeholder": {
+        "frame": { "value": "#2A2A2A", "type": "color", "description": "--placeholder-frame, dark." },
+        "label": { "value": "#888888", "type": "color", "description": "--placeholder-label. Same value in both modes." }
+      },
+      "heroScrim": { "value": "rgba(13, 13, 13, 0.68)", "type": "color", "description": "--hero-scrim, dark. Slightly denser than the light scrim." }
+    }
+  },
+
+  "$themes": [
+    {
+      "id": "myuxd-light",
+      "name": "Light",
+      "selectedTokenSets": {
+        "global": "source",
+        "light": "enabled"
+      }
+    },
+    {
+      "id": "myuxd-dark",
+      "name": "Dark",
+      "selectedTokenSets": {
+        "global": "source",
+        "dark": "enabled"
+      }
+    }
+  ],
+
+  "$metadata": {
+    "tokenSetOrder": [
+      "global",
+      "light",
+      "dark"
+    ]
+  }
+}
