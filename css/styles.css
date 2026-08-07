@@ -498,7 +498,9 @@ ul {
   gap: var(--space-md);
 }
 
+/* position: relative anchors the stretched .card__link overlay below. */
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-primary);
@@ -512,24 +514,21 @@ ul {
   border-color: var(--accent);
 }
 
-/* Card thumbnail doubles as the lightbox trigger, so it's a button for
-   keyboard reach — same reset as .shot__btn, minus the border the card
-   already provides. */
-.card__btn {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  border-bottom: 1px solid var(--border);
-  background: none;
-  font: inherit;
-  color: inherit;
-  cursor: zoom-in;
+/* The whole card is one hit target, so the focus ring belongs on the card
+   rather than on the link text it originates from. */
+.card:focus-within {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-.card__btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
+.card:focus-within .card__link:focus-visible {
+  outline: none;
+}
+
+.card__media {
+  display: block;
+  border-bottom: 1px solid var(--border);
 }
 
 .card__img {
@@ -574,7 +573,17 @@ ul {
   transition: gap 0.2s ease;
 }
 
-.card__link:hover {
+/* Stretch the link over the whole card so the entire surface is tappable,
+   without nesting an <a> around the other card content. The link keeps its
+   own semantics and stays the single tab stop. */
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.card:hover .card__link {
   gap: 0.7rem;
 }
 
