@@ -446,7 +446,7 @@ ul {
   margin-top: var(--space-md);
   margin-inline: auto;
   font-size: var(--fs-lead);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-bold);
   line-height: 1.4;
   color: var(--text-primary);
 }
