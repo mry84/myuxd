@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RevRent — Product Story | Mark Young</title>
+  <meta
+    name="description"
+    content="RevRent: a UX/UI audit and design system for a live multi-tenant SaaS rental platform. A product story by Mark Young — UX/UI designer directing AI-assisted implementation inside a live, multi-developer team."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RevRent — Product Story | Mark Young" />
+  <meta
+    property="og:description"
+    content="A UX/UI audit and design system for a live multi-tenant SaaS rental platform."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myuxd.work/work/revrent.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="../index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="destin-elite.html">Destin Elite Carts</a></li>
+            <li><a href="corporate-dump.html">Corporate Dump™</a></li>
+            <li><a href="athlink.html">AthLink</a></li>
+            <li><a href="carrier-360.html">Carrier 360</a></li>
+            <li><a href="revrent.html" aria-current="page">RevRent</a></li>
+          </ul>
+        </div>
+
+        <a href="../resume.html" class="nav__link">Resume</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="story">
+    <div class="story__wrap">
+      <!-- ==================== MASTHEAD ==================== -->
+      <header class="story-head reveal">
+        <p class="eyebrow">Product Story</p>
+        <h1 class="story-head__title">RevRent</h1>
+        <p class="story-head__subtitle">
+          UX/UI Audit &amp; Design System — Directed Through AI
+        </p>
+      </header>
+
+      <!-- ==================== AT A GLANCE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-glance">
+        <h2 id="s-glance" class="story-section__title">At a Glance</h2>
+        <div class="glance-panel">
+          <table class="glance">
+            <tbody>
+              <tr>
+                <th scope="row">Role</th>
+                <td>
+                  UX/UI Designer, directing AI-assisted implementation inside a
+                  live, multi-developer team
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Timeline</th>
+                <td>
+                  August 2026 — this phase shipped and merged; next phase paused
+                  by mutual agreement pending real usage data
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Stack</th>
+                <td>React · Tailwind · FastAPI · PostgreSQL · Git</td>
+              </tr>
+              <tr>
+                <th scope="row">Tools</th>
+                <td>Claude · Claude Code</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Outcomes</th>
+                <td>
+                  Unified navigation and filtering vocabulary across five core
+                  product areas · replaced duplicated interaction patterns with
+                  reusable components · caught a cross-branch UX regression
+                  before it reached production · established a repeatable
+                  verification practice for AI-directed implementation
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== OVERVIEW ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-overview">
+        <h2 id="s-overview" class="story-section__title">Overview</h2>
+        <p>
+          RevRent is a live, multi-tenant SaaS platform for rental operators
+          (golf carts, paddle boards, and similar equipment businesses), built
+          rapidly and launched to its first real operator the same week this
+          engagement began. The product was already functional and, in places,
+          genuinely well designed — but it carried the normal scar tissue of
+          software built fast under launch pressure: the same interaction pattern
+          invented three or four different ways across the app, a single visual
+          component quietly doing four unrelated jobs, and no written record of
+          why any of it had been decided.
+        </p>
+        <p>
+          The mandate wasn't a redesign. It was an audit: find what's actually
+          broken, fix it without disrupting real operators already relying on the
+          product, and establish reusable patterns — with the reasoning behind
+          them documented — so the next inconsistency doesn't get invented from
+          scratch.
+        </p>
+      </section>
+
+      <!-- ==================== THE PROBLEM ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-problem">
+        <h2 id="s-problem" class="story-section__title">The Problem</h2>
+
+        <p class="story-h4">For operators using the product</p>
+        <ul class="story-list">
+          <li>
+            The same kind of control — a filter, a view switch, a status toggle —
+            looked and behaved differently depending on which page you were on.
+          </li>
+          <li>
+            Some filters silently combined incorrectly; others couldn't combine
+            at all when logically they should have.
+          </li>
+          <li>
+            Zero-count badges rendered as a literal "0" in some places and were
+            hidden entirely in others.
+          </li>
+          <li>
+            A page's own sense of "where am I" was frequently reversed or
+            missing — a navigational trail rendering above the page title it was
+            supposed to support, or not existing at all.
+          </li>
+        </ul>
+
+        <p class="story-h4">For the team shipping the product</p>
+        <ul class="story-list">
+          <li>
+            No shared component existed for several patterns that had already
+            been hand-rolled independently five or six times.
+          </li>
+          <li>
+            Design decisions lived only in the head of whoever made them, with no
+            record for the next session — human or AI — to inherit.
+          </li>
+        </ul>
+
+        <p class="story-h4">The core insight</p>
+        <p>
+          The product had no shared vocabulary for its own interface — so every
+          new page reinvented one, and every reinvention drifted a little further
+          from the last.
+        </p>
+      </section>
+
+      <!-- ==================== CONSTRAINTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-constraints">
+        <h2 id="s-constraints" class="story-section__title">Constraints</h2>
+        <ul class="story-list">
+          <li>
+            <strong>Time:</strong> Sessions were compressed and self-contained —
+            hours, not days — inside a product under continuous active
+            development.
+          </li>
+          <li>
+            <strong>Stack:</strong> An existing, working application already in
+            production. No rebuilds, no framework changes — every fix had to
+            compose with what real operators were already using.
+          </li>
+          <li>
+            <strong>Team:</strong> Not a solo build. A small team was actively
+            committing to the same repository throughout, several times a day,
+            which meant every change had to be verified against a codebase that
+            could have moved since the last sync.
+          </li>
+          <li>
+            <strong>Audience:</strong> Real operators, mid-use, on a product
+            whose long-term direction was itself still an open, evolving
+            question.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== HOW AI FIT INTO THE WORK ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-ai">
+        <h2 id="s-ai" class="story-section__title">How AI Fit Into the Work</h2>
+        <p>
+          The audit, taxonomy, UX decisions, scope, and implementation
+          verification were my responsibility. Claude Code worked directly
+          against the active repository to implement those decisions. Nothing was
+          considered finished because a session reported success — every change
+          was checked against the current repository, the rendered product, the
+          test suite, and any upstream changes before it shipped. The concurrency
+          issues below show why that verification discipline mattered.
+        </p>
+      </section>
+
+      <!-- ==================== PHASE 1 ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-phase1">
+        <h2 id="s-phase1" class="story-section__title">
+          Phase 1: Establishing the Taxonomy
+        </h2>
+
+        <h3 class="story-h3">Approach</h3>
+        <p>
+          Before fixing anything, the actual scope of the inconsistency had to be
+          named precisely. A single visual pill component was found doing four
+          structurally different jobs — navigation, filtering, multi-select
+          input, and single-value selection — across sixteen separate files, with
+          no visual distinction between them.
+        </p>
+
+        <h3 class="story-h3">Key UX Decisions</h3>
+
+        <p class="story-h4">Component Taxonomy</p>
+        <p>
+          Split the shared visual language into purpose-specific components: a
+          contained "segmented track" for navigation, a dismissible loose chip
+          for filtering, a checkbox-affordance variant for selection. Same design
+          language throughout — each now signals its actual function rather than
+          relying on context alone.
+        </p>
+
+        <p class="story-h4">Navigation &amp; Breadcrumb Order</p>
+        <p>
+          Corrected a reversed hierarchy: page title now always states the
+          current location first; a breadcrumb trail sits below it as supporting
+          context, appearing only once navigation genuinely goes deeper than a
+          page's own tabs can express.
+        </p>
+
+        <p class="story-h4">Badge Stability</p>
+        <p>
+          Any count badge — on a navigation tab or a filter chip — must reflect a
+          stable, unfiltered total, never whatever happens to be currently
+          selected. A badge that changes while a user types into search reads as
+          the data itself shifting, not as filter feedback.
+        </p>
+
+        <div class="story-callout">
+          <p>
+            <strong>A deliberate exception, not a rule:</strong> Settings kept its
+            existing, denser layout rather than being folded into the new
+            taxonomy — a product owner explicitly preferred seeing every option
+            on one screen over a cleaner hierarchy that would have required
+            drilling into buckets to find things. Consistency isn't the goal in
+            itself; the goal is the right pattern for how the page actually gets
+            used.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== PHASE 2 ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-phase2">
+        <h2 id="s-phase2" class="story-section__title">
+          Phase 2: Scaling the Pattern
+        </h2>
+
+        <h3 class="story-h3">Approach</h3>
+        <p>
+          A second session extended the taxonomy from Phase 1 across the
+          product's core operational modules — dispatch, bookings, fleet,
+          service, customer records — proving the rules held up against real,
+          varied backend shapes rather than just the one page they were invented
+          on.
+        </p>
+
+        <h3 class="story-h3">Key UX Decisions</h3>
+
+        <p class="story-h4">Primary/Secondary Filter Layering</p>
+        <p>
+          Where a page had one real filtering dimension, it stayed as chips.
+          Where a page stacked multiple dimensions on the same table, the primary
+          dimension stayed as chips and every additional dimension demoted to a
+          dropdown — applied consistently across five separate pages, each with a
+          different underlying data shape.
+        </p>
+
+        <p class="story-h4">Shared View-Toggle Component</p>
+        <p>
+          Extracted a single component for switching between display modes of the
+          same data (list/calendar, timeline/map, table/diagram), replacing six
+          independently hand-rolled implementations.
+        </p>
+      </section>
+
+      <!-- ==================== LIVE CODEBASE COLLISIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-collisions">
+        <h2 id="s-collisions" class="story-section__title">
+          Managing Live Codebase Collisions
+        </h2>
+        <p>
+          Two things surfaced while shipping this work that had nothing to do
+          with visual design and everything to do with what "done" means on a
+          product multiple people are changing at once.
+        </p>
+
+        <p class="story-h4">A same-day data collision</p>
+        <p>
+          While converting a location filter to a dropdown, verification surfaced
+          that another engineer had fixed the exact same underlying data bug on
+          the shared branch that same day — independently, with its own test
+          coverage. Rather than overwrite it, the two changes were reconciled
+          line-by-line against the actual upstream diff, reusing their parameter
+          shape and porting their tests rather than duplicating weaker ones.
+        </p>
+
+        <p class="story-h4">A mid-review regression</p>
+        <p>
+          Code review caught that a new feature had landed on the main branch
+          after this work was already built — a fourth view the shared toggle
+          component had no knowledge of. A naive merge could have silently
+          dropped that feature's entry point from the interface while its code
+          kept running underneath, reachable only by hand-editing a URL. Nothing
+          would have failed a test. It was a UX regression created by concurrent
+          development, not a design mistake — and a colleague caught it, restored
+          the entry point, and wrote a test that derives the interface's expected
+          state from the page's own logic, so the same kind of drift can't go
+          unnoticed again.
+        </p>
+
+        <p>
+          A third, smaller version of the same risk — two sessions independently
+          claiming the same backlog-item number — was caught by CI before it
+          reached review and resolved by renumbering.
+        </p>
+
+        <div class="story-callout">
+          <p>
+            <strong>The throughline:</strong> verify against the live repository,
+            never against a session's own summary of itself — whether the session
+            is yours or someone else's.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== RESULTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-results">
+        <h2 id="s-results" class="story-section__title">Results</h2>
+        <ul class="story-list">
+          <li>
+            Unified navigation and filter patterns now live across Fleet, CRM,
+            Bookings, Dispatch, and Service.
+          </li>
+          <li>
+            A structural badge-counting bug caught and corrected on three
+            separate pages, each with a different data model, before any of them
+            shipped.
+          </li>
+          <li>
+            Same-day overlapping work with another engineer reconciled without
+            losing either side's shipped feature or test coverage.
+          </li>
+          <li>
+            Merged after full frontend and backend verification, including tests
+            run across multiple clock conditions; no known regressions reached
+            production.
+          </li>
+          <li>
+            Several additional real inconsistencies were found, fully documented,
+            and deliberately left unbuilt — outside what had actually been agreed
+            for that session.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== WHAT I'D MEASURE NEXT ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-measure">
+        <h2 id="s-measure" class="story-section__title">What I'd Measure Next</h2>
+        <ul class="story-list">
+          <li>
+            Whether filter- or navigation-related friction appears in support
+            requests or operator feedback now that the patterns are consistent.
+          </li>
+          <li>
+            Whether any of the documented-but-deferred findings show up as real
+            friction in usage — component reuse alone won't tell us; drop-off or
+            hesitation at specific steps would.
+          </li>
+          <li>
+            Whether the badge-stability and filter-layering rules hold up as more
+            modules get built, or a case emerges the rule doesn't cleanly cover.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== REFLECTIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-reflections">
+        <h2 id="s-reflections" class="story-section__title">Reflections</h2>
+        <p>
+          The clearest signal of judgment on this engagement wasn't any single
+          fix. It was recognizing, mid-session, that the audit had surfaced more
+          real problems than had actually been asked for that day — and choosing
+          to stop anyway, document everything precisely, and close out exactly at
+          the boundary of what was agreed. Formal design-system documentation was
+          deferred the same way, for the same reason — worth writing down once the
+          patterns have been tested against real usage, not before.
+        </p>
+        <p>
+          The backlog is documented and ready. The next move isn't to keep
+          building against assumptions. It's to let the product run under
+          sustained operator use, and let evidence decide which problems are
+          actually worth solving next.
+        </p>
+      </section>
+
+      <!-- ==================== STORY FOOTER META ==================== -->
+      <footer class="story-footer reveal">
+        <p class="story-meta">
+          Stack: React · Tailwind · FastAPI · PostgreSQL · Git<br />
+          Tools: Claude · Claude Code<br />
+          Timeline: August 2026 (ongoing)
+        </p>
+        <a href="../index.html#work" class="story-back">
+          <span aria-hidden="true">←</span> All Product Stories
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

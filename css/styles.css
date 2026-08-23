@@ -539,6 +539,12 @@ ul {
   object-fit: cover;
 }
 
+/* A placeholder standing in for a card thumbnail keeps the centered label
+   from .placeholder — .card__media's display would otherwise win on order. */
+.card__media.placeholder {
+  display: flex;
+}
+
 .card__body {
   padding: var(--space-md);
   display: flex;
