@@ -293,6 +293,14 @@ ul {
   color: var(--text-primary);
 }
 
+/* Groups the product stories apart from the items that follow. Inset to the
+   same 0.75rem as the link padding so the rule lines up with the label text. */
+.nav__dropdown-sep {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0.4rem 0.75rem;
+}
+
 /* Theme toggle */
 .theme-toggle {
   display: inline-flex;
