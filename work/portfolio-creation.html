@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This Site — Product Story | Mark Young</title>
+  <meta
+    name="description"
+    content="How this portfolio was built: a vanilla HTML, CSS, and JavaScript site with a token-driven light/dark design system. A product story by Mark Young — solo designer and AI-directed developer."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="This Site — Product Story | Mark Young" />
+  <meta
+    property="og:description"
+    content="How this portfolio was built — zero frameworks, zero build step, zero dependencies."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myuxd.work/work/portfolio-creation.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="../index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="revrent.html">RevRent</a></li>
+            <li><a href="destin-elite.html">Destin Elite Carts</a></li>
+            <li><a href="carrier-360.html">Carrier 360</a></li>
+            <li><a href="corporate-dump.html">Corporate Dump™</a></li>
+            <li><a href="athlink.html">AthLink</a></li>
+            <li role="separator"><hr class="nav__dropdown-sep" aria-hidden="true" /></li>
+            <li><a href="portfolio-creation.html" aria-current="page">Portfolio Creation</a></li>
+          </ul>
+        </div>
+
+        <a href="../resume.html" class="nav__link">Resume</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="story">
+    <div class="story__wrap">
+      <!-- ==================== MASTHEAD ==================== -->
+      <header class="story-head reveal">
+        <p class="eyebrow">Product Story</p>
+        <h1 class="story-head__title">THIS SITE</h1>
+        <p class="story-head__subtitle">
+          Product Story — How This Portfolio Was Built
+        </p>
+      </header>
+
+      <!-- ==================== AT A GLANCE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-glance">
+        <h2 id="s-glance" class="story-section__title">At a Glance</h2>
+        <div class="glance-panel">
+          <table class="glance">
+            <tbody>
+              <tr>
+                <th scope="row">Role</th>
+                <td>Solo Designer + AI-Directed Developer</td>
+              </tr>
+              <tr>
+                <th scope="row">Timeline</th>
+                <td>July–August 2026</td>
+              </tr>
+              <tr>
+                <th scope="row">Stack</th>
+                <td>HTML5 · CSS · Vanilla JavaScript · Git · Vercel</td>
+              </tr>
+              <tr>
+                <th scope="row">Tools</th>
+                <td>Claude · Claude Code</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Outcomes</th>
+                <td>
+                  Full portfolio site designed and shipped in a single focused
+                  effort · Zero frameworks, zero build step, zero dependencies ·
+                  Light/dark theme system with no flash · Accessible, responsive
+                  from day one · Live at myuxd.work
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== OVERVIEW ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-overview">
+        <h2 id="s-overview" class="story-section__title">Overview</h2>
+        <p>
+          This portfolio documents work that spans different eras and methods —
+          enterprise UX leadership, early-stage product strategy, and more recent
+          AI-directed development. The site itself belongs to that last category:
+          every page was built using the same workflow described in the newer
+          product stories, with Claude Code handling implementation while design
+          decisions, architecture, and verification stayed with me.
+        </p>
+        <p>
+          The goal was a site that felt like a product, not a resume dressed up as
+          a website.
+        </p>
+      </section>
+
+      <!-- ==================== PROJECT MATERIALS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-materials">
+        <h2 id="s-materials" class="story-section__title">Project Materials</h2>
+        <div class="story-materials">
+          <a
+            href="https://github.com/mry84/myuxd"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener"
+          >
+            View Repository <span aria-hidden="true">→</span>
+          </a>
+
+          <div class="story-downloads">
+            <a
+              href="../assets/docs/portfolio/style-guide.pdf"
+              class="btn btn--secondary"
+              download
+            >
+              Download Style Guide <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CONSTRAINTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-constraints">
+        <h2 id="s-constraints" class="story-section__title">Constraints</h2>
+        <p>
+          A portfolio is primarily a content-delivery product — it doesn't need
+          application-scale state, routing, or framework abstraction. That made
+          the stack choice straightforward before a single line of code was
+          written.
+        </p>
+        <ul class="story-list">
+          <li>
+            <strong>Vanilla only</strong> — no React, no Vue, no build step, no
+            npm. If it couldn't be done in HTML, CSS, and vanilla JS, it wasn't
+            done.
+          </li>
+          <li>
+            <strong>One stylesheet, one script</strong> —
+            <code>css/styles.css</code> and <code>js/main.js</code>. Design tokens
+            and component styling are centralized in the stylesheet; shared
+            interaction behavior lives in the script.
+          </li>
+          <li>
+            <strong>No third-party image services</strong> — placeholder frames
+            are styled <code>div</code> elements with descriptive labels. No
+            Unsplash, no Picsum, no external dependencies that could break.
+          </li>
+          <li>
+            <strong>Content first</strong> — the design system exists to serve the
+            writing, not compete with it. Every visual decision was evaluated
+            against whether it helped or distracted from the work being
+            presented.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== KEY DECISIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-decisions">
+        <h2 id="s-decisions" class="story-section__title">Key Decisions</h2>
+
+        <p class="story-h4">Design token architecture</p>
+        <p>
+          Every color, type size, and spacing value lives as a CSS custom
+          property. Light and dark mode are two token sets —
+          <code>[data-theme="light"]</code> and <code>[data-theme="dark"]</code> —
+          toggled by a single attribute on the <code>html</code> element. A
+          pre-paint inline script reads <code>localStorage</code> before the first
+          render, eliminating theme flash entirely on reload.
+        </p>
+
+        <p class="story-h4">Scroll animation without libraries</p>
+        <p>
+          All scroll-triggered animations use the Intersection Observer API — no
+          GSAP, no AOS, no dependencies. Fade-up on entry, staggered delays on
+          card grids, hero content sequenced on load. A single
+          <code>prefers-reduced-motion</code> media query disables all of it for
+          users who need that. The entire animation system is approximately 40
+          lines of vanilla JS.
+        </p>
+
+        <p class="story-h4">Placeholder system</p>
+        <p>
+          Every image placeholder is a styled <code>div</code> with a specific
+          descriptive label — not a generic gray box. The labels document intent:
+          what image belongs there, what it should show, and why it's placed where
+          it is. This turned placeholder management from a liability into a
+          reference system for the image integration phase.
+        </p>
+
+        <p class="story-h4">Deployment</p>
+        <p>
+          GitHub to Vercel. Push to <code>main</code>, site deploys. No build step
+          means no framework configuration or dependency chain to maintain. The
+          deploy stays as simple as the stack.
+        </p>
+      </section>
+
+      <!-- ==================== REFLECTIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-reflections">
+        <h2 id="s-reflections" class="story-section__title">Reflections</h2>
+        <p>
+          Building the portfolio this way made the positioning argument concrete
+          rather than claimed. There's a meaningful difference between writing "I
+          close the gap between design decisions and working software" and having
+          a site at a custom domain that proves it.
+        </p>
+        <p>
+          The vanilla constraint also made certain decisions explicit rather than
+          inherited from a framework. There's no state management library, so
+          state is managed deliberately. There's no router, so navigation stays
+          simple. There's no component library, so reusable patterns had to be
+          defined intentionally rather than inherited.
+        </p>
+        <p>
+          Working within real constraints tends to produce clearer decisions than
+          working without them. That held here as much as it did on any of the
+          product stories on this site.
+        </p>
+      </section>
+
+      <!-- ==================== STORY FOOTER META ==================== -->
+      <footer class="story-footer reveal">
+        <p class="story-meta">
+          Stack: HTML5 · CSS · Vanilla JavaScript · Git · Vercel<br />
+          Tools: Claude · Claude Code<br />
+          Timeline: July–August 2026<br />
+          Repository: github.com/mry84/myuxd (public)
+        </p>
+        <a href="../index.html#work" class="story-back">
+          <span aria-hidden="true">←</span> All Product Stories
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
