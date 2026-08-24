@@ -983,6 +983,15 @@ ul {
   border-top: 1px solid var(--border);
 }
 
+/* Stories with no hero image open straight into At a Glance, so the section's
+   own hairline would stack under the masthead rule as a second, thinner line.
+   The masthead rule already divides them; margin-top alone matches the
+   4rem gap a hero figure leaves on the pages that have one. */
+.story-head + .story-section {
+  padding-top: 0;
+  border-top: 0;
+}
+
 .story-section__title {
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
