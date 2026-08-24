@@ -173,9 +173,25 @@
         <div class="card-grid">
           <!-- Card 1 -->
           <article class="card reveal" style="--reveal-delay: 0ms">
-            <div class="placeholder placeholder--card card__media" aria-hidden="true">
-              [ RevRent — UI audit, component taxonomy, filter/navigation patterns ]
-            </div>
+            <picture class="card__media">
+              <source
+                type="image/webp"
+                srcset="
+                  assets/images/thumb_rr.webp    252w,
+                  assets/images/thumb_rr@2x.webp 504w
+                "
+                sizes="(min-width: 1140px) 510px, (min-width: 720px) 48vw, calc(100vw - 2.5rem)"
+              />
+              <img
+                class="card__img"
+                src="assets/images/thumb_rr.png"
+                alt="The RevRent Bookings list — status filter chips carrying count badges above a table of bookings by order, customer, product, dates, status, and total, beside the product's left navigation"
+                width="504"
+                height="315"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <div class="card__body">
               <h3 class="card__name">RevRent</h3>
               <p class="card__descriptor">
