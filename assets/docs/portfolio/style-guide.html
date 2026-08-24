@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myuxd.work — Design System Documentation v1.0</title>
+  <meta
+    name="description"
+    content="The complete design system for myuxd.work — color tokens, type scale, spacing, components, and guiding principles. Version 1.0, August 2026."
+  />
+
+  <!-- Roboto, matching the site. Roboto Mono carries the token and code
+       specimens — a print document needs a monospace the site never had. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ======================================================================
+       myuxd.work — Design System Documentation
+       Standalone print artifact. Light mode only, no nav, no footer, no
+       theme toggle. Color tokens are the site's own values, restated here so
+       the document renders identically without css/styles.css.
+       ====================================================================== */
+
+    :root {
+      /* Color — light mode only, verbatim from css/styles.css */
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F5;
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --accent: #0066FF;
+      --border: #E4E4E4;
+      --placeholder-frame: #C8D0D8;
+      --placeholder-label: #888888;
+
+      /* Weights — same scale as the site */
+      --fw-light: 300;
+      --fw-regular: 400;
+      --fw-medium: 500;
+      --fw-bold: 700;
+      --fw-black: 900;
+
+      /* Type — fixed print sizes rather than the site's clamp() values,
+         since a page has one width and fluid type has nothing to scale to. */
+      --fs-cover: 44pt;
+      --fs-h2: 15pt;
+      --fs-h3: 11pt;
+      --fs-lead: 12pt;
+      --fs-body: 10pt;
+      --fs-small: 8.5pt;
+      --fs-micro: 7.5pt;
+
+      /* Spacing — the site's rem scale */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+    }
+
+    @page {
+      size: Letter;
+      margin: 17mm 16mm 15mm;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: var(--fw-regular);
+      font-size: var(--fs-body);
+      line-height: 1.65;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      -webkit-font-smoothing: antialiased;
+      /* Swatches and banded rows are the content here — they must print. */
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* On screen the document sits on a page-width column so it previews the
+       way it prints. In print the @page box already provides the measure. */
+    .doc {
+      max-width: 176mm;
+      margin-inline: auto;
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    code,
+    .token,
+    pre {
+      font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+    }
+
+    /* ------------------------------------------------------------------
+       Cover
+       ------------------------------------------------------------------ */
+    .cover {
+      padding-bottom: var(--space-md);
+      border-bottom: 2px solid var(--text-primary);
+    }
+
+    .eyebrow {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-secondary);
+    }
+
+    .cover__title {
+      margin-top: var(--space-xs);
+      font-size: var(--fs-cover);
+      font-weight: var(--fw-black);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .cover__version {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-lead);
+      font-weight: var(--fw-light);
+      color: var(--text-secondary);
+    }
+
+    /* Accent as a signal, per the accent usage rules this document sets out. */
+    .cover__rule {
+      width: 64px;
+      height: 4px;
+      margin-top: var(--space-md);
+      background-color: var(--accent);
+    }
+
+    .cover__principle {
+      margin-top: var(--space-md);
+      max-width: 46em;
+      font-size: var(--fs-lead);
+      font-weight: var(--fw-light);
+      line-height: 1.5;
+    }
+
+    /* ------------------------------------------------------------------
+       Contents
+       ------------------------------------------------------------------ */
+    .contents {
+      margin-top: var(--space-md);
+      break-inside: avoid;
+    }
+
+    .contents__list {
+      margin-top: var(--space-sm);
+      list-style: none;
+      column-count: 2;
+      column-gap: var(--space-md);
+      font-size: var(--fs-small);
+    }
+
+    .contents__list li {
+      padding-block: 0.28rem;
+      color: var(--text-secondary);
+      break-inside: avoid;
+    }
+
+    .contents__num {
+      display: inline-block;
+      width: 1.9em;
+      font-family: "Roboto Mono", monospace;
+      font-size: var(--fs-micro);
+      color: var(--accent);
+    }
+
+    .contents__list li span:last-child {
+      color: var(--text-primary);
+    }
+
+    /* ------------------------------------------------------------------
+       Sections
+       ------------------------------------------------------------------ */
+    .section {
+      margin-top: var(--space-lg);
+      padding-top: var(--space-sm);
+      border-top: 1px solid var(--border);
+      /* Never leave a section header stranded at the foot of a page. */
+      break-before: auto;
+      break-inside: auto;
+    }
+
+    .section__head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      break-after: avoid;
+    }
+
+    .section__num {
+      font-family: "Roboto Mono", monospace;
+      font-size: var(--fs-micro);
+      font-weight: var(--fw-medium);
+      color: var(--accent);
+    }
+
+    .section__title {
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+      letter-spacing: -0.01em;
+    }
+
+    .section > * + * {
+      margin-top: var(--space-sm);
+    }
+
+    h3 {
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.01em;
+      break-after: avoid;
+    }
+
+    /* Sub-label inside a subsection — the site's story-h4 role. */
+    .label {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-secondary);
+      break-after: avoid;
+    }
+
+    p {
+      max-width: 46em;
+    }
+
+    strong {
+      font-weight: var(--fw-bold);
+    }
+
+    /* ------------------------------------------------------------------
+       Lists
+       ------------------------------------------------------------------ */
+    .rules,
+    .principles {
+      padding-left: 1.1rem;
+      max-width: 46em;
+    }
+
+    .rules li,
+    .principles li {
+      padding-block: 0.16rem;
+      break-inside: avoid;
+    }
+
+    .rules li::marker {
+      color: var(--border);
+    }
+
+    .principles {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: principle;
+    }
+
+    .principles li {
+      position: relative;
+      padding-left: 2.1rem;
+      padding-block: 0.34rem;
+      counter-increment: principle;
+    }
+
+    .principles li::before {
+      content: counter(principle);
+      position: absolute;
+      left: 0;
+      top: 0.34rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: var(--fs-micro);
+      font-weight: var(--fw-medium);
+      color: var(--accent);
+    }
+
+    /* ------------------------------------------------------------------
+       Spec tables
+       ------------------------------------------------------------------ */
+    .spec {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--fs-small);
+      break-inside: avoid;
+    }
+
+    .spec thead {
+      /* Repeat the header if a long table does split across pages. */
+      display: table-header-group;
+    }
+
+    .spec th {
+      text-align: left;
+      font-size: var(--fs-micro);
+      font-weight: var(--fw-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      padding: 0 0.6rem 0.45rem;
+      border-bottom: 1px solid var(--text-primary);
+    }
+
+    .spec td {
+      padding: 0.42rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .spec tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec th:first-child,
+    .spec td:first-child {
+      padding-left: 0;
+    }
+
+    .spec th:last-child,
+    .spec td:last-child {
+      padding-right: 0;
+    }
+
+    .spec .token,
+    .spec .val {
+      white-space: nowrap;
+    }
+
+    .spec .use {
+      color: var(--text-secondary);
+      font-weight: var(--fw-light);
+    }
+
+    /* A chip carrying the literal value it documents. */
+    .swatch {
+      display: inline-block;
+      width: 1.05rem;
+      height: 1.05rem;
+      margin-right: 0.5rem;
+      vertical-align: -0.22rem;
+      background-color: var(--sw);
+      border: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    /* ------------------------------------------------------------------
+       Code specimens
+       ------------------------------------------------------------------ */
+    pre {
+      padding: 0.85rem 1rem;
+      background-color: var(--bg-secondary);
+      border-left: 2px solid var(--border);
+      font-size: var(--fs-micro);
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+      break-inside: avoid;
+    }
+
+    /* ------------------------------------------------------------------
+       Colophon
+       ------------------------------------------------------------------ */
+    .colophon {
+      margin-top: var(--space-lg);
+      padding-top: var(--space-sm);
+      border-top: 2px solid var(--text-primary);
+      font-size: var(--fs-small);
+      font-weight: var(--fw-light);
+      line-height: 1.9;
+      color: var(--text-secondary);
+      break-inside: avoid;
+    }
+
+    @media print {
+      .doc {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc">
+    <!-- ==================== COVER ==================== -->
+    <header class="cover">
+      <p class="eyebrow">Design System Documentation</p>
+      <h1 class="cover__title">myuxd.work</h1>
+      <p class="cover__version">Version 1.0 — August 2026</p>
+      <div class="cover__rule" aria-hidden="true"></div>
+      <p class="cover__principle">
+        The system is built around one principle: content is the star. Every
+        visual decision exists to serve the writing, not compete with it.
+      </p>
+    </header>
+
+    <!-- ==================== CONTENTS ==================== -->
+    <nav class="contents" aria-label="Contents">
+      <p class="eyebrow">Contents</p>
+      <ol class="contents__list">
+        <li><span class="contents__num">01</span><span>Overview</span></li>
+        <li><span class="contents__num">02</span><span>Color Tokens</span></li>
+        <li><span class="contents__num">03</span><span>Typography</span></li>
+        <li><span class="contents__num">04</span><span>Spacing Scale</span></li>
+        <li><span class="contents__num">05</span><span>Layout</span></li>
+        <li><span class="contents__num">06</span><span>Buttons</span></li>
+        <li><span class="contents__num">07</span><span>Navigation</span></li>
+        <li><span class="contents__num">08</span><span>Cards</span></li>
+        <li><span class="contents__num">09</span><span>Image System</span></li>
+        <li><span class="contents__num">10</span><span>Theme System</span></li>
+        <li><span class="contents__num">11</span><span>Animation</span></li>
+        <li><span class="contents__num">12</span><span>Accessibility</span></li>
+        <li><span class="contents__num">13</span><span>File Structure</span></li>
+        <li><span class="contents__num">14</span><span>Guiding Principles</span></li>
+      </ol>
+    </nav>
+
+    <!-- ==================== 01 OVERVIEW ==================== -->
+    <section class="section" aria-labelledby="s-overview">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">01</span>
+        <h2 id="s-overview" class="section__title">Overview</h2>
+      </div>
+      <p>
+        This document covers the complete design system for myuxd.work — the
+        personal portfolio of Mark Young, Senior Product Designer. The system is
+        implemented in vanilla CSS using custom properties (CSS variables) as
+        design tokens. All values are defined in <code>css/styles.css</code>.
+      </p>
+      <p>
+        The system is built around one principle: content is the star. Every
+        visual decision exists to serve the writing, not compete with it.
+      </p>
+    </section>
+
+    <!-- ==================== 02 COLOR TOKENS ==================== -->
+    <section class="section" aria-labelledby="s-color">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">02</span>
+        <h2 id="s-color" class="section__title">Color Tokens</h2>
+      </div>
+
+      <h3>Light Mode <code>[data-theme="light"]</code></h3>
+      <table class="spec">
+        <thead>
+          <tr>
+            <th scope="col">Token</th>
+            <th scope="col">Value</th>
+            <th scope="col">Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="token">--color-bg</td>
+            <td class="val"><span class="swatch" style="--sw: #FFFFFF" aria-hidden="true"></span>#FFFFFF</td>
+            <td class="use">Primary background</td>
+          </tr>
+          <tr>
+            <td class="token">--color-bg-secondary</td>
+            <td class="val"><span class="swatch" style="--sw: #F5F5F5" aria-hidden="true"></span>#F5F5F5</td>
+            <td class="use">Section bands, card backgrounds</td>
+          </tr>
+          <tr>
+            <td class="token">--color-text</td>
+            <td class="val"><span class="swatch" style="--sw: #111111" aria-hidden="true"></span>#111111</td>
+            <td class="use">Primary body text</td>
+          </tr>
+          <tr>
+            <td class="token">--color-text-secondary</td>
+            <td class="val"><span class="swatch" style="--sw: #555555" aria-hidden="true"></span>#555555</td>
+            <td class="use">Captions, secondary labels, metadata</td>
+          </tr>
+          <tr>
+            <td class="token">--color-accent</td>
+            <td class="val"><span class="swatch" style="--sw: #0066FF" aria-hidden="true"></span>#0066FF</td>
+            <td class="use">CTAs, active states, links, key highlights</td>
+          </tr>
+          <tr>
+            <td class="token">--color-border</td>
+            <td class="val"><span class="swatch" style="--sw: #E0E0E0" aria-hidden="true"></span>#E0E0E0</td>
+            <td class="use">Dividers, card borders, table rules</td>
+          </tr>
+          <tr>
+            <td class="token">--color-placeholder-bg</td>
+            <td class="val"><span class="swatch" style="--sw: #C8D0D8" aria-hidden="true"></span>#C8D0D8</td>
+            <td class="use">Image placeholder frames</td>
+          </tr>
+          <tr>
+            <td class="token">--color-placeholder-text</td>
+            <td class="val"><span class="swatch" style="--sw: #888888" aria-hidden="true"></span>#888888</td>
+            <td class="use">Placeholder label text</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Dark Mode <code>[data-theme="dark"]</code></h3>
+      <table class="spec">
+        <thead>
+          <tr>
+            <th scope="col">Token</th>
+            <th scope="col">Value</th>
+            <th scope="col">Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="token">--color-bg</td>
+            <td class="val"><span class="swatch" style="--sw: #0D0D0D" aria-hidden="true"></span>#0D0D0D</td>
+            <td class="use">Primary background</td>
+          </tr>
+          <tr>
+            <td class="token">--color-bg-secondary</td>
+            <td class="val"><span class="swatch" style="--sw: #1A1A1A" aria-hidden="true"></span>#1A1A1A</td>
+            <td class="use">Section bands, card backgrounds</td>
+          </tr>
+          <tr>
+            <td class="token">--color-text</td>
+            <td class="val"><span class="swatch" style="--sw: #F5F5F5" aria-hidden="true"></span>#F5F5F5</td>
+            <td class="use">Primary body text</td>
+          </tr>
+          <tr>
+            <td class="token">--color-text-secondary</td>
+            <td class="val"><span class="swatch" style="--sw: #999999" aria-hidden="true"></span>#999999</td>
+            <td class="use">Captions, secondary labels, metadata</td>
+          </tr>
+          <tr>
+            <td class="token">--color-accent</td>
+            <td class="val"><span class="swatch" style="--sw: #0066FF" aria-hidden="true"></span>#0066FF</td>
+            <td class="use">CTAs, active states, links, key highlights</td>
+          </tr>
+          <tr>
+            <td class="token">--color-border</td>
+            <td class="val"><span class="swatch" style="--sw: #2A2A2A" aria-hidden="true"></span>#2A2A2A</td>
+            <td class="use">Dividers, card borders, table rules</td>
+          </tr>
+          <tr>
+            <td class="token">--color-placeholder-bg</td>
+            <td class="val"><span class="swatch" style="--sw: #2A2A2A" aria-hidden="true"></span>#2A2A2A</td>
+            <td class="use">Image placeholder frames</td>
+          </tr>
+          <tr>
+            <td class="token">--color-placeholder-text</td>
+            <td class="val"><span class="swatch" style="--sw: #888888" aria-hidden="true"></span>#888888</td>
+            <td class="use">Placeholder label text</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="label">Accent Usage Rules</p>
+      <ul class="rules">
+        <li><code>#0066FF</code> is used sparingly — it is a signal, not a coat</li>
+        <li>Applied to: primary buttons, active nav states, link text, card hover borders, key highlight text</li>
+        <li>Never used as a background color on large surfaces</li>
+        <li>Opacity variants not used — full value only</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 03 TYPOGRAPHY ==================== -->
+    <section class="section" aria-labelledby="s-type">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">03</span>
+        <h2 id="s-type" class="section__title">Typography</h2>
+      </div>
+
+      <h3>Font Family</h3>
+      <p>
+        <strong>Roboto</strong> — loaded via a single Google Fonts
+        <code>&lt;link&gt;</code> import. No other typefaces used anywhere on the
+        site.
+      </p>
+      <pre>https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap</pre>
+
+      <h3>Type Scale</h3>
+      <p>
+        All sizes use <code>clamp()</code> for fluid scaling between mobile and
+        desktop viewports.
+      </p>
+      <table class="spec">
+        <thead>
+          <tr>
+            <th scope="col">Role</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Size</th>
+            <th scope="col">L/H</th>
+            <th scope="col">Tracking</th>
+            <th scope="col">Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero Name</td>
+            <td>900 (Black)</td>
+            <td class="token">clamp(3rem, 8vw, 7rem)</td>
+            <td>0.95</td>
+            <td>-0.02em</td>
+            <td class="use">MARK YOUNG on homepage hero</td>
+          </tr>
+          <tr>
+            <td>Hero Title</td>
+            <td>500 (Medium)</td>
+            <td class="token">clamp(0.75rem, 1.5vw, 0.9rem)</td>
+            <td>1.4</td>
+            <td>0.2em</td>
+            <td class="use">SENIOR PRODUCT DESIGNER — uppercase</td>
+          </tr>
+          <tr>
+            <td>Hero Headline</td>
+            <td>400 (Regular)</td>
+            <td class="token">clamp(1.1rem, 2.5vw, 1.5rem)</td>
+            <td>1.5</td>
+            <td>0</td>
+            <td class="use">Hero subheadline copy</td>
+          </tr>
+          <tr>
+            <td>Section Label</td>
+            <td>500 (Medium)</td>
+            <td class="token">0.7rem</td>
+            <td>1</td>
+            <td>0.15em</td>
+            <td class="use">SELECTED WORK, AT A GLANCE — uppercase</td>
+          </tr>
+          <tr>
+            <td>H1 Page Title</td>
+            <td>700 (Bold)</td>
+            <td class="token">clamp(2rem, 5vw, 3.5rem)</td>
+            <td>1.1</td>
+            <td>-0.02em</td>
+            <td class="use">Product story page titles</td>
+          </tr>
+          <tr>
+            <td>H2 Section</td>
+            <td>700 (Bold)</td>
+            <td class="token">clamp(1.3rem, 3vw, 2rem)</td>
+            <td>1.2</td>
+            <td>-0.01em</td>
+            <td class="use">Major section headers</td>
+          </tr>
+          <tr>
+            <td>H3 Subsection</td>
+            <td>600 (SemiBold)</td>
+            <td class="token">clamp(1rem, 2vw, 1.25rem)</td>
+            <td>1.3</td>
+            <td>0</td>
+            <td class="use">Subsection headers, job titles</td>
+          </tr>
+          <tr>
+            <td>H4 Label</td>
+            <td>700 (Bold)</td>
+            <td class="token">1rem</td>
+            <td>1.4</td>
+            <td>0</td>
+            <td class="use">Bold decision labels within body</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td>400 (Regular)</td>
+            <td class="token">clamp(0.95rem, 1.5vw, 1.05rem)</td>
+            <td>1.7</td>
+            <td>0</td>
+            <td class="use">All body copy</td>
+          </tr>
+          <tr>
+            <td>Small / Caption</td>
+            <td>300 (Light)</td>
+            <td class="token">0.85rem</td>
+            <td>1.5</td>
+            <td>0.05em</td>
+            <td class="use">Captions, metadata, stack labels</td>
+          </tr>
+          <tr>
+            <td>Nav</td>
+            <td>500 (Medium)</td>
+            <td class="token">0.85rem</td>
+            <td>1</td>
+            <td>0.05em</td>
+            <td class="use">Navigation links</td>
+          </tr>
+          <tr>
+            <td>Button</td>
+            <td>500 (Medium)</td>
+            <td class="token">0.9rem</td>
+            <td>1</td>
+            <td>0.03em</td>
+            <td class="use">Button labels</td>
+          </tr>
+          <tr>
+            <td>At a Glance</td>
+            <td>300 (Light)</td>
+            <td class="token">0.9rem</td>
+            <td>1.6</td>
+            <td>0</td>
+            <td class="use">Table values in At a Glance</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="label">Typography Rules</p>
+      <ul class="rules">
+        <li>Section labels always uppercase, wide letter-spacing, <code>--color-text-secondary</code></li>
+        <li>No decorative typefaces — Roboto only</li>
+        <li>Line length capped at approximately 70 characters for body copy</li>
+        <li>Bold (<code>700</code>) used for emphasis within body — never italic</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 04 SPACING SCALE ==================== -->
+    <section class="section" aria-labelledby="s-space">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">04</span>
+        <h2 id="s-space" class="section__title">Spacing Scale</h2>
+      </div>
+      <p>
+        Base unit: <code>8px</code>. All spacing is a multiple of the base unit.
+      </p>
+      <table class="spec">
+        <thead>
+          <tr>
+            <th scope="col">Token</th>
+            <th scope="col">Value</th>
+            <th scope="col">Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="token">--space-1</td>
+            <td class="val">8px</td>
+            <td class="use">Tight internal padding, icon gaps</td>
+          </tr>
+          <tr>
+            <td class="token">--space-2</td>
+            <td class="val">16px</td>
+            <td class="use">Component internal padding</td>
+          </tr>
+          <tr>
+            <td class="token">--space-3</td>
+            <td class="val">24px</td>
+            <td class="use">Between related elements</td>
+          </tr>
+          <tr>
+            <td class="token">--space-4</td>
+            <td class="val">32px</td>
+            <td class="use">Section sub-divisions</td>
+          </tr>
+          <tr>
+            <td class="token">--space-5</td>
+            <td class="val">48px</td>
+            <td class="use">Between major sections</td>
+          </tr>
+          <tr>
+            <td class="token">--space-6</td>
+            <td class="val">64px</td>
+            <td class="use">Section padding top/bottom</td>
+          </tr>
+          <tr>
+            <td class="token">--space-7</td>
+            <td class="val">96px</td>
+            <td class="use">Large section separation</td>
+          </tr>
+          <tr>
+            <td class="token">--space-8</td>
+            <td class="val">128px</td>
+            <td class="use">Hero top/bottom padding</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ==================== 05 LAYOUT ==================== -->
+    <section class="section" aria-labelledby="s-layout">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">05</span>
+        <h2 id="s-layout" class="section__title">Layout</h2>
+      </div>
+
+      <h3>Grid</h3>
+      <ul class="rules">
+        <li>Max content width: <code>1200px</code>, centered</li>
+        <li>Gutter: <code>clamp(1.5rem, 5vw, 3rem)</code> on left and right</li>
+        <li>Product story card grid: 2 columns on desktop, 1 column on mobile</li>
+        <li>Breakpoint: <code>768px</code> — below this, all multi-column layouts collapse to single column</li>
+      </ul>
+
+      <h3>Story Page Layout</h3>
+      <ul class="rules">
+        <li>Single column, max-width <code>760px</code>, centered</li>
+        <li>Section titles: uppercase, <code>0.7rem</code>, wide tracking, with a <code>1px</code> top rule in <code>--color-border</code></li>
+        <li>Each section separated by <code>--space-6</code> padding</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 06 BUTTONS ==================== -->
+    <section class="section" aria-labelledby="s-buttons">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">06</span>
+        <h2 id="s-buttons" class="section__title">Buttons</h2>
+      </div>
+
+      <h3>Primary Button</h3>
+      <ul class="rules">
+        <li>Background: <code>--color-accent</code> (<code>#0066FF</code>)</li>
+        <li>Text: <code>#FFFFFF</code></li>
+        <li>Font: Roboto Medium, <code>0.9rem</code>, <code>0.03em</code> tracking</li>
+        <li>Padding: <code>12px 28px</code></li>
+        <li>Border radius: <code>4px</code></li>
+        <li>Hover: 10% darker (<code>#0052CC</code>)</li>
+        <li>No shadow</li>
+      </ul>
+
+      <h3>Secondary Button</h3>
+      <ul class="rules">
+        <li>Background: transparent</li>
+        <li>Text: <code>--color-text</code></li>
+        <li>Border: <code>1.5px solid --color-border</code></li>
+        <li>Font: same as primary</li>
+        <li>Padding: <code>12px 28px</code></li>
+        <li>Border radius: <code>4px</code></li>
+        <li>Hover: border color shifts to <code>--color-accent</code>, text shifts to <code>--color-accent</code></li>
+      </ul>
+
+      <p class="label">Button Rules</p>
+      <ul class="rules">
+        <li>Slight border radius only — never pill shaped</li>
+        <li>Accent color reserved for primary buttons only</li>
+        <li>Never stack more than two buttons side by side</li>
+        <li>Label always uses sentence case with arrow: "Read Story →", "View Live Site →"</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 07 NAVIGATION ==================== -->
+    <section class="section" aria-labelledby="s-nav">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">07</span>
+        <h2 id="s-nav" class="section__title">Navigation</h2>
+      </div>
+
+      <h3>Structure</h3>
+      <pre>MARK YOUNG.  |  Work ▾  Resume  Contact  [theme toggle]</pre>
+      <ul class="rules">
+        <li>Brand mark: Roboto Bold, left-aligned, links to homepage</li>
+        <li>Nav links: Roboto Medium, <code>0.85rem</code>, <code>0.05em</code> tracking</li>
+        <li>Active state: <code>--color-accent</code></li>
+        <li>Work dropdown: appears on hover/focus, lists all product stories</li>
+        <li>Theme toggle: sun/moon icon, right-aligned</li>
+        <li>Mobile: hamburger collapses nav, dropdown becomes full-width</li>
+      </ul>
+
+      <p class="label">Nav Rules</p>
+      <ul class="rules">
+        <li>Nav is always present — no page hides the nav</li>
+        <li>No sub-sub-menus — one level of dropdown only</li>
+        <li>Sticky on scroll — fixed to top of viewport</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 08 CARDS ==================== -->
+    <section class="section" aria-labelledby="s-cards">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">08</span>
+        <h2 id="s-cards" class="section__title">Cards</h2>
+      </div>
+
+      <h3>Product Story Cards (Homepage)</h3>
+      <ul class="rules">
+        <li>Background: <code>--color-bg-secondary</code></li>
+        <li>Border: <code>1px solid --color-border</code></li>
+        <li>Border radius: <code>4px</code></li>
+        <li>Padding: <code>0</code> (image flush to top, content padded internally at <code>--space-3</code>)</li>
+        <li>Hover: border color shifts to <code>--color-accent</code></li>
+        <li>Image area: placeholder or real image, aspect ratio <code>16:9</code></li>
+        <li>Content: project name (H3), one-line descriptor (body), "Read Story →" link in <code>--color-accent</code></li>
+        <li>No shadow</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 09 IMAGE SYSTEM ==================== -->
+    <section class="section" aria-labelledby="s-images">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">09</span>
+        <h2 id="s-images" class="section__title">Image System</h2>
+      </div>
+
+      <h3>Placeholder Frames</h3>
+      <ul class="rules">
+        <li>Background: <code>--color-placeholder-bg</code></li>
+        <li>Label text: <code>--color-placeholder-text</code>, centered, <code>0.85rem</code> Roboto Light</li>
+        <li>Label format: <code>[ Descriptive label of intended image content ]</code></li>
+        <li>Every placeholder has a specific label — no generic gray boxes</li>
+      </ul>
+
+      <h3>Real Images</h3>
+      <ul class="rules">
+        <li>All images served as WebP with PNG fallback via <code>&lt;picture&gt;</code> element</li>
+        <li>Hero image: <code>loading="eager"</code>, <code>fetchpriority="high"</code></li>
+        <li>All other images: <code>loading="lazy"</code></li>
+        <li>Intrinsic dimensions set on every <code>&lt;img&gt;</code> to prevent layout shift</li>
+        <li>Hero retina variant: 2560px wide WebP alongside 1800px standard</li>
+      </ul>
+
+      <h3>Lightbox Modal</h3>
+      <ul class="rules">
+        <li>Triggered by clicking any project image</li>
+        <li>Full viewport overlay, <code>rgba(0,0,0,0.9)</code> background</li>
+        <li>Image centered, max <code>90vw</code> / <code>90vh</code></li>
+        <li>Close via × button (top right) or click outside</li>
+        <li>No libraries — vanilla JS in <code>main.js</code></li>
+      </ul>
+
+      <h3>Image Layout Patterns</h3>
+      <ul class="rules">
+        <li><strong>Full width:</strong> single image spanning content column</li>
+        <li><strong>2-up:</strong> two images side by side, equal width, stacks on mobile</li>
+        <li><strong>3-up:</strong> three images side by side, equal width, stacks on mobile</li>
+        <li><strong>2×2 grid:</strong> four images in a two-column grid, stacks to single column on mobile</li>
+        <li><strong>5-up inline:</strong> five images side by side, used for App Store / marketing asset rows</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 10 THEME SYSTEM ==================== -->
+    <section class="section" aria-labelledby="s-theme">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">10</span>
+        <h2 id="s-theme" class="section__title">Theme System</h2>
+      </div>
+
+      <h3>Implementation</h3>
+      <ul class="rules">
+        <li>Default: light mode</li>
+        <li>Toggle: sets <code>data-theme</code> attribute on <code>&lt;html&gt;</code> element</li>
+        <li>Persistence: <code>localStorage.setItem('theme', value)</code></li>
+        <li>Flash prevention: inline <code>&lt;script&gt;</code> in <code>&lt;head&gt;</code> reads localStorage and sets <code>data-theme</code> before first paint — eliminates flash on reload</li>
+      </ul>
+
+      <h3>Pre-Paint Script</h3>
+      <pre>(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+})();</pre>
+
+      <p class="label">Rules</p>
+      <ul class="rules">
+        <li>All color values reference tokens — no hardcoded hex values in components</li>
+        <li>Both themes tested at every breakpoint before shipping</li>
+        <li>No third theme — light and dark only</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 11 ANIMATION ==================== -->
+    <section class="section" aria-labelledby="s-anim">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">11</span>
+        <h2 id="s-anim" class="section__title">Animation</h2>
+      </div>
+
+      <h3>Scroll Animations</h3>
+      <ul class="rules">
+        <li>API: Intersection Observer — no libraries</li>
+        <li>Primary: fade-up — elements start <code>opacity: 0</code>, <code>translateY(20px)</code>, transition to full opacity and position on viewport entry</li>
+        <li>Duration: <code>400ms</code></li>
+        <li>Easing: <code>ease-out</code></li>
+        <li>Stagger: card grids use <code>--reveal-delay</code> CSS custom property, incremented per child (<code>80ms</code> between cards)</li>
+        <li>Hero: sequences in on page load, not scroll</li>
+      </ul>
+
+      <p class="label">Rules</p>
+      <ul class="rules">
+        <li>Entry animation only — no exit animations</li>
+        <li><code>prefers-reduced-motion</code> media query disables all animations</li>
+        <li>No bounce, elastic, or overshoot easing</li>
+        <li>Duration never exceeds <code>450ms</code></li>
+      </ul>
+    </section>
+
+    <!-- ==================== 12 ACCESSIBILITY ==================== -->
+    <section class="section" aria-labelledby="s-a11y">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">12</span>
+        <h2 id="s-a11y" class="section__title">Accessibility</h2>
+      </div>
+      <ul class="rules">
+        <li>Semantic HTML throughout: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code></li>
+        <li>All images have descriptive <code>alt</code> text</li>
+        <li>Color contrast meets WCAG AA across both themes</li>
+        <li>Focus states visible on all interactive elements</li>
+        <li><code>aria-current="page"</code> on active nav items</li>
+        <li><code>rel="noopener"</code> on all external links</li>
+        <li><code>prefers-reduced-motion</code> respected by animation system</li>
+        <li>Theme toggle has accessible label</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 13 FILE STRUCTURE ==================== -->
+    <section class="section" aria-labelledby="s-files">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">13</span>
+        <h2 id="s-files" class="section__title">File Structure</h2>
+      </div>
+      <pre>/index.html
+/resume.html
+/contact.html
+/work/
+  destin-elite.html
+  corporate-dump.html
+  athlink.html
+  carrier-360.html
+/css/
+  styles.css
+/js/
+  main.js
+/assets/
+  images/
+  docs/</pre>
+    </section>
+
+    <!-- ==================== 14 GUIDING PRINCIPLES ==================== -->
+    <section class="section" aria-labelledby="s-principles">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">14</span>
+        <h2 id="s-principles" class="section__title">Guiding Principles</h2>
+      </div>
+      <ol class="principles">
+        <li><strong>Content is the star</strong> — design serves writing, never competes with it</li>
+        <li><strong>Tokens over values</strong> — no hardcoded colors or sizes anywhere in components</li>
+        <li><strong>One file per concern</strong> — one stylesheet, one script, no exceptions</li>
+        <li><strong>No dependency that can break</strong> — vanilla stack runs correctly in any browser indefinitely</li>
+        <li><strong>Constraints clarify</strong> — every limitation produced a better decision than freedom would have</li>
+      </ol>
+    </section>
+
+    <!-- ==================== COLOPHON ==================== -->
+    <footer class="colophon">
+      myuxd.work Design System — Version 1.0<br />
+      Mark Young, Senior Product Designer<br />
+      August 2026
+    </footer>
+  </div>
+</body>
+</html>
