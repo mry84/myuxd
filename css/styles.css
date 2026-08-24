@@ -388,7 +388,13 @@ ul {
      sizes the track (960px at a 1440px viewport), overflow: hidden crops it,
      and the centred content gets pushed below the visible edge. */
   grid-template-rows: minmax(0, 1fr);
-  min-height: clamp(520px, 82vh, 820px);
+  /* Mobile-first height: 60vh, floored at 520px so the headline and CTAs are
+     never clipped by overflow: hidden. On most phones 60vh lands under the
+     floor, so 520px is what actually renders; 60vh takes over on viewports
+     taller than ~867px. The 720px query below raises the cap to 70vh. */
+  min-height: 520px;
+  height: 60vh;
+  max-height: 60vh;
   isolation: isolate;
   overflow: hidden;
 }
@@ -418,15 +424,12 @@ ul {
   object-position: center center;
 }
 
-/* From 720px up, cap the hero at 70vh so the image stops dominating the fold.
-   min-height has to come down with it — a min always wins over a max, so the
-   clamp() above would otherwise hold the hero at up to 820px and the cap would
-   never bind. The 520px floor keeps the headline and CTAs from being clipped by
-   overflow: hidden on short laptop windows, where 70vh falls below the content.
-   Mobile keeps the original clamp() height untouched. */
+/* From 720px up, give the hero more of the fold than mobile gets: 70vh rather
+   than 60vh. The 520px floor from the base rule still applies, which is what
+   holds the content clear of the crop on short laptop windows where 70vh falls
+   below what the headline and CTAs need. */
 @media (min-width: 720px) {
   .hero {
-    min-height: 520px;
     height: 70vh;
     max-height: 70vh;
   }
