@@ -384,6 +384,10 @@ ul {
   /* minmax(0, 1fr) keeps the image's intrinsic 3000px width from
      widening the track and overflowing the page */
   grid-template-columns: minmax(0, 1fr);
+  /* Same guard on the row: without it the image's intrinsic 2000px height
+     sizes the track (960px at a 1440px viewport), overflow: hidden crops it,
+     and the centred content gets pushed below the visible edge. */
+  grid-template-rows: minmax(0, 1fr);
   min-height: clamp(520px, 82vh, 820px);
   isolation: isolate;
   overflow: hidden;
@@ -404,13 +408,28 @@ ul {
   min-width: 0;
 }
 
-/* Full-bleed image — fills the hero edge to edge at any viewport ratio */
+/* Full-bleed image — fills the hero edge to edge at any viewport ratio.
+   center center keeps the devices centred as the crop tightens on desktop. */
 .hero__img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+}
+
+/* From 720px up, cap the hero at 70vh so the image stops dominating the fold.
+   min-height has to come down with it — a min always wins over a max, so the
+   clamp() above would otherwise hold the hero at up to 820px and the cap would
+   never bind. The 520px floor keeps the headline and CTAs from being clipped by
+   overflow: hidden on short laptop windows, where 70vh falls below the content.
+   Mobile keeps the original clamp() height untouched. */
+@media (min-width: 720px) {
+  .hero {
+    min-height: 520px;
+    height: 70vh;
+    max-height: 70vh;
+  }
 }
 
 /* Scrim between the image and the content, so the hero text and CTAs
