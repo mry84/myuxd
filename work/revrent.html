@@ -118,6 +118,36 @@
           class="shot__btn"
           type="button"
           data-lightbox
+          data-full="../assets/images/rr_homepage@2x.webp"
+          data-full-fallback="../assets/images/rr_homepage.png"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ../assets/images/rr_homepage.webp    1800w,
+                ../assets/images/rr_homepage@2x.webp 2560w
+              "
+              sizes="(min-width: 1140px) 1044px, 100vw"
+            />
+            <img
+              class="shot__img"
+              src="../assets/images/rr_homepage.png"
+              alt="The RevRent Bookings list running on a desktop monitor — status filter chips carrying count badges above a table of bookings by order, customer, product, dates, status, and total"
+              width="6500"
+              height="4520"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
+        </button>
+      </figure>
+
+      <figure class="shot reveal">
+        <button
+          class="shot__btn"
+          type="button"
+          data-lightbox
           data-full="../assets/images/rr_full@2x.webp"
           data-full-fallback="../assets/images/rr_full.png"
         >
@@ -136,8 +166,7 @@
               alt="The RevRent Bookings list — status filter chips carrying stable, unfiltered count badges of 12, 2, 2, and 8 above a table of bookings by order, customer, product, dates, status, and total"
               width="4480"
               height="2520"
-              loading="eager"
-              fetchpriority="high"
+              loading="lazy"
             />
           </picture>
         </button>
