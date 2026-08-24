@@ -28,6 +28,56 @@
         }
       } catch (e) {}
     })();
+
+    /* Hero intro — the sharp-image-then-blur reveal, once per session.
+       Pre-paint so the start state never flashes, and self-contained here
+       rather than in main.js: if a deferred script failed to load, this
+       would be the one thing standing between the visitor and the copy. */
+    (function () {
+      var root = document.documentElement;
+
+      try {
+        if (sessionStorage.getItem("heroIntroSeen")) return; // already seen
+        sessionStorage.setItem("heroIntroSeen", "1");
+      } catch (e) {
+        return; // no sessionStorage — land on the settled state
+      }
+
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
+
+      root.classList.add("hero-intro");
+
+      var released = false;
+      function release() {
+        if (released) return;
+        released = true;
+        root.classList.remove("hero-intro");
+      }
+      // Hold the sharp frame for 600ms, then let CSS carry both transitions.
+      function hold() {
+        window.setTimeout(release, 600);
+      }
+
+      // Start counting once the image is actually on screen — holding a
+      // half-loaded image sharp for 600ms would defeat the point.
+      document.addEventListener("DOMContentLoaded", function () {
+        var img = document.querySelector(".hero__img");
+        if (!img || img.complete) {
+          hold();
+          return;
+        }
+        img.addEventListener("load", hold, { once: true });
+        img.addEventListener("error", hold, { once: true });
+      });
+
+      // Safety net: never leave the hero stuck mid-intro on a stalled image.
+      window.setTimeout(release, 2600);
+    })();
   </script>
 
   <!-- Fonts — Roboto only, single import -->
