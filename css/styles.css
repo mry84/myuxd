@@ -17,11 +17,15 @@
   --placeholder-label: #888888;
   --border: #E4E4E4;
 
-  /* Scrim laid over the hero image so overlaid text keeps its contrast */
-  --hero-scrim: rgba(255, 255, 255, 0.6);
+  /* Scrim laid over the hero image so overlaid text keeps its contrast.
+     The hero is its own always-dark zone, so this is deliberately NOT
+     overridden per theme — one subtle dark veil serves both modes. */
+  --hero-scrim: rgba(0, 0, 0, 0.35);
 
   /* Type scale — fluid via clamp() */
-  --fs-hero: clamp(2.75rem, 8vw, 5.5rem);
+  /* ~18% down from clamp(2.75rem, 8vw, 5.5rem) — still the largest type on
+     the page, no longer swallowing the hero */
+  --fs-hero: clamp(2.25rem, 6.6vw, 4.5rem);
   --fs-h2: clamp(1.5rem, 3.5vw, 2.25rem);
   --fs-h3: clamp(1.15rem, 2vw, 1.4rem);
   --fs-lead: clamp(1.1rem, 2.2vw, 1.5rem);
@@ -65,7 +69,8 @@
   --placeholder-frame: #2A2A2A;
   --placeholder-label: #888888;
   --border: #262626;
-  --hero-scrim: rgba(13, 13, 13, 0.68);
+  /* --hero-scrim is intentionally absent here: the hero zone renders the same
+     in both themes, so it inherits the single value from :root. */
 }
 
 /* --------------------------------------------------------------------------
@@ -462,12 +467,16 @@ ul {
   padding-block: var(--space-lg);
 }
 
+/* Hero copy sits on the always-dark scrim, so it is white in both themes
+   rather than following --text-primary / --text-secondary. Hierarchy comes
+   from size, weight, and tracking instead of from colour. */
 .hero__name {
   font-size: var(--fs-hero);
   font-weight: var(--fw-black);
   line-height: 0.95;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  color: #FFFFFF;
 }
 
 .hero__title {
@@ -476,7 +485,7 @@ ul {
   font-weight: var(--fw-medium);
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--text-secondary);
+  color: #FFFFFF;
 }
 
 .hero__headline {
@@ -485,7 +494,7 @@ ul {
   font-size: var(--fs-lead);
   font-weight: var(--fw-bold);
   line-height: 1.4;
-  color: var(--text-primary);
+  color: #FFFFFF;
 }
 
 .hero__ctas {
