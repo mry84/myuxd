@@ -113,6 +113,37 @@
         </p>
       </header>
 
+      <figure class="shot shot--hero reveal">
+        <button
+          class="shot__btn"
+          type="button"
+          data-lightbox
+          data-full="../assets/images/rr_full@2x.webp"
+          data-full-fallback="../assets/images/rr_full.png"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ../assets/images/rr_full.webp    1200w,
+                ../assets/images/rr_full@2x.webp 2400w
+              "
+              sizes="(min-width: 1140px) 1044px, 100vw"
+            />
+            <img
+              class="shot__img"
+              src="../assets/images/rr_full.png"
+              alt="The RevRent Bookings list — status filter chips carrying stable, unfiltered count badges of 12, 2, 2, and 8 above a table of bookings by order, customer, product, dates, status, and total"
+              width="4480"
+              height="2520"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
+        </button>
+      </figure>
+
+
       <!-- ==================== AT A GLANCE ==================== -->
       <section class="story-section reveal" aria-labelledby="s-glance">
         <h2 id="s-glance" class="story-section__title">At a Glance</h2>
@@ -292,14 +323,6 @@
           relying on context alone.
         </p>
 
-        <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <span class="placeholder placeholder--shot">
-              [ Component taxonomy — the contained segmented track for navigation, the dismissible loose chip for filtering, and the checkbox-affordance variant for selection, shown side by side ]
-            </span>
-          </button>
-        </figure>
-
         <p class="story-h4">Navigation &amp; Breadcrumb Order</p>
         <p>
           Corrected a reversed hierarchy: page title now always states the
@@ -308,14 +331,6 @@
           page's own tabs can express.
         </p>
 
-        <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <span class="placeholder placeholder--shot">
-              [ Category editor — the page title stating the current location, with the Catalog / Categories / Golf Carts breadcrumb trail sitting below it as supporting context ]
-            </span>
-          </button>
-        </figure>
-
         <p class="story-h4">Badge Stability</p>
         <p>
           Any count badge — on a navigation tab or a filter chip — must reflect a
@@ -323,14 +338,6 @@
           selected. A badge that changes while a user types into search reads as
           the data itself shifting, not as filter feedback.
         </p>
-
-        <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <span class="placeholder placeholder--shot">
-              [ Service work orders — status filter chips carrying stable, unfiltered count badges, unchanged while a search term narrows the table beneath them ]
-            </span>
-          </button>
-        </figure>
 
         <div class="story-callout">
           <p>
@@ -371,14 +378,6 @@
           different underlying data shape.
         </p>
 
-        <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <span class="placeholder placeholder--shot">
-              [ Bookings list — the primary status dimension held as chips with every additional dimension demoted to a dropdown, above the filtered table ]
-            </span>
-          </button>
-        </figure>
-
         <p class="story-h4">Shared View-Toggle Component</p>
         <p>
           Extracted a single component for switching between display modes of the
@@ -387,10 +386,31 @@
         </p>
 
         <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <span class="placeholder placeholder--shot">
-              [ Booking calendar — the shared view-toggle component switching the same booking data between list and calendar display ]
-            </span>
+          <button
+            class="shot__btn"
+            type="button"
+            data-lightbox
+            data-full="../assets/images/rr_calendar@2x.webp"
+            data-full-fallback="../assets/images/rr_calendar.png"
+          >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ../assets/images/rr_calendar.webp    1200w,
+                  ../assets/images/rr_calendar@2x.webp 2400w
+                "
+                sizes="(min-width: 1140px) 1044px, 100vw"
+              />
+              <img
+                class="shot__img"
+                src="../assets/images/rr_calendar.png"
+                alt="Booking calendar — the same booking data in calendar form, reached from the List view toggle, with a Products and Specs track, status chips, and a 7, 14, 30, and 45 day window switch above rental units grouped by product"
+                width="4480"
+                height="2520"
+                loading="lazy"
+              />
+            </picture>
           </button>
         </figure>
       </section>
