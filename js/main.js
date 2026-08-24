@@ -131,14 +131,18 @@
      Any [data-lightbox] trigger opens its full-size image over the page.
      The trigger carries data-full (WebP) and data-full-fallback (PNG) so
      the overlay shows a higher-resolution file than the inline thumbnail.
+     A trigger wrapping a .placeholder frame instead of an image expands the
+     frame and its label, so pending screenshots behave like shipped ones.
      Closes on the X button, on a click outside the image, and on Escape.
      ------------------------------------------------------------------ */
   const lightboxTriggers = document.querySelectorAll("[data-lightbox]");
 
   if (lightboxTriggers.length) {
     let overlay = null;
+    let overlayPicture = null;
     let overlaySource = null;
     let overlayImg = null;
+    let overlayPlaceholder = null;
     let closeBtn = null;
     let lastFocused = null;
 
@@ -160,15 +164,20 @@
       const figure = document.createElement("div");
       figure.className = "lightbox__figure";
 
-      const picture = document.createElement("picture");
+      overlayPicture = document.createElement("picture");
       overlaySource = document.createElement("source");
       overlaySource.type = "image/webp";
       overlayImg = document.createElement("img");
       overlayImg.className = "lightbox__img";
 
-      picture.appendChild(overlaySource);
-      picture.appendChild(overlayImg);
-      figure.appendChild(picture);
+      overlayPlaceholder = document.createElement("div");
+      overlayPlaceholder.className = "lightbox__placeholder";
+      overlayPlaceholder.hidden = true;
+
+      overlayPicture.appendChild(overlaySource);
+      overlayPicture.appendChild(overlayImg);
+      figure.appendChild(overlayPicture);
+      figure.appendChild(overlayPlaceholder);
       overlay.appendChild(closeBtn);
       overlay.appendChild(figure);
       document.body.appendChild(overlay);
@@ -194,15 +203,27 @@
     function openLightbox(trigger) {
       if (!overlay) buildOverlay();
 
-      const inlineImg = trigger.querySelector("img");
-      const webp = trigger.getAttribute("data-full");
-      const fallback =
-        trigger.getAttribute("data-full-fallback") ||
-        (inlineImg ? inlineImg.getAttribute("src") : "");
+      const inlinePlaceholder = trigger.querySelector(".placeholder");
 
-      overlaySource.srcset = webp || "";
-      overlayImg.src = fallback;
-      overlayImg.alt = inlineImg ? inlineImg.getAttribute("alt") || "" : "";
+      if (inlinePlaceholder) {
+        overlayPlaceholder.textContent = inlinePlaceholder.textContent.trim();
+        overlayPlaceholder.hidden = false;
+        overlayPicture.hidden = true;
+        overlay.setAttribute("aria-label", "Expanded placeholder");
+      } else {
+        const inlineImg = trigger.querySelector("img");
+        const webp = trigger.getAttribute("data-full");
+        const fallback =
+          trigger.getAttribute("data-full-fallback") ||
+          (inlineImg ? inlineImg.getAttribute("src") : "");
+
+        overlaySource.srcset = webp || "";
+        overlayImg.src = fallback;
+        overlayImg.alt = inlineImg ? inlineImg.getAttribute("alt") || "" : "";
+        overlayPicture.hidden = false;
+        overlayPlaceholder.hidden = true;
+        overlay.setAttribute("aria-label", "Expanded image");
+      }
 
       lastFocused = document.activeElement;
       overlay.hidden = false;

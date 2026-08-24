@@ -113,114 +113,6 @@
         </p>
       </header>
 
-      <div class="shot-grid shot-grid--five reveal">
-        <figure class="shot">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                ../assets/images/rr_breadcrumb.webp     600w,
-                ../assets/images/rr_breadcrumb@2x.webp 1840w
-              "
-              sizes="(min-width: 1140px) 196px, (min-width: 720px) 17vw, 300px"
-            />
-            <img
-              class="shot__img"
-              src="../assets/images/rr_breadcrumb.png"
-              alt="RevRent category editor — the Golf Carts page title with a Catalog / Categories / Golf Carts breadcrumb trail below it, beside a section list and the spec field editor"
-              width="1840"
-              height="1481"
-              loading="eager"
-              fetchpriority="high"
-            />
-          </picture>
-        </figure>
-
-        <figure class="shot">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                ../assets/images/rr_controller.webp     600w,
-                ../assets/images/rr_controller@2x.webp 1487w
-              "
-              sizes="(min-width: 1140px) 196px, (min-width: 720px) 17vw, 300px"
-            />
-            <img
-              class="shot__img"
-              src="../assets/images/rr_controller.png"
-              alt="Service work orders — a List and Week segmented track above status filter chips carrying count badges, over a work order table"
-              width="1487"
-              height="390"
-              loading="eager"
-            />
-          </picture>
-        </figure>
-
-        <figure class="shot">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                ../assets/images/rr_controllerfull.webp     600w,
-                ../assets/images/rr_controllerfull@2x.webp 1840w
-              "
-              sizes="(min-width: 1140px) 196px, (min-width: 720px) 17vw, 300px"
-            />
-            <img
-              class="shot__img"
-              src="../assets/images/rr_controllerfull.png"
-              alt="Booking calendar — a Products and Specs segmented track, status filter chips, and a 7, 14, 30, and 45 day window toggle above rental units grouped by product"
-              width="1840"
-              height="1481"
-              loading="eager"
-            />
-          </picture>
-        </figure>
-
-        <figure class="shot">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                ../assets/images/rr_fullpage.webp     600w,
-                ../assets/images/rr_fullpage@2x.webp 1840w
-              "
-              sizes="(min-width: 1140px) 196px, (min-width: 720px) 17vw, 300px"
-            />
-            <img
-              class="shot__img"
-              src="../assets/images/rr_fullpage.png"
-              alt="Bookings list — status filter chips with unfiltered count badges above a bookings table, with Calendar view, Export CSV, and New booking actions"
-              width="1840"
-              height="1481"
-              loading="eager"
-            />
-          </picture>
-        </figure>
-
-        <figure class="shot">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                ../assets/images/rr_navigation.webp     600w,
-                ../assets/images/rr_navigation@2x.webp 1487w
-              "
-              sizes="(min-width: 1140px) 196px, (min-width: 720px) 17vw, 300px"
-            />
-            <img
-              class="shot__img"
-              src="../assets/images/rr_navigation.png"
-              alt="Catalog navigation — a segmented track for Rental Categories, Rental Products, Add-ons, Rental Service Fees, Protections, and Service Charges above the categories table"
-              width="1487"
-              height="427"
-              loading="eager"
-            />
-          </picture>
-        </figure>
-      </div>
-
       <!-- ==================== AT A GLANCE ==================== -->
       <section class="story-section reveal" aria-labelledby="s-glance">
         <h2 id="s-glance" class="story-section__title">At a Glance</h2>
@@ -400,6 +292,14 @@
           relying on context alone.
         </p>
 
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <span class="placeholder placeholder--shot">
+              [ Component taxonomy — the contained segmented track for navigation, the dismissible loose chip for filtering, and the checkbox-affordance variant for selection, shown side by side ]
+            </span>
+          </button>
+        </figure>
+
         <p class="story-h4">Navigation &amp; Breadcrumb Order</p>
         <p>
           Corrected a reversed hierarchy: page title now always states the
@@ -408,6 +308,14 @@
           page's own tabs can express.
         </p>
 
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <span class="placeholder placeholder--shot">
+              [ Category editor — the page title stating the current location, with the Catalog / Categories / Golf Carts breadcrumb trail sitting below it as supporting context ]
+            </span>
+          </button>
+        </figure>
+
         <p class="story-h4">Badge Stability</p>
         <p>
           Any count badge — on a navigation tab or a filter chip — must reflect a
@@ -415,6 +323,14 @@
           selected. A badge that changes while a user types into search reads as
           the data itself shifting, not as filter feedback.
         </p>
+
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <span class="placeholder placeholder--shot">
+              [ Service work orders — status filter chips carrying stable, unfiltered count badges, unchanged while a search term narrows the table beneath them ]
+            </span>
+          </button>
+        </figure>
 
         <div class="story-callout">
           <p>
@@ -455,12 +371,28 @@
           different underlying data shape.
         </p>
 
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <span class="placeholder placeholder--shot">
+              [ Bookings list — the primary status dimension held as chips with every additional dimension demoted to a dropdown, above the filtered table ]
+            </span>
+          </button>
+        </figure>
+
         <p class="story-h4">Shared View-Toggle Component</p>
         <p>
           Extracted a single component for switching between display modes of the
           same data (list/calendar, timeline/map, table/diagram), replacing six
           independently hand-rolled implementations.
         </p>
+
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <span class="placeholder placeholder--shot">
+              [ Booking calendar — the shared view-toggle component switching the same booking data between list and calendar display ]
+            </span>
+          </button>
+        </figure>
       </section>
 
       <!-- ==================== LIVE CODEBASE COLLISIONS ==================== -->

@@ -1155,6 +1155,13 @@ ul {
   margin-top: var(--space-md);
 }
 
+/* A pending screenshot sitting inside a .shot__btn trigger. The figure and
+   button already carry the margin and frame, so this only sets the ratio. */
+.placeholder--shot {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
 /* Real screenshots — portrait device shots centered on a panel */
 .device-shot {
   margin-top: var(--space-lg);
@@ -1319,6 +1326,27 @@ ul {
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+/* Expanded stand-in for a placeholder frame — the label is the content, so it
+   scales up rather than opening an empty overlay. */
+.lightbox__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: min(90vw, 1000px);
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 2 * clamp(1rem, 4vw, 4rem));
+  padding: var(--space-md);
+  background-color: var(--placeholder-frame);
+  color: var(--placeholder-label);
+  font-size: var(--fs-body);
+  letter-spacing: 0.02em;
+}
+
+.lightbox__placeholder[hidden] {
+  display: none;
 }
 
 .lightbox__close {
