@@ -106,22 +106,19 @@
     <!-- ==================== HERO ==================== -->
     <section class="hero" aria-labelledby="hero-name">
       <!-- Full-bleed hero image — spans the hero edge to edge.
-           WebP is the primary source at two widths (1800w ~97KB standard,
-           2560w ~163KB retina); the browser picks by viewport × DPR.
-           The original PNG is the fallback where WebP isn't supported. -->
+           kcQFw.webp (1950x820, ~97KB) is the primary source. home_hero.png
+           remains the fallback for the handful of browsers without WebP; note
+           it is a different composition, so those users see the older shot. -->
       <picture class="hero__picture">
         <source
           type="image/webp"
-          srcset="
-            assets/images/home_hero.webp    1800w,
-            assets/images/home_hero@2x.webp 2560w
-          "
+          srcset="assets/images/kcQFw.webp 1950w"
           sizes="100vw"
         />
         <img
           class="hero__img"
           src="assets/images/home_hero.png"
-          alt="The Destin Elite Carts website and CMS control center shown across a desktop monitor, laptop, tablet, and phone."
+          alt="Four shipped products side by side — the Carrier 360 load board, the RevRent bookings table, the Destin Elite Carts CMS control center, and the Corporate Dump mobile app."
           width="3000"
           height="2000"
           loading="eager"
