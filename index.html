@@ -29,10 +29,15 @@
       } catch (e) {}
     })();
 
-    /* Hero intro — the sharp-image-then-blur reveal, once per session.
+    /* Hero intro — the staggered settle, once per session.
        Pre-paint so the start state never flashes, and self-contained here
        rather than in main.js: if a deferred script failed to load, this
-       would be the one thing standing between the visitor and the copy. */
+       would be the one thing standing between the visitor and the copy.
+
+       The settled hero is the default in CSS. This only ever rewinds it and
+       then lets go, so no-JS, reduced-motion, and repeat visits all render
+       the finished thing. There is no image in the hero any more, so there is
+       nothing to wait on — the copy starts moving as soon as it can paint. */
     (function () {
       var root = document.documentElement;
 
@@ -58,25 +63,18 @@
         released = true;
         root.classList.remove("hero-intro");
       }
-      // Hold the sharp frame for 600ms, then let CSS carry both transitions.
-      function hold() {
-        window.setTimeout(release, 600);
-      }
 
-      // Start counting once the image is actually on screen — holding a
-      // half-loaded image sharp for 600ms would defeat the point.
+      // Two frames: the first paints the rewound state, the second guarantees
+      // the class removal lands as a transition rather than being collapsed
+      // into the same style recalculation (which would skip the animation).
       document.addEventListener("DOMContentLoaded", function () {
-        var img = document.querySelector(".hero__img");
-        if (!img || img.complete) {
-          hold();
-          return;
-        }
-        img.addEventListener("load", hold, { once: true });
-        img.addEventListener("error", hold, { once: true });
+        requestAnimationFrame(function () {
+          requestAnimationFrame(release);
+        });
       });
 
-      // Safety net: never leave the hero stuck mid-intro on a stalled image.
-      window.setTimeout(release, 2600);
+      // Safety net: never leave the hero stuck hidden.
+      window.setTimeout(release, 1500);
     })();
   </script>
 
@@ -154,41 +152,27 @@
 
   <main>
     <!-- ==================== HERO ==================== -->
+    <!-- Typography only, on an always-dark zone. There is deliberately no
+         image here: see the note above .hero in css/styles.css. The device
+         montage that used to sit behind this copy is a Destin Elite Carts
+         mockup, and it still appears on that project's own card below. -->
     <section class="hero" aria-labelledby="hero-name">
-      <!-- Full-bleed hero image — spans the hero edge to edge.
-           WebP is the primary source at two widths (1800w ~97KB standard,
-           2560w ~163KB retina); the browser picks by viewport × DPR.
-           The original PNG is the fallback where WebP isn't supported. -->
-      <picture class="hero__picture">
-        <source
-          type="image/webp"
-          srcset="
-            assets/images/home_hero.webp    1800w,
-            assets/images/home_hero@2x.webp 2560w
-          "
-          sizes="100vw"
-        />
-        <img
-          class="hero__img"
-          src="assets/images/home_hero.png"
-          alt="The Destin Elite Carts website and CMS control center shown across a desktop monitor, laptop, tablet, and phone."
-          width="3000"
-          height="2000"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </picture>
-
-      <!-- Centered, stacked content layered over the image -->
       <div class="hero__content container">
-        <h1 id="hero-name" class="hero__name hero-anim" style="--hero-delay: 0ms">
-          Mark Young
-        </h1>
-        <p class="hero__title hero-anim" style="--hero-delay: 100ms">
+        <!-- Role sits above the name so the accent rule can lead the eye in.
+             The h1 still follows immediately, and aria-labelledby points at
+             it, so the section's accessible name is unaffected. -->
+        <p class="hero__eyebrow hero-anim" style="--hero-delay: 0ms">
+          <span class="hero__rule" aria-hidden="true"></span>
           Senior Product Designer
         </p>
+        <h1 id="hero-name" class="hero__name hero-anim" style="--hero-delay: 100ms">
+          Mark Young
+        </h1>
+        <!-- <em> is carrying emphasis, not italics — the CSS resets the slant
+             and swaps in the accent colour. -->
         <p class="hero__headline hero-anim" style="--hero-delay: 200ms">
-          The gap between design decisions and working software is where I work.
+          The gap between design decisions and working software
+          <em>is where I work.</em>
         </p>
         <div class="hero__ctas hero-anim" style="--hero-delay: 300ms">
           <a href="#work" class="btn btn--primary">View Work</a>

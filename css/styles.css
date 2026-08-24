@@ -17,15 +17,24 @@
   --placeholder-label: #888888;
   --border: #E4E4E4;
 
-  /* Scrim laid over the hero image so overlaid text keeps its contrast.
-     The hero is its own always-dark zone, so this is deliberately NOT
-     overridden per theme — one subtle dark veil serves both modes. */
-  --hero-scrim: rgba(0, 0, 0, 0.35);
+  /* The hero is its own always-dark zone, so these are deliberately NOT
+     overridden per theme. Text sits on this colour directly rather than on an
+     image, which is what makes the contrast structural (white on #0D0D0D is
+     18.9:1) instead of something a scrim has to negotiate.
+
+     --hero-accent is --accent lifted for use on near-black. #0066FF is only
+     3.2:1 on #0D0D0D, which fails for text; #4D94FF is 6.5:1 and passes AA at
+     any size. The two blues are close enough to read as one brand colour. */
+  --hero-bg: #0D0D0D;
+  --hero-accent: #4D94FF;
 
   /* Type scale — fluid via clamp() */
-  /* ~18% down from clamp(2.75rem, 8vw, 5.5rem) — still the largest type on
-     the page, no longer swallowing the hero */
-  --fs-hero: clamp(2.25rem, 6.6vw, 4.5rem);
+  /* The name is the only graphic element in the hero now that the image is
+     gone, so it can carry a little more size than it could over a photo. */
+  --fs-hero: clamp(2.5rem, 7.4vw, 5rem);
+  /* Hero sub-headline. Deliberately larger than --fs-lead: at 300 weight it
+     has to be big enough for the contrast against the 900 name to register. */
+  --fs-hero-lead: clamp(1.25rem, 2.6vw, 1.875rem);
   --fs-h2: clamp(1.5rem, 3.5vw, 2.25rem);
   --fs-h3: clamp(1.15rem, 2vw, 1.4rem);
   --fs-lead: clamp(1.1rem, 2.2vw, 1.5rem);
@@ -69,8 +78,9 @@
   --placeholder-frame: #2A2A2A;
   --placeholder-label: #888888;
   --border: #262626;
-  /* --hero-scrim is intentionally absent here: the hero zone renders the same
-     in both themes, so it inherits the single value from :root. */
+  /* --hero-bg / --hero-accent are intentionally absent here: the hero zone
+     renders the same in both themes, so it inherits the single value from
+     :root. */
 }
 
 /* --------------------------------------------------------------------------
@@ -382,127 +392,164 @@ ul {
 /* --------------------------------------------------------------------------
    7. Hero
    -------------------------------------------------------------------------- */
+/* Typography-only, and always dark in both themes.
+
+   There is no image behind this copy on purpose. The montage we had was a
+   bright white-studio shot, so every scrim strong enough to carry white text
+   also flattened the image into grey mush — the contrast was being negotiated
+   rather than designed. It was also a mockup of a single project that already
+   has its own card in the work grid below, so leading with it introduced the
+   client before it introduced Mark.
+
+   What replaces it is structure: weight contrast between a 900 name and a 300
+   sub-headline, one accent used twice, and two CSS light layers for depth.
+   Nothing here can fail to load, and nothing has to fight anything else. */
 .hero {
   position: relative;
-  display: grid;
-  grid-template-areas: "stack";
-  /* minmax(0, 1fr) keeps the image's intrinsic 3000px width from
-     widening the track and overflowing the page */
-  grid-template-columns: minmax(0, 1fr);
-  /* Same guard on the row: without it the image's intrinsic 2000px height
-     sizes the track (960px at a 1440px viewport), overflow: hidden crops it,
-     and the centred content gets pushed below the visible edge. */
-  grid-template-rows: minmax(0, 1fr);
-  /* Mobile-first height: 60vh, floored at 460px so the headline and CTAs are
-     never clipped by overflow: hidden. On most phones 60vh lands under the
-     floor, so 460px is what actually renders; 60vh takes over on viewports
-     taller than ~767px. The 720px query below raises both to 70vh / 520px. */
-  min-height: 460px;
-  height: 60vh;
-  max-height: 60vh;
+  display: flex;
+  align-items: center;
+  /* min-height with no max. The copy is now the only thing sizing this zone,
+     so a fixed height (or a max) would clip it on short windows or at large
+     text-zoom settings — it just grows instead. 76vh fills the fold without
+     pushing the work section entirely below it. */
+  min-height: clamp(30rem, 76vh, 46rem);
+  background-color: var(--hero-bg);
+  /* Scopes the z-index: -1 light layers below, so they stay inside the hero
+     rather than sliding behind the page background. */
   isolation: isolate;
   overflow: hidden;
 }
 
-/* Both children occupy the same grid cell — content stacks over the image */
-.hero__picture,
-.hero__content {
-  grid-area: stack;
+/* Key light. One wide, very low-alpha radial pushed off-axis to the upper
+   right, so the zone reads as lit from somewhere instead of as a flat black
+   rectangle. Sits far enough from the left-aligned copy to never touch it. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    55rem 42rem at 72% 28%,
+    rgba(77, 148, 255, 0.22),
+    rgba(77, 148, 255, 0) 68%
+  );
+  pointer-events: none;
 }
 
-/* <picture> is the grid item, so it has to fill the cell itself before
-   the inner <img> can cover it */
-.hero__picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-}
-
-/* Full-bleed image — fills the hero edge to edge at any viewport ratio.
-   center center keeps the devices centred as the crop tightens on desktop. */
-.hero__img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* From 720px up, give the hero more of the fold than mobile gets: 70vh rather
-   than 60vh, on a 520px rather than 460px floor. The taller floor is what holds
-   the content clear of the crop on short laptop windows, where 70vh falls below
-   what the headline and CTAs need at desktop type sizes and padding. */
-@media (min-width: 720px) {
-  .hero {
-    min-height: 520px;
-    height: 70vh;
-    max-height: 70vh;
-  }
-
-  .hero__content {
-    padding-block: var(--space-xl);
-  }
-}
-
-/* Scrim between the image and the content, so the hero text and CTAs
-   hold contrast in both themes */
+/* Floor. Darkens the bottom edge so the hero settles rather than stopping on
+   a hard line, and hands off cleanly to the section beneath it. */
 .hero::after {
   content: "";
-  grid-area: stack;
-  background-color: var(--hero-scrim);
-  transition: background-color 0.3s ease;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
 }
 
+/* Left-aligned rather than centred. A centred stack of short lines reads as a
+   landing-page template; anchoring to the container gutter gives the headline
+   a strong ragged right edge and puts the hero on the same vertical line as
+   every section below it. .container supplies the max-width and gutter. */
 .hero__content {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* Tighter on mobile so the 460px floor can hold the whole block; the 720px
-     query restores the roomier --space-xl once there's height to spend. */
+  width: 100%;
+  text-align: left;
   padding-block: var(--space-lg);
 }
 
-/* Hero copy sits on the always-dark scrim, so it is white in both themes
-   rather than following --text-primary / --text-secondary. Hierarchy comes
-   from size, weight, and tracking instead of from colour. */
-.hero__name {
-  font-size: var(--fs-hero);
-  font-weight: var(--fw-black);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
+/* Hero copy sits on an always-dark zone, so it is white in both themes rather
+   than following --text-primary / --text-secondary. Hierarchy comes from size,
+   weight, and tracking instead of from colour. */
 
-.hero__title {
-  margin-top: var(--space-sm);
+/* Rule and role travel together as one animated unit — a flex row rather than
+   two separately staggered elements, so the eye reads them as a single mark. */
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
   text-transform: uppercase;
   letter-spacing: 0.22em;
+  /* Slightly held back from pure white so it introduces the name instead of
+     competing with it. 0.72 alpha on #0D0D0D still clears 10:1. */
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero__rule {
+  flex: none;
+  width: 2.75rem;
+  height: 2px;
+  background-color: var(--hero-accent);
+}
+
+.hero__name {
+  margin-top: 0.85rem;
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-black);
+  /* Sub-1 leading and negative tracking pull the letterforms into a single
+     mass, which is what makes the name read as a mark rather than as text. */
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
   color: #FFFFFF;
 }
 
+/* 300 against the name's 900 is the whole design — the size step alone would
+   not carry it. Capped near 36ch so it holds a block shape rather than running
+   out as one thin measure, and balanced so the last line never strands a
+   single word (at 28ch it orphaned "work." on a line of its own). balance is
+   progressively enhanced: browsers without it just get the plain greedy wrap
+   inside the same measure. */
 .hero__headline {
   margin-top: var(--space-md);
-  margin-inline: auto;
-  font-size: var(--fs-lead);
-  font-weight: var(--fw-bold);
-  line-height: 1.4;
-  color: #FFFFFF;
+  max-width: 36ch;
+  font-size: var(--fs-hero-lead);
+  font-weight: var(--fw-light);
+  line-height: 1.35;
+  text-wrap: balance;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* The one place the accent appears in the copy, on the clause that carries
+   the actual claim. --hero-accent, not --accent, so it passes on near-black. */
+.hero__headline em {
+  font-style: normal;
+  font-weight: var(--fw-regular);
+  color: var(--hero-accent);
 }
 
 .hero__ctas {
   margin-top: var(--space-lg);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--space-sm);
+}
+
+/* The default secondary button is --text-primary on --border, which is #111
+   on a near-invisible grey in light mode — unreadable in an always-dark zone.
+   Scope it to the hero rather than touching the global button. */
+.hero .btn--secondary {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.hero .btn--secondary:hover {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 720px) {
+  .hero__content {
+    padding-block: var(--space-xl);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1483,46 +1530,32 @@ ul {
   transform: translateY(0);
 }
 
-/* Hero intro — blur-to-text reveal, first visit per session.
+/* Hero intro — a staggered settle on the first visit of a session.
 
-   The rules below are the SETTLED state: image softly blurred and dimmed,
-   text in place. That is what a repeat visit, a no-JS visit, and a
-   reduced-motion visit all render, so nothing depends on the script running.
+   No blur, on anything. The previous version left the hero image softly
+   blurred as its END state, which read as a broken or half-loaded image
+   rather than as a treatment. Every element here finishes sharp, fully
+   opaque, and in place; the animation only ever moves opacity and position.
 
-   On a first visit the pre-paint script in index.html adds .hero-intro to
-   <html>, which rewinds both halves at once — sharp image, hidden text — and
-   removes it 600ms later. One class change drives both transitions, which is
-   what makes it read as a single breath rather than two effects. */
-.hero__picture {
-  filter: blur(6px);
-  opacity: 0.85;
-  /* The slight scale hides the soft edge blur() leaves behind where it
-     samples past the element's bounds, and doubles as the exhale. */
-  transform: scale(1.04);
-  transition: filter var(--dur) var(--ease-out),
-    opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
-}
-
-.hero-intro .hero__picture {
-  filter: blur(0);
-  opacity: 1;
-  transform: scale(1);
-}
-
+   The rules below ARE the settled state, so a repeat visit, a no-JS visit,
+   and a reduced-motion visit all render the finished hero with nothing to
+   wait for. On a first visit the pre-paint script in index.html adds
+   .hero-intro to <html>, which rewinds the copy, then removes it — one class
+   change driving the whole stagger. */
 .hero-anim {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity var(--dur) var(--ease-out),
-    transform var(--dur) var(--ease-out);
-  /* Stagger comes from the --hero-delay the markup already carries:
-     0 / 100 / 200 / 300ms. The image has no delay, so the blur moves with
-     the name rather than after it. */
+  /* 700ms rather than --dur (400ms): with a stagger this shallow, the longer
+     ease is what makes it read as one confident settle instead of four
+     separate pops. */
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  /* Stagger comes from the --hero-delay the markup carries: 0/100/200/300ms. */
   transition-delay: var(--hero-delay, 0ms);
 }
 
 .hero-intro .hero-anim {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   transition-delay: 0ms;
 }
 
