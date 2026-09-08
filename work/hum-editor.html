@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hum Website Editor — Product Story | Mark Young</title>
+  <meta
+    name="description"
+    content="Hum Website Editor: a live restaurant site rebuilt into a content seam, then handed off as a multi-tenant hospitality platform's first write-capable CMS module. A product story by Mark Young — product designer and AI-directed developer."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hum Website Editor — Product Story | Mark Young" />
+  <meta
+    property="og:description"
+    content="A live restaurant site rebuilt into a content seam — then the platform's first write-capable CMS module."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://myuxd.work/work/hum-editor.html" />
+
+  <!-- Prevent theme flash: set stored theme before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts — Roboto only, single import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="../index.html" class="nav__brand">
+        MARK YOUNG
+      </a>
+
+      <button
+        class="nav__hamburger"
+        data-nav-toggle
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" data-nav-menu>
+        <div class="nav__dropdown" data-dropdown>
+          <button
+            class="nav__dropdown-toggle"
+            data-dropdown-toggle
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Work <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="nav__dropdown-menu" data-dropdown-menu>
+            <li><a href="hum-editor.html" aria-current="page">Hum Editor</a></li>
+            <li><a href="revrent.html">RevRent</a></li>
+            <li><a href="destin-elite.html">Destin Elite Carts</a></li>
+            <li><a href="carrier-360.html">Carrier 360</a></li>
+            <li><a href="corporate-dump.html">Corporate Dump™</a></li>
+            <li><a href="athlink.html">AthLink</a></li>
+            <li role="separator"><hr class="nav__dropdown-sep" aria-hidden="true" /></li>
+            <li><a href="portfolio-creation.html">Portfolio Creation</a></li>
+          </ul>
+        </div>
+
+        <a href="../resume.html" class="nav__link">Resume</a>
+        <a href="../contact.html" class="nav__link">Contact</a>
+
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="story">
+    <div class="story__wrap">
+      <!-- ==================== MASTHEAD ==================== -->
+      <header class="story-head reveal">
+        <p class="eyebrow">Product Story</p>
+        <h1 class="story-head__title">Hum Website Editor</h1>
+        <p class="story-head__subtitle">
+          A Content Seam for a Live Restaurant Site — Then the First
+          Write-Capable Module Inside a Multi-Tenant Hospitality Platform
+        </p>
+      </header>
+
+      <figure class="shot shot--hero reveal">
+        <button class="shot__btn" type="button" data-lightbox>
+          <div class="placeholder placeholder--shot">
+            Original Squarespace chrome vs. the static rebuild, side by side —
+            one frame.
+          </div>
+        </button>
+      </figure>
+
+      <!-- ==================== AT A GLANCE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-glance">
+        <h2 id="s-glance" class="story-section__title">At a Glance</h2>
+        <div class="glance-panel">
+          <table class="glance">
+            <tbody>
+              <tr>
+                <th scope="row">Role</th>
+                <td>Product Designer + AI-Directed Developer</td>
+              </tr>
+              <tr>
+                <th scope="row">Ownership</th>
+                <td>
+                  Problem framing, tenant-isolation model, editor IA,
+                  publish-safety architecture, demo-scope call
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Implementation</th>
+                <td>
+                  Claude Code — safety-critical behavior independently verified
+                  before shipping
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Timeline</th>
+                <td>
+                  August 2026 — two connected phases across roughly two weeks
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Stack</th>
+                <td>
+                  HTML · CSS · Vanilla JavaScript · JSON (site) · Python/FastAPI
+                  · PostgreSQL · React (Hum module)
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Tools</th>
+                <td>Claude · Claude Code</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Outcomes</th>
+                <td>
+                  A production CMS module inside an existing multi-tenant SaaS
+                  platform, with real database-level tenant isolation · The
+                  platform's first write-capable external integration (GitHub) ·
+                  A two-layer publish-safety system, built and adversarially
+                  tested in direct response to a real incident
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== OVERVIEW ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-overview">
+        <h2 id="s-overview" class="story-section__title">Overview</h2>
+        <p>
+          The client runs Hum, a multi-tenant SaaS platform for her hospitality
+          group, and The Bend NWA, a trailside restaurant in Bentonville,
+          Arkansas, running on Squarespace. She was locked into Squarespace's
+          content model with no way to bring the site under her own platform's
+          control — and even after a migration, still no way to edit a live
+          public site without going through a developer for every small change.
+        </p>
+        <p>
+          She needed ownership of a live site without a developer in the loop.
+          Two phases: rebuild the site around a single content seam, then hand
+          that seam to a real editor she could use herself.
+        </p>
+      </section>
+
+      <!-- ==================== LIVE SITE ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-live">
+        <h2 id="s-live" class="story-section__title">Live Site</h2>
+        <div class="story-materials">
+          <a
+            href="https://thebend-nwa.vercel.app/"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener"
+          >
+            View Live Site <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==================== THE PROBLEM ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-problem">
+        <h2 id="s-problem" class="story-section__title">The Problem</h2>
+        <p>
+          For the business owner, the actual problem was never the restaurant's
+          homepage. It was ownership: she couldn't change a photo, fix a typo, or
+          add an event without asking someone else to touch code — and once
+          handed a real CMS, she'd have no way to trust that publishing a change
+          wouldn't break something she couldn't see.
+        </p>
+
+        <p class="story-h4">The core insight</p>
+        <p>
+          Build a clean seam between content and code, so the system in front of
+          a non-technical operator can change without anyone touching the system
+          underneath it. Phase one built that seam. Phase two proved it could be
+          handed to someone else.
+        </p>
+      </section>
+
+      <!-- ==================== CONSTRAINTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-constraints">
+        <h2 id="s-constraints" class="story-section__title">Constraints</h2>
+        <ul class="story-list">
+          <li>
+            <strong>Scope discipline, phase one:</strong> strict 1:1 recreation.
+            No design changes, copy preserved as-is. A new brand guide existed
+            mid-project and was deliberately not applied — this was a migration,
+            not a redesign.
+          </li>
+          <li>
+            <strong>Scope discipline, phase two:</strong> built inside a live,
+            multi-tenant production codebase — existing tests, an established
+            security model, other tenants' data in the same database.
+          </li>
+          <li>
+            <strong>Stakes:</strong> publish triggers a real deployment to a real
+            external system. No staging environment to hide a mistake in.
+          </li>
+          <li>
+            <strong>Budget:</strong> informal, trust-based engagement. Scope grew
+            past the original estimate once real safety requirements surfaced
+            mid-build — named directly with the client, not absorbed silently.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== APPROACH ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-approach">
+        <h2 id="s-approach" class="story-section__title">Approach</h2>
+
+        <h3 class="story-h3">Phase one: the seam</h3>
+        <p>
+          Every string, image path, and form field lives in one
+          <code>content.json</code>, read by a small vanilla-JS data-binder —
+          nothing hardcoded into markup. Getting there required a full
+          headless-Chrome scrape: the site's events calendar and contact form
+          were JS-rendered and invisible to a static crawl. That file became the
+          contract phase two built on, without a rewrite.
+        </p>
+
+        <h3 class="story-h3">Phase two: three problems, one module</h3>
+
+        <p class="story-h4">Isolation</p>
+        <p>
+          The natural way to reference a brand in the new tables was a numeric
+          foreign key. During review, that choice was caught as a real gap: a
+          query scoped only by that ID would have returned another tenant's site
+          content instead of this client's — the class of bug that produces
+          cross-org leakage. The fix was corrected before any code shipped, and
+          the isolation guard itself was proven by deliberately breaking it,
+          confirming the test caught the break, and restoring it.
+        </p>
+
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <div class="placeholder placeholder--shot">
+              Isolation diagram — brand-scoped query path vs. the FK path that
+              would have bypassed it.
+            </div>
+          </button>
+        </figure>
+
+        <p class="story-h4">Editor IA</p>
+        <p>
+          The schema is large and unfamiliar — theme colors, navigation, image
+          galleries, multi-field forms. Two views handle it, because the business
+          owner thinks about the site two different ways depending on the task: a
+          page-based structure that matches "the menu page" or "the calendar,"
+          and a content-type view (Colors, Images, Forms, Links) that matches
+          "swap the hero photo" or "fix the hours everywhere they appear." Both
+          read and write the same underlying draft, so switching views never
+          resets what she's doing.
+        </p>
+        <p>
+          Adding a new item follows the same logic instead of dropping her into a
+          blank form. Adding a gallery photo infers its alt text, caption, and
+          slot from the photos already there — not a blank twelve-field form she
+          has to guess her way through.
+        </p>
+
+        <div class="shot-grid reveal">
+          <figure class="shot">
+            <button class="shot__btn" type="button" data-lightbox>
+              <div class="placeholder placeholder--shot">
+                Page view and content-type view of the same draft, side by side.
+              </div>
+            </button>
+          </figure>
+
+          <figure class="shot">
+            <button class="shot__btn" type="button" data-lightbox>
+              <div class="placeholder placeholder--shot">
+                The composer adding a new gallery photo — showing the inferred
+                alt/caption/slot, not a blank form.
+              </div>
+            </button>
+          </figure>
+        </div>
+
+        <p class="story-h4">Publish safety</p>
+        <p>
+          Every edit stages as a draft with zero live effect until an explicit
+          publish action — including newly uploaded images, held in the database
+          and discardable before ever reaching the live repository.
+        </p>
+
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <div class="placeholder placeholder--shot">
+              Publish flow: draft → review → GitHub commit → live site.
+            </div>
+          </button>
+        </figure>
+      </section>
+
+      <!-- ==================== THE INCIDENT ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-incident">
+        <h2 id="s-incident" class="story-section__title">The Incident</h2>
+        <div class="story-callout">
+          <p>
+            Mid-build, a screenshot of the editor's own interface was
+            accidentally uploaded and published as a live image on the site.
+          </p>
+          <ol class="story-list">
+            <li>
+              A local development environment held a live, production-capable
+              credential
+            </li>
+            <li>
+              The upload path had no gate distinguishing "this is a test" from
+              "this is live"
+            </li>
+            <li>
+              Publishing from that environment was therefore real, not simulated
+            </li>
+            <li>
+              Caught the same session — traced through the exact GitHub commit
+              history, restored byte-for-byte, verified by checksum
+            </li>
+            <li>
+              Closed with two independent protections: an environment-level
+              switch defaulting to off everywhere except real production, and a
+              per-site pause for day-to-day safety — both adversarially tested by
+              deliberately trying to bypass them
+            </li>
+          </ol>
+          <p>The response was the boundary, not the file.</p>
+        </div>
+
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <div class="placeholder placeholder--shot">
+              Safety architecture diagram + redacted commit timeline — not the
+              leaked editor chrome itself.
+            </div>
+          </button>
+        </figure>
+      </section>
+
+      <!-- ==================== VERIFICATION ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-verification">
+        <h2 id="s-verification" class="story-section__title">Verification</h2>
+        <p>
+          Every security-critical guard — tenant isolation, credential handling,
+          publish-safety logic, and a later-discovered privilege-escalation path
+          in an unrelated feature — got the same mutation-testing treatment as
+          the isolation guard above: broken on purpose, confirmed the test caught
+          it, restored. One of those checks turned out to be passing for the
+          wrong reason — it only failed correctly once the code it was meant to
+          protect was broken first.
+        </p>
+      </section>
+
+      <!-- ==================== RESULTS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-results">
+        <h2 id="s-results" class="story-section__title">Results</h2>
+
+        <p class="story-h4">Shipped</p>
+        <ul class="story-list">
+          <li>A static migration with content fully separated from presentation</li>
+          <li>A full-schema editor for a non-technical operator</li>
+          <li>Database-level tenant isolation</li>
+          <li>The platform's first write-capable external integration</li>
+          <li>A two-layer publish-safety system, incident-tested</li>
+          <li>
+            Hum already had a marketing calendar; the site was made to read from
+            it instead of keeping a second ledger. Events flow to the live
+            calendar automatically and render as shareable cards with links that
+            deep-link straight to the event — the customer-facing proof that the
+            seam works in both directions.
+          </li>
+        </ul>
+
+        <figure class="shot reveal">
+          <button class="shot__btn" type="button" data-lightbox>
+            <div class="placeholder placeholder--shot">
+              A shared event link opening directly to that event on the live
+              site.
+            </div>
+          </button>
+        </figure>
+
+        <p class="story-h4">Not yet measured</p>
+        <ul class="story-list">
+          <li>
+            Whether the business owner or her staff actually use the editor
+            day-to-day once handoff is complete
+          </li>
+          <li>
+            Time from "new special" to live, compared to the old
+            email-a-developer workflow
+          </li>
+        </ul>
+        <p>
+          The instrumentation for both already exists in the platform (publish
+          timestamps, version history) — it just hasn't been measured against
+          real usage yet.
+        </p>
+      </section>
+
+      <!-- ==================== REFLECTIONS ==================== -->
+      <section class="story-section reveal" aria-labelledby="s-reflections">
+        <h2 id="s-reflections" class="story-section__title">Reflections</h2>
+        <p>
+          The hardest discipline across both phases wasn't technical — it was
+          staying honest about what "done" meant. Refusing to apply an available
+          redesign during a migration that wasn't supposed to change anything is
+          one version of that. The incident is the clearer one: not that the
+          system never made a mistake, but that it caught its own mistake, traced
+          the real cause, and proved the fix instead of just moving on.
+        </p>
+        <p>
+          Whether this pattern is worth extending to the client's other
+          restaurant brands — or whether the cost of generalizing outweighs the
+          value at this size — is still an open business question, not a metric
+          this project failed to capture.
+        </p>
+      </section>
+
+      <!-- ==================== STORY FOOTER META ==================== -->
+      <footer class="story-footer reveal">
+        <p class="story-meta">
+          Stack: HTML · CSS · Vanilla JavaScript · JSON (site) · Python/FastAPI · PostgreSQL · React (Hum module)<br />
+          Tools: Claude · Claude Code<br />
+          Timeline: August 2026
+        </p>
+        <a href="../index.html#work" class="story-back">
+          <span aria-hidden="true">←</span> All Product Stories
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© 2026 Mark Young</span>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/markyoung84" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
