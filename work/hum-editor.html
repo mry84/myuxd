@@ -116,11 +116,32 @@
       </header>
 
       <figure class="shot shot--hero reveal">
-        <button class="shot__btn" type="button" data-lightbox>
-          <div class="placeholder placeholder--shot">
-            Original Squarespace chrome vs. the static rebuild, side by side —
-            one frame.
-          </div>
+        <button
+          class="shot__btn"
+          type="button"
+          data-lightbox
+          data-full="../assets/images/hum_dashboard@2x.webp"
+          data-full-fallback="../assets/images/hum_dashboard.png"
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                ../assets/images/hum_dashboard.webp    1200w,
+                ../assets/images/hum_dashboard@2x.webp 1251w
+              "
+              sizes="(min-width: 1140px) 1044px, 100vw"
+            />
+            <img
+              class="shot__img"
+              src="../assets/images/hum_dashboard.png"
+              alt="The Hum platform hub — tool tiles grouped under Focus and Growth and Marketing, with Website Editor sitting alongside Marketing Calendar, Content Studio, CRM, and Workflow Management, most badged work in progress"
+              width="1251"
+              height="834"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </picture>
         </button>
       </figure>
 
@@ -287,25 +308,18 @@
           confirming the test caught the break, and restoring it.
         </p>
 
-        <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <div class="placeholder placeholder--shot">
-              Isolation diagram — brand-scoped query path vs. the FK path that
-              would have bypassed it.
-            </div>
-          </button>
-        </figure>
-
         <p class="story-h4">Editor IA</p>
         <p>
           The schema is large and unfamiliar — theme colors, navigation, image
           galleries, multi-field forms. Two views handle it, because the business
           owner thinks about the site two different ways depending on the task: a
           page-based structure that matches "the menu page" or "the calendar,"
-          and a content-type view (Colors, Images, Forms, Links) that matches
-          "swap the hero photo" or "fix the hours everywhere they appear." Both
-          read and write the same underlying draft, so switching views never
-          resets what she's doing.
+          and a content-type view whose list is scoped to the page in hand —
+          Content, Images, Links, Colors, Typography, and Radius at the site
+          level, narrowing to Content, Images, Forms, and Colors on Party
+          Inquiry — matching "swap the hero photo" or "fix the hours everywhere
+          they appear." Both read and write the same underlying draft, so
+          switching views never resets what she's doing.
         </p>
         <p>
           Adding a new item follows the same logic instead of dropping her into a
@@ -316,19 +330,60 @@
 
         <div class="shot-grid reveal">
           <figure class="shot">
-            <button class="shot__btn" type="button" data-lightbox>
-              <div class="placeholder placeholder--shot">
-                Page view and content-type view of the same draft, side by side.
-              </div>
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/hum_content@2x.webp"
+              data-full-fallback="../assets/images/hum_content.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/hum_content.webp    1200w,
+                    ../assets/images/hum_content@2x.webp 1251w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/hum_content.png"
+                  alt="The editor on the Site tab — a content-type sidebar listing Content, Images, Links, Colors, Typography, Radius, and Advanced beside the site-wide fields for site name and the per-page SEO titles and descriptions"
+                  width="1251"
+                  height="834"
+                  loading="lazy"
+                />
+              </picture>
             </button>
           </figure>
 
           <figure class="shot">
-            <button class="shot__btn" type="button" data-lightbox>
-              <div class="placeholder placeholder--shot">
-                The composer adding a new gallery photo — showing the inferred
-                alt/caption/slot, not a blank form.
-              </div>
+            <button
+              class="shot__btn"
+              type="button"
+              data-lightbox
+              data-full="../assets/images/hum_forms@2x.webp"
+              data-full-fallback="../assets/images/hum_forms.png"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    ../assets/images/hum_forms.webp    1200w,
+                    ../assets/images/hum_forms@2x.webp 1251w
+                  "
+                  sizes="(min-width: 1140px) 514px, (min-width: 720px) 47vw, 100vw"
+                />
+                <img
+                  class="shot__img"
+                  src="../assets/images/hum_forms.png"
+                  alt="The same editor on the Party Inquiry tab — the content-type sidebar narrowed to Content, Images, Forms, and Colors, beside that page's form field specs for first name: submission key, label, type, required, width, and group"
+                  width="1251"
+                  height="834"
+                  loading="lazy"
+                />
+              </picture>
             </button>
           </figure>
         </div>
@@ -340,11 +395,40 @@
           and discardable before ever reaching the live repository.
         </p>
 
+        <p>
+          The deploy target is where this stops short of finished: the Vercel
+          preview domain is confirmed working end to end, while cutting the
+          production domain over to it remains an open item — which is why the
+          live link at the top of this page points at the
+          <code>.vercel.app</code> address rather than thebendnwa.com.
+        </p>
+
         <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <div class="placeholder placeholder--shot">
-              Publish flow: draft → review → GitHub commit → live site.
-            </div>
+          <button
+            class="shot__btn"
+            type="button"
+            data-lightbox
+            data-full="../assets/images/hum_publish_flow_diagram@2x.webp"
+            data-full-fallback="../assets/images/hum_publish_flow_diagram.png"
+          >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ../assets/images/hum_publish_flow_diagram.webp    1200w,
+                  ../assets/images/hum_publish_flow_diagram@2x.webp 1320w
+                "
+                sizes="(min-width: 1140px) 1044px, 100vw"
+              />
+              <img
+                class="shot__img"
+                src="../assets/images/hum_publish_flow_diagram.png"
+                alt="A flowchart of the publish pipeline — Hum editor, to Save draft writing to BrandSite.draft_content, to Publish promoting the draft to content and snapshotting a version, to a GitHub commit pushing an updated content.json, to an automatic Vercel deploy, which branches to a Vercel preview that is live and working and to thebendnwa.com, still serving the old site as an open item"
+                width="1320"
+                height="1248"
+                loading="lazy"
+              />
+            </picture>
           </button>
         </figure>
       </section>
@@ -384,11 +468,31 @@
         </div>
 
         <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <div class="placeholder placeholder--shot">
-              Safety architecture diagram + redacted commit timeline — not the
-              leaked editor chrome itself.
-            </div>
+          <button
+            class="shot__btn"
+            type="button"
+            data-lightbox
+            data-full="../assets/images/hum_publish_header@2x.webp"
+            data-full-fallback="../assets/images/hum_publish_header.png"
+          >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ../assets/images/hum_publish_header.webp    1200w,
+                  ../assets/images/hum_publish_header@2x.webp 1251w
+                "
+                sizes="(min-width: 1140px) 1044px, 100vw"
+              />
+              <img
+                class="shot__img"
+                src="../assets/images/hum_publish_header.png"
+                alt="The per-site pause as it ships — the editor's header bar showing Pause publishing sitting between Save draft and Publish, with View live alongside"
+                width="1251"
+                height="104"
+                loading="lazy"
+              />
+            </picture>
           </button>
         </figure>
       </section>
@@ -428,11 +532,60 @@
         </ul>
 
         <figure class="shot reveal">
-          <button class="shot__btn" type="button" data-lightbox>
-            <div class="placeholder placeholder--shot">
-              A shared event link opening directly to that event on the live
-              site.
-            </div>
+          <button
+            class="shot__btn"
+            type="button"
+            data-lightbox
+            data-full="../assets/images/hum_calendar_2@2x.webp"
+            data-full-fallback="../assets/images/hum_calendar_2.png"
+          >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ../assets/images/hum_calendar_2.webp    1200w,
+                  ../assets/images/hum_calendar_2@2x.webp 1251w
+                "
+                sizes="(min-width: 1140px) 1044px, 100vw"
+              />
+              <img
+                class="shot__img"
+                src="../assets/images/hum_calendar_2.png"
+                alt="A marketing calendar item with The Bend NWA selected and a checked &quot;Send to The Bend NWA's website on save&quot; box — the explicit opt-in that pushes the event to the live site"
+                width="1251"
+                height="834"
+                loading="lazy"
+              />
+            </picture>
+          </button>
+        </figure>
+
+        <figure class="shot reveal">
+          <button
+            class="shot__btn"
+            type="button"
+            data-lightbox
+            data-full="../assets/images/hum_bend_share@2x.webp"
+            data-full-fallback="../assets/images/hum_bend_share.png"
+          >
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  ../assets/images/hum_bend_share.webp    1200w,
+                  ../assets/images/hum_bend_share@2x.webp 1251w
+                "
+                sizes="(min-width: 1140px) 1044px, 100vw"
+              />
+              <img
+                class="shot__img"
+                src="../assets/images/hum_bend_share.png"
+                alt="A shared event link opening directly to that event on the live site — the Two-for-One Tuesdays card open over the dimmed events calendar with Share, Facebook, X, and Copy link actions"
+                width="1251"
+                height="834"
+                loading="lazy"
+              />
+            </picture>
           </button>
         </figure>
 
