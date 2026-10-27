@@ -472,10 +472,10 @@
           dropped that feature's entry point from the interface while its code
           kept running underneath, reachable only by hand-editing a URL. Nothing
           would have failed a test. It was a UX regression created by concurrent
-          development, not a design mistake — and a colleague caught it, restored
-          the entry point, and wrote a test that derives the interface's expected
-          state from the page's own logic, so the same kind of drift can't go
-          unnoticed again.
+          development, not a design mistake — and I caught it and flagged it to
+          the client. The entry point was restored, and a test was added that
+          derives the interface's expected state from the page's own logic, so
+          the same kind of drift can't go unnoticed again.
         </p>
 
         <p>
